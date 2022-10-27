@@ -12,7 +12,7 @@ import SwiftUI
 extension Font {
     
     static func medelRegular(size: Int) -> Font {
-        Font.custom("Medal", size: CGFloat(size))
+        Font.custom("Medel", size: CGFloat(size))
     }
     static func poppinsRegular(size: Int) -> Font {
         Font.custom("Poppins-Regular", size: CGFloat(size))
