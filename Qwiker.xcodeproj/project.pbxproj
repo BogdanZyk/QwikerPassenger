@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A0AA1E8290B192A00D7D0D6 /* GeoFire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A0AA1E7290B192A00D7D0D6 /* GeoFire */; };
+		5A0AA1EA290B192A00D7D0D6 /* GeoFireUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 5A0AA1E9290B192A00D7D0D6 /* GeoFireUtils */; };
+		5A0AA1ED290B19E600D7D0D6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5A0AA1EC290B19E600D7D0D6 /* FirebaseAuth */; };
+		5A0AA1EF290B19E600D7D0D6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5A0AA1EE290B19E600D7D0D6 /* FirebaseFirestore */; };
+		5A0AA1F1290B19E600D7D0D6 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 5A0AA1F0290B19E600D7D0D6 /* FirebaseFirestoreSwift-Beta */; };
+		5A0AA1F3290B19E600D7D0D6 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5A0AA1F2290B19E600D7D0D6 /* FirebaseStorage */; };
 		5A44E46B290A8E5000577B4A /* QwikerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E46A290A8E4F00577B4A /* QwikerApp.swift */; };
 		5A44E46D290A8E5000577B4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E46C290A8E5000577B4A /* ContentView.swift */; };
 		5A44E46F290A8E5100577B4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A44E46E290A8E5100577B4A /* Assets.xcassets */; };
@@ -26,13 +32,6 @@
 		5A44E4A2290AA90200577B4A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4A1290AA90200577B4A /* String.swift */; };
 		5A44E4A4290AAF9400577B4A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4A3290AAF9400577B4A /* LocationManager.swift */; };
 		5A44E4A6290AB69C00577B4A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4A5290AB69C00577B4A /* Helpers.swift */; };
-		5A44E4A9290AC45F00577B4A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5A44E4A8290AC45F00577B4A /* FirebaseAuth */; };
-		5A44E4AB290AC45F00577B4A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5A44E4AA290AC45F00577B4A /* FirebaseDatabase */; };
-		5A44E4AD290AC45F00577B4A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5A44E4AC290AC45F00577B4A /* FirebaseFirestore */; };
-		5A44E4AF290AC45F00577B4A /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 5A44E4AE290AC45F00577B4A /* FirebaseFirestoreSwift-Beta */; };
-		5A44E4B1290AC45F00577B4A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5A44E4B0290AC45F00577B4A /* FirebaseStorage */; };
-		5A44E4B4290AC4B000577B4A /* GeoFire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A44E4B3290AC4B000577B4A /* GeoFire */; };
-		5A44E4B6290AC4B000577B4A /* GeoFireUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 5A44E4B5290AC4B000577B4A /* GeoFireUtils */; };
 		5A44E4B9290AC50B00577B4A /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A44E4B8290AC50B00577B4A /* NukeUI */; };
 		5A44E4BB290AC54700577B4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A44E4BA290AC54600577B4A /* GoogleService-Info.plist */; };
 		5A44E4BD290AC61B00577B4A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4BC290AC61B00577B4A /* HomeView.swift */; };
@@ -66,7 +65,6 @@
 		5A44E471290A8E5100577B4A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5A44E484290A94EE00577B4A /* Medel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Medel.ttf; sourceTree = "<group>"; };
 		5A44E487290A952100577B4A /* FontsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsExt.swift; sourceTree = "<group>"; };
-		5A44E489290A954B00577B4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5A44E48A290A960100577B4A /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		5A44E48C290A960A00577B4A /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		5A44E48E290A975200577B4A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -109,14 +107,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A44E4B4290AC4B000577B4A /* GeoFire in Frameworks */,
-				5A44E4AB290AC45F00577B4A /* FirebaseDatabase in Frameworks */,
-				5A44E4AF290AC45F00577B4A /* FirebaseFirestoreSwift-Beta in Frameworks */,
-				5A44E4A9290AC45F00577B4A /* FirebaseAuth in Frameworks */,
-				5A44E4B1290AC45F00577B4A /* FirebaseStorage in Frameworks */,
-				5A44E4B6290AC4B000577B4A /* GeoFireUtils in Frameworks */,
-				5A44E4AD290AC45F00577B4A /* FirebaseFirestore in Frameworks */,
+				5A0AA1E8290B192A00D7D0D6 /* GeoFire in Frameworks */,
+				5A0AA1EA290B192A00D7D0D6 /* GeoFireUtils in Frameworks */,
 				5A44E4B9290AC50B00577B4A /* NukeUI in Frameworks */,
+				5A0AA1F1290B19E600D7D0D6 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				5A0AA1F3290B19E600D7D0D6 /* FirebaseStorage in Frameworks */,
+				5A0AA1EF290B19E600D7D0D6 /* FirebaseFirestore in Frameworks */,
+				5A0AA1ED290B19E600D7D0D6 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				5A44E4BA290AC54600577B4A /* GoogleService-Info.plist */,
-				5A44E489290A954B00577B4A /* Info.plist */,
 				5A44E47A290A8E9600577B4A /* App */,
 				5A44E47E290A8ED900577B4A /* Managers */,
 				5A44E47D290A8EB700577B4A /* Services */,
@@ -381,14 +377,13 @@
 			);
 			name = Qwiker;
 			packageProductDependencies = (
-				5A44E4A8290AC45F00577B4A /* FirebaseAuth */,
-				5A44E4AA290AC45F00577B4A /* FirebaseDatabase */,
-				5A44E4AC290AC45F00577B4A /* FirebaseFirestore */,
-				5A44E4AE290AC45F00577B4A /* FirebaseFirestoreSwift-Beta */,
-				5A44E4B0290AC45F00577B4A /* FirebaseStorage */,
-				5A44E4B3290AC4B000577B4A /* GeoFire */,
-				5A44E4B5290AC4B000577B4A /* GeoFireUtils */,
 				5A44E4B8290AC50B00577B4A /* NukeUI */,
+				5A0AA1E7290B192A00D7D0D6 /* GeoFire */,
+				5A0AA1E9290B192A00D7D0D6 /* GeoFireUtils */,
+				5A0AA1EC290B19E600D7D0D6 /* FirebaseAuth */,
+				5A0AA1EE290B19E600D7D0D6 /* FirebaseFirestore */,
+				5A0AA1F0290B19E600D7D0D6 /* FirebaseFirestoreSwift-Beta */,
+				5A0AA1F2290B19E600D7D0D6 /* FirebaseStorage */,
 			);
 			productName = Qwiker;
 			productReference = 5A44E467290A8E4F00577B4A /* Qwiker.app */;
@@ -419,9 +414,9 @@
 			);
 			mainGroup = 5A44E45E290A8E4F00577B4A;
 			packageReferences = (
-				5A44E4A7290AC45F00577B4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				5A44E4B2290AC4B000577B4A /* XCRemoteSwiftPackageReference "geofire-objc" */,
 				5A44E4B7290AC50B00577B4A /* XCRemoteSwiftPackageReference "NukeUI" */,
+				5A0AA1E6290B192A00D7D0D6 /* XCRemoteSwiftPackageReference "geofire-objc" */,
+				5A0AA1EB290B19E600D7D0D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 5A44E468290A8E4F00577B4A /* Products */;
 			projectDirPath = "";
@@ -625,8 +620,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -658,8 +652,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -698,20 +691,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5A44E4A7290AC45F00577B4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		5A0AA1E6290B192A00D7D0D6 /* XCRemoteSwiftPackageReference "geofire-objc" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.9.3;
-			};
-		};
-		5A44E4B2290AC4B000577B4A /* XCRemoteSwiftPackageReference "geofire-objc" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/geofire-objc.git";
+			repositoryURL = "https://github.com/firebase/geofire-objc";
 			requirement = {
 				kind = exactVersion;
 				version = 4.3.0;
+			};
+		};
+		5A0AA1EB290B19E600D7D0D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 8.15.0;
 			};
 		};
 		5A44E4B7290AC50B00577B4A /* XCRemoteSwiftPackageReference "NukeUI" */ = {
@@ -725,40 +718,35 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5A44E4A8290AC45F00577B4A /* FirebaseAuth */ = {
+		5A0AA1E7290B192A00D7D0D6 /* GeoFire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5A44E4A7290AC45F00577B4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		5A44E4AA290AC45F00577B4A /* FirebaseDatabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5A44E4A7290AC45F00577B4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
-		};
-		5A44E4AC290AC45F00577B4A /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5A44E4A7290AC45F00577B4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		5A44E4AE290AC45F00577B4A /* FirebaseFirestoreSwift-Beta */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5A44E4A7290AC45F00577B4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = "FirebaseFirestoreSwift-Beta";
-		};
-		5A44E4B0290AC45F00577B4A /* FirebaseStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5A44E4A7290AC45F00577B4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseStorage;
-		};
-		5A44E4B3290AC4B000577B4A /* GeoFire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5A44E4B2290AC4B000577B4A /* XCRemoteSwiftPackageReference "geofire-objc" */;
+			package = 5A0AA1E6290B192A00D7D0D6 /* XCRemoteSwiftPackageReference "geofire-objc" */;
 			productName = GeoFire;
 		};
-		5A44E4B5290AC4B000577B4A /* GeoFireUtils */ = {
+		5A0AA1E9290B192A00D7D0D6 /* GeoFireUtils */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5A44E4B2290AC4B000577B4A /* XCRemoteSwiftPackageReference "geofire-objc" */;
+			package = 5A0AA1E6290B192A00D7D0D6 /* XCRemoteSwiftPackageReference "geofire-objc" */;
 			productName = GeoFireUtils;
+		};
+		5A0AA1EC290B19E600D7D0D6 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A0AA1EB290B19E600D7D0D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		5A0AA1EE290B19E600D7D0D6 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A0AA1EB290B19E600D7D0D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		5A0AA1F0290B19E600D7D0D6 /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A0AA1EB290B19E600D7D0D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+		5A0AA1F2290B19E600D7D0D6 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A0AA1EB290B19E600D7D0D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 		5A44E4B8290AC50B00577B4A /* NukeUI */ = {
 			isa = XCSwiftPackageProductDependency;
