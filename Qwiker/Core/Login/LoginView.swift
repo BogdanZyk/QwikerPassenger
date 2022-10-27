@@ -18,14 +18,22 @@ struct LoginView: View {
                 inputSection
                 Spacer()
                 alredyAccountSection
+                NavigationLink(isActive: $authVM.isShowVerifView) {
+                    VerificationView()
+                        .environmentObject(authVM)
+                        .navigationBarHidden(true)
+                } label: {}
+                    .labelsHidden()
+
             }
+            .handle(error: $authVM.error)
             .allFrame()
             .background(Color.primaryBg)
             .navigationBarHidden(true)
         }
-        .fullScreenCover(isPresented: $isShowOnboarding) {
-            OnboardingView()
-        }
+//        .fullScreenCover(isPresented: $isShowOnboarding) {
+//            OnboardingView()
+//        }
     }
 }
 
@@ -46,6 +54,7 @@ extension LoginView{
                 userNameTf
             }
             phoneTf
+            validSection
             submitButton
         }
         .padding()
@@ -58,7 +67,7 @@ extension LoginView{
             }else{
                 validText(authVM.validTextName)
             }
-        }
+        }.padding(.vertical, -10)
     }
     
     private var title: some View{
@@ -111,8 +120,8 @@ extension LoginView{
         }
     }
     private var submitButton: some View{
-        PrimaryButtonView(title: viewState == .login ? "Send code" : "Sign Up") {
-            
+        PrimaryButtonView(showLoader: authVM.isShowLoader, title: viewState == .login ? "Send code" : "Sign Up") {
+            authVM.actionForViewType(for: viewState)
         }
     }
 }

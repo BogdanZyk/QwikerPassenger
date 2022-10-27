@@ -16,13 +16,14 @@ struct VerificationView: View {
     @FocusState var activeField: OTPField?
     var body: some View {
         VStack(spacing: 40){
+            backButton
             title
             verifInpurSection
             Spacer()
         }
-        .padding(.top, 50)
         .hCenter()
         .background(Color.primaryBg)
+        .handle(error: $authVM.error)
         .onAppear{
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 activeField = .field1
@@ -77,8 +78,8 @@ extension VerificationView{
     }
     
     private var verifButton: some View{
-        PrimaryButtonView(title: "Verify") {
-            
+        PrimaryButtonView(showLoader: authVM.isShowLoader, title: "Verify") {
+            authVM.singInWithOTR()
         }
     }
     
@@ -86,7 +87,7 @@ extension VerificationView{
         HStack {
             if isHiddenTimer{
                 Button {
-                    //authVM.requestCode()
+                    authVM.requestCode()
                 } label: {
                     Text("Send the code again")
                 }
@@ -106,6 +107,24 @@ extension VerificationView{
             verifButton
         }
         .padding(.horizontal)
+    }
+    
+    private var backButton: some View{
+        Button {
+            authVM.isShowVerifView.toggle()
+        } label: {
+            Image(systemName: "chevron.left")
+                .imageScale(.medium)
+                .foregroundColor(.black)
+                .padding()
+                .background{
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.white)
+                        .shadow(color: .black.opacity(0.2), radius: 5, x: 0, y: 0)
+                }
+        }
+        .padding()
+        .hLeading()
     }
 }
 
@@ -133,7 +152,7 @@ extension VerificationView{
         
         // Send request for all inputs is not empty
         if value.map({!$0.isEmpty}).allSatisfy({$0}){
-            //authVM.singInWithOTR()
+            authVM.singInWithOTR()
         }
         
         

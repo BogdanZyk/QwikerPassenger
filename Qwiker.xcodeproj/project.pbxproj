@@ -26,6 +26,26 @@
 		5A44E4A2290AA90200577B4A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4A1290AA90200577B4A /* String.swift */; };
 		5A44E4A4290AAF9400577B4A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4A3290AAF9400577B4A /* LocationManager.swift */; };
 		5A44E4A6290AB69C00577B4A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4A5290AB69C00577B4A /* Helpers.swift */; };
+		5A44E4A9290AC45F00577B4A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5A44E4A8290AC45F00577B4A /* FirebaseAuth */; };
+		5A44E4AB290AC45F00577B4A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5A44E4AA290AC45F00577B4A /* FirebaseDatabase */; };
+		5A44E4AD290AC45F00577B4A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5A44E4AC290AC45F00577B4A /* FirebaseFirestore */; };
+		5A44E4AF290AC45F00577B4A /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 5A44E4AE290AC45F00577B4A /* FirebaseFirestoreSwift-Beta */; };
+		5A44E4B1290AC45F00577B4A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5A44E4B0290AC45F00577B4A /* FirebaseStorage */; };
+		5A44E4B4290AC4B000577B4A /* GeoFire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A44E4B3290AC4B000577B4A /* GeoFire */; };
+		5A44E4B6290AC4B000577B4A /* GeoFireUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 5A44E4B5290AC4B000577B4A /* GeoFireUtils */; };
+		5A44E4B9290AC50B00577B4A /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A44E4B8290AC50B00577B4A /* NukeUI */; };
+		5A44E4BB290AC54700577B4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A44E4BA290AC54600577B4A /* GoogleService-Info.plist */; };
+		5A44E4BD290AC61B00577B4A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4BC290AC61B00577B4A /* HomeView.swift */; };
+		5A44E4BF290AC6AB00577B4A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4BE290AC6AB00577B4A /* UserService.swift */; };
+		5A44E4C1290AC6DD00577B4A /* TripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4C0290AC6DD00577B4A /* TripService.swift */; };
+		5A44E4C3290AC70000577B4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4C2290AC70000577B4A /* User.swift */; };
+		5A44E4C5290AC73A00577B4A /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4C4290AC73A00577B4A /* Trip.swift */; };
+		5A44E4C7290AC75B00577B4A /* AppLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4C6290AC75B00577B4A /* AppLocation.swift */; };
+		5A44E4C9290AC77A00577B4A /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4C8290AC77A00577B4A /* RideType.swift */; };
+		5A44E4CB290AC79700577B4A /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4CA290AC79700577B4A /* Vehicle.swift */; };
+		5A44E4CE290AC7C300577B4A /* FbConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4CD290AC7C300577B4A /* FbConstant.swift */; };
+		5A44E4D0290AC92500577B4A /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4CF290AC92500577B4A /* MapViewState.swift */; };
+		5A44E4D2290ACA8100577B4A /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4D1290ACA8000577B4A /* ErrorHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +70,18 @@
 		5A44E4A1290AA90200577B4A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		5A44E4A3290AAF9400577B4A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5A44E4A5290AB69C00577B4A /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		5A44E4BA290AC54600577B4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5A44E4BC290AC61B00577B4A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		5A44E4BE290AC6AB00577B4A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		5A44E4C0290AC6DD00577B4A /* TripService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripService.swift; sourceTree = "<group>"; };
+		5A44E4C2290AC70000577B4A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5A44E4C4290AC73A00577B4A /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		5A44E4C6290AC75B00577B4A /* AppLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocation.swift; sourceTree = "<group>"; };
+		5A44E4C8290AC77A00577B4A /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
+		5A44E4CA290AC79700577B4A /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		5A44E4CD290AC7C300577B4A /* FbConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FbConstant.swift; sourceTree = "<group>"; };
+		5A44E4CF290AC92500577B4A /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
+		5A44E4D1290ACA8000577B4A /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +89,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A44E4B4290AC4B000577B4A /* GeoFire in Frameworks */,
+				5A44E4AB290AC45F00577B4A /* FirebaseDatabase in Frameworks */,
+				5A44E4AF290AC45F00577B4A /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				5A44E4A9290AC45F00577B4A /* FirebaseAuth in Frameworks */,
+				5A44E4B1290AC45F00577B4A /* FirebaseStorage in Frameworks */,
+				5A44E4B6290AC4B000577B4A /* GeoFireUtils in Frameworks */,
+				5A44E4AD290AC45F00577B4A /* FirebaseFirestore in Frameworks */,
+				5A44E4B9290AC50B00577B4A /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +122,7 @@
 		5A44E469290A8E4F00577B4A /* Qwiker */ = {
 			isa = PBXGroup;
 			children = (
+				5A44E4BA290AC54600577B4A /* GoogleService-Info.plist */,
 				5A44E489290A954B00577B4A /* Info.plist */,
 				5A44E47A290A8E9600577B4A /* App */,
 				5A44E47E290A8ED900577B4A /* Managers */,
@@ -108,8 +149,10 @@
 		5A44E478290A8E5700577B4A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5A44E4CC290AC7B600577B4A /* Constants */,
 				5A44E483290A94E200577B4A /* Fonts */,
 				5A44E4A5290AB69C00577B4A /* Helpers.swift */,
+				5A44E4D1290ACA8000577B4A /* ErrorHandler.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -147,6 +190,12 @@
 		5A44E47C290A8EAF00577B4A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5A44E4C2290AC70000577B4A /* User.swift */,
+				5A44E4C4290AC73A00577B4A /* Trip.swift */,
+				5A44E4C6290AC75B00577B4A /* AppLocation.swift */,
+				5A44E4C8290AC77A00577B4A /* RideType.swift */,
+				5A44E4CA290AC79700577B4A /* Vehicle.swift */,
+				5A44E4CF290AC92500577B4A /* MapViewState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -154,6 +203,8 @@
 		5A44E47D290A8EB700577B4A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5A44E4BE290AC6AB00577B4A /* UserService.swift */,
+				5A44E4C0290AC6DD00577B4A /* TripService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -187,6 +238,7 @@
 		5A44E481290A8F0700577B4A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5A44E4BC290AC61B00577B4A /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -234,6 +286,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		5A44E4CC290AC7B600577B4A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				5A44E4CD290AC7C300577B4A /* FbConstant.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -250,6 +310,16 @@
 			dependencies = (
 			);
 			name = Qwiker;
+			packageProductDependencies = (
+				5A44E4A8290AC45F00577B4A /* FirebaseAuth */,
+				5A44E4AA290AC45F00577B4A /* FirebaseDatabase */,
+				5A44E4AC290AC45F00577B4A /* FirebaseFirestore */,
+				5A44E4AE290AC45F00577B4A /* FirebaseFirestoreSwift-Beta */,
+				5A44E4B0290AC45F00577B4A /* FirebaseStorage */,
+				5A44E4B3290AC4B000577B4A /* GeoFire */,
+				5A44E4B5290AC4B000577B4A /* GeoFireUtils */,
+				5A44E4B8290AC50B00577B4A /* NukeUI */,
+			);
 			productName = Qwiker;
 			productReference = 5A44E467290A8E4F00577B4A /* Qwiker.app */;
 			productType = "com.apple.product-type.application";
@@ -278,6 +348,11 @@
 				Base,
 			);
 			mainGroup = 5A44E45E290A8E4F00577B4A;
+			packageReferences = (
+				5A44E4A7290AC45F00577B4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				5A44E4B2290AC4B000577B4A /* XCRemoteSwiftPackageReference "geofire-objc" */,
+				5A44E4B7290AC50B00577B4A /* XCRemoteSwiftPackageReference "NukeUI" */,
+			);
 			productRefGroup = 5A44E468290A8E4F00577B4A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -297,6 +372,7 @@
 				5A44E46F290A8E5100577B4A /* Assets.xcassets in Resources */,
 				5A44E48B290A960100577B4A /* Poppins-Regular.ttf in Resources */,
 				5A44E48D290A960A00577B4A /* Poppins-Medium.ttf in Resources */,
+				5A44E4BB290AC54700577B4A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,16 +384,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A44E46D290A8E5000577B4A /* ContentView.swift in Sources */,
+				5A44E4CE290AC7C300577B4A /* FbConstant.swift in Sources */,
 				5A44E4A6290AB69C00577B4A /* Helpers.swift in Sources */,
+				5A44E4C1290AC6DD00577B4A /* TripService.swift in Sources */,
 				5A44E491290A9B2E00577B4A /* Colors.swift in Sources */,
+				5A44E4BD290AC61B00577B4A /* HomeView.swift in Sources */,
 				5A44E48F290A975200577B4A /* OnboardingView.swift in Sources */,
 				5A44E49A290AA19100577B4A /* LoginView.swift in Sources */,
 				5A44E488290A952100577B4A /* FontsExt.swift in Sources */,
+				5A44E4CB290AC79700577B4A /* Vehicle.swift in Sources */,
 				5A44E49D290AA73700577B4A /* VerificationView.swift in Sources */,
 				5A44E4A2290AA90200577B4A /* String.swift in Sources */,
+				5A44E4D2290ACA8100577B4A /* ErrorHandler.swift in Sources */,
+				5A44E4C7290AC75B00577B4A /* AppLocation.swift in Sources */,
+				5A44E4C5290AC73A00577B4A /* Trip.swift in Sources */,
 				5A44E46B290A8E5000577B4A /* QwikerApp.swift in Sources */,
+				5A44E4D0290AC92500577B4A /* MapViewState.swift in Sources */,
 				5A44E4A0290AA87100577B4A /* AuthenticationViewModel.swift in Sources */,
+				5A44E4C9290AC77A00577B4A /* RideType.swift in Sources */,
 				5A44E498290A9DAE00577B4A /* PrimaryTextFieldView.swift in Sources */,
+				5A44E4BF290AC6AB00577B4A /* UserService.swift in Sources */,
+				5A44E4C3290AC70000577B4A /* User.swift in Sources */,
 				5A44E496290A9D0000577B4A /* View.swift in Sources */,
 				5A44E494290A9CAD00577B4A /* PrimaryButtonView.swift in Sources */,
 				5A44E4A4290AAF9400577B4A /* LocationManager.swift in Sources */,
@@ -453,11 +540,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Qwiker/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow us to access your location to find you nearby drivers";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -467,7 +557,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -483,11 +573,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Qwiker/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow us to access your location to find you nearby drivers";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,7 +590,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -523,6 +616,76 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5A44E4A7290AC45F00577B4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.9.3;
+			};
+		};
+		5A44E4B2290AC4B000577B4A /* XCRemoteSwiftPackageReference "geofire-objc" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/geofire-objc.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.3.0;
+			};
+		};
+		5A44E4B7290AC50B00577B4A /* XCRemoteSwiftPackageReference "NukeUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/NukeUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5A44E4A8290AC45F00577B4A /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A44E4A7290AC45F00577B4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		5A44E4AA290AC45F00577B4A /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A44E4A7290AC45F00577B4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		5A44E4AC290AC45F00577B4A /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A44E4A7290AC45F00577B4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		5A44E4AE290AC45F00577B4A /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A44E4A7290AC45F00577B4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+		5A44E4B0290AC45F00577B4A /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A44E4A7290AC45F00577B4A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		5A44E4B3290AC4B000577B4A /* GeoFire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A44E4B2290AC4B000577B4A /* XCRemoteSwiftPackageReference "geofire-objc" */;
+			productName = GeoFire;
+		};
+		5A44E4B5290AC4B000577B4A /* GeoFireUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A44E4B2290AC4B000577B4A /* XCRemoteSwiftPackageReference "geofire-objc" */;
+			productName = GeoFireUtils;
+		};
+		5A44E4B8290AC50B00577B4A /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A44E4B7290AC50B00577B4A /* XCRemoteSwiftPackageReference "NukeUI" */;
+			productName = NukeUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5A44E45F290A8E4F00577B4A /* Project object */;
 }
