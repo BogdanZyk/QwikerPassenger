@@ -54,25 +54,14 @@ class DeveloperPreview {
                              profileImageUrl: nil,
                              homeLocation: nil,
                              workLocation: nil,
-                             accountType: .passenger,
-                             coordinates: GeoPoint(latitude: 37.4, longitude: -122.1),
-                             isActive: true)
+                             coordinates: GeoPoint(latitude: 37.4, longitude: -122.1))
     
-    let mockDriver = User(id: NSUUID().uuidString,
-                          fullname: "John Doe",
-                          email: "johndoe@gmail.com",
-                          phoneNumber: "78005553535",
-                          profileImageUrl: nil,
-                          homeLocation: nil,
-                          workLocation: nil,
-                          accountType: .driver,
-                          coordinates: GeoPoint(latitude: 37.41, longitude: -122.1),
-                          isActive: false)
+
     
     var homeViewModel: HomeViewModel {
         let vm = HomeViewModel()
         vm.trip = mockTrip
-        vm.user = mockDriver
+        vm.user = mockPassenger
         //vm.selectedLocation = mockSelectedLocation
         return vm
     }

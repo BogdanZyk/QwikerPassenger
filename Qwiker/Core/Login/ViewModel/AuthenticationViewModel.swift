@@ -62,7 +62,7 @@ final class AuthenticationViewModel: ObservableObject{
                 if let user = user{
                     self.user = user
                 }else{
-                    guard let uid = result?.user.uid, let userModel = UserService.createUserModel(phone: self.phoneNumber.formattingPhone()) else { return }
+                    guard let uid = result?.user.uid, let userModel = UserService.createUserModel(withName: self.userName, phone: self.phoneNumber.formattingPhone()) else { return }
                     UserService.uploadUserData(withUid: uid, user: userModel) { error in
                         if let error = error{
                             self.error = error

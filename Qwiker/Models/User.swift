@@ -20,10 +20,7 @@ struct User: Codable {
     var profileImageUrl: String?
     var homeLocation: SavedLocation?
     var workLocation: SavedLocation?
-    var accountType: AccountType
     var coordinates: GeoPoint
-    var vehicle: Vehicle?
-    var isActive: Bool
     
     var uid: String { return id ?? "" }
 }
@@ -35,7 +32,12 @@ struct SavedLocation: Codable {
     let longitude: Double
 }
 
-enum AccountType: Int, Codable {
-    case passenger
-    case driver
-}
+
+
+
+
+
+
+
+
+

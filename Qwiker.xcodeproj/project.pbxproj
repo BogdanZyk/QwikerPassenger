@@ -13,6 +13,7 @@
 		5A0AA1EF290B19E600D7D0D6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5A0AA1EE290B19E600D7D0D6 /* FirebaseFirestore */; };
 		5A0AA1F1290B19E600D7D0D6 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 5A0AA1F0290B19E600D7D0D6 /* FirebaseFirestoreSwift-Beta */; };
 		5A0AA1F3290B19E600D7D0D6 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5A0AA1F2290B19E600D7D0D6 /* FirebaseStorage */; };
+		5A26AA11290B1E5E00E2D5AC /* Rider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26AA10290B1E5E00E2D5AC /* Rider.swift */; };
 		5A44E46B290A8E5000577B4A /* QwikerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E46A290A8E4F00577B4A /* QwikerApp.swift */; };
 		5A44E46D290A8E5000577B4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E46C290A8E5000577B4A /* ContentView.swift */; };
 		5A44E46F290A8E5100577B4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A44E46E290A8E5100577B4A /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A26AA10290B1E5E00E2D5AC /* Rider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rider.swift; sourceTree = "<group>"; };
 		5A44E467290A8E4F00577B4A /* Qwiker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qwiker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A44E46A290A8E4F00577B4A /* QwikerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwikerApp.swift; sourceTree = "<group>"; };
 		5A44E46C290A8E5000577B4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				5A44E4C8290AC77A00577B4A /* RideType.swift */,
 				5A44E4CA290AC79700577B4A /* Vehicle.swift */,
 				5A44E4CF290AC92500577B4A /* MapViewState.swift */,
+				5A26AA10290B1E5E00E2D5AC /* Rider.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				5A44E4C5290AC73A00577B4A /* Trip.swift in Sources */,
 				5A44E46B290A8E5000577B4A /* QwikerApp.swift in Sources */,
 				5A44E4D0290AC92500577B4A /* MapViewState.swift in Sources */,
+				5A26AA11290B1E5E00E2D5AC /* Rider.swift in Sources */,
 				5A44E4A0290AA87100577B4A /* AuthenticationViewModel.swift in Sources */,
 				5A44E4C9290AC77A00577B4A /* RideType.swift in Sources */,
 				5A44E4E7290ADA2D00577B4A /* UserAvaterComponent.swift in Sources */,

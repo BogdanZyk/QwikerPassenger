@@ -59,27 +59,27 @@ extension SideMenuView{
                             .font(.system(size: 16))
                     }
                 }
-                userForTypeActiveSection
+               // userForTypeActiveSection
             }
         }
         .hLeading()
     }
     
-    private var userForTypeActiveSection: some View{
-        HStack(spacing: 12) {
-            if let user = viewModel.user{
-                VStack(alignment: .leading, spacing: 10) {
-                    Text(user.accountType == .passenger ? "Do more with your account" : "DRIVER")
-                        .font(.footnote)
-                        .fontWeight(.semibold)
-                        .opacity(0.87)
-                        .padding(.bottom)
-                    Divider()
-                }
-                .padding(.top, 24)
-            }
-        }
-    }
+//    private var userForTypeActiveSection: some View{
+//        HStack(spacing: 12) {
+//            if let user = viewModel.user{
+//                VStack(alignment: .leading, spacing: 10) {
+//                    Text(user.accountType == .passenger ? "Do more with your account" : "DRIVER")
+//                        .font(.footnote)
+//                        .fontWeight(.semibold)
+//                        .opacity(0.87)
+//                        .padding(.bottom)
+//                    Divider()
+//                }
+//                .padding(.top, 24)
+//            }
+//        }
+//    }
     
     private var passengerMakeMoneyBtn: some View{
         Button {

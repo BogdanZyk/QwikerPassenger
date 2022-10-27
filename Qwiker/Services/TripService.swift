@@ -33,24 +33,24 @@ struct TripService {
 // MARK: - Passenger API
 extension TripService {
     func addTripObserverForPassanger(listener: @escaping(FIRQuerySnapshotBlock)) {
-        guard let user = user, user.accountType == .passenger, let uid = user.id else { return }
+        guard let user = user, let uid = user.id else { return }
         FbConstant.COLLECTION_RIDES.whereField("passengerUid", isEqualTo: uid).addSnapshotListener(listener)
     }
 }
 
 
-// MARK: - Driver API
-extension TripService {
-    
-    func addTripObserverForDriver(listener: @escaping(FIRQuerySnapshotBlock)) {
-        guard let user = user, user.accountType == .driver, let uid = user.id else { return }
-        FbConstant.COLLECTION_RIDES.whereField("driverUid", isEqualTo: uid).addSnapshotListener(listener)
-    }
-    
-    func acceptTrip(completion: FirestoreCompletion) {
-        guard let trip = trip else { return }
-        guard let user = user, user.accountType == .driver else { return }
-                
-        FbConstant.COLLECTION_RIDES.document(trip.tripId).updateData(["tripState": MapViewState.tripAccepted.rawValue], completion: completion)
-    }
-}
+//// MARK: - Driver API
+//extension TripService {
+//    
+//    func addTripObserverForDriver(listener: @escaping(FIRQuerySnapshotBlock)) {
+//        guard let user = user, user.accountType == .driver, let uid = user.id else { return }
+//        FbConstant.COLLECTION_RIDES.whereField("driverUid", isEqualTo: uid).addSnapshotListener(listener)
+//    }
+//
+//    func acceptTrip(completion: FirestoreCompletion) {
+//        guard let trip = trip else { return }
+//        guard let user = user, user.accountType == .driver else { return }
+//
+//        FbConstant.COLLECTION_RIDES.document(trip.tripId).updateData(["tripState": MapViewState.tripAccepted.rawValue], completion: completion)
+//    }
+//}

@@ -30,11 +30,8 @@ struct UserService {
             fullname: name,
             email: email,
             phoneNumber: phone,
-            accountType: .passenger,
             coordinates: GeoPoint(latitude: userLocation.coordinate.latitude,
-                                  longitude: userLocation.coordinate.longitude),
-            isActive: false
-        )
+                                  longitude: userLocation.coordinate.longitude))
         return user
     }
     
