@@ -49,6 +49,12 @@
 		5A44E4D5290AD5BA00577B4A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4D4290AD5BA00577B4A /* HomeViewModel.swift */; };
 		5A44E4D9290AD61300577B4A /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4D8290AD61300577B4A /* SearchViewModel.swift */; };
 		5A44E4DC290AD6B400577B4A /* MapViewRepresantable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4DB290AD6B400577B4A /* MapViewRepresantable.swift */; };
+		5A44E4DF290AD8AA00577B4A /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4DE290AD8AA00577B4A /* SideMenuView.swift */; };
+		5A44E4E1290AD8C700577B4A /* SideMenuCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4E0290AD8C700577B4A /* SideMenuCellView.swift */; };
+		5A44E4E3290AD8FF00577B4A /* SideMenuOptionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4E2290AD8FF00577B4A /* SideMenuOptionType.swift */; };
+		5A44E4E5290AD9B800577B4A /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4E4290AD9B800577B4A /* Preview.swift */; };
+		5A44E4E7290ADA2D00577B4A /* UserAvaterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4E6290ADA2D00577B4A /* UserAvaterComponent.swift */; };
+		5A44E4E9290ADA3D00577B4A /* CustomLazyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4E8290ADA3D00577B4A /* CustomLazyImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +94,12 @@
 		5A44E4D4290AD5BA00577B4A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5A44E4D8290AD61300577B4A /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		5A44E4DB290AD6B400577B4A /* MapViewRepresantable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresantable.swift; sourceTree = "<group>"; };
+		5A44E4DE290AD8AA00577B4A /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		5A44E4E0290AD8C700577B4A /* SideMenuCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCellView.swift; sourceTree = "<group>"; };
+		5A44E4E2290AD8FF00577B4A /* SideMenuOptionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionType.swift; sourceTree = "<group>"; };
+		5A44E4E4290AD9B800577B4A /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		5A44E4E6290ADA2D00577B4A /* UserAvaterComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvaterComponent.swift; sourceTree = "<group>"; };
+		5A44E4E8290ADA3D00577B4A /* CustomLazyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLazyImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +203,7 @@
 				5A44E490290A9B2E00577B4A /* Colors.swift */,
 				5A44E495290A9D0000577B4A /* View.swift */,
 				5A44E4A1290AA90200577B4A /* String.swift */,
+				5A44E4E4290AD9B800577B4A /* Preview.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -255,6 +268,7 @@
 		5A44E482290A8F0A00577B4A /* SidebarMenu */ = {
 			isa = PBXGroup;
 			children = (
+				5A44E4DD290AD89F00577B4A /* View */,
 			);
 			path = SidebarMenu;
 			sourceTree = "<group>";
@@ -275,6 +289,8 @@
 			children = (
 				5A44E493290A9CAD00577B4A /* PrimaryButtonView.swift */,
 				5A44E497290A9DAE00577B4A /* PrimaryTextFieldView.swift */,
+				5A44E4E6290ADA2D00577B4A /* UserAvaterComponent.swift */,
+				5A44E4E8290ADA3D00577B4A /* CustomLazyImage.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -333,6 +349,16 @@
 				5A44E4DB290AD6B400577B4A /* MapViewRepresantable.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		5A44E4DD290AD89F00577B4A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5A44E4DE290AD8AA00577B4A /* SideMenuView.swift */,
+				5A44E4E0290AD8C700577B4A /* SideMenuCellView.swift */,
+				5A44E4E2290AD8FF00577B4A /* SideMenuOptionType.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +460,7 @@
 				5A44E49A290AA19100577B4A /* LoginView.swift in Sources */,
 				5A44E488290A952100577B4A /* FontsExt.swift in Sources */,
 				5A44E4CB290AC79700577B4A /* Vehicle.swift in Sources */,
+				5A44E4E5290AD9B800577B4A /* Preview.swift in Sources */,
 				5A44E49D290AA73700577B4A /* VerificationView.swift in Sources */,
 				5A44E4A2290AA90200577B4A /* String.swift in Sources */,
 				5A44E4D2290ACA8100577B4A /* ErrorHandler.swift in Sources */,
@@ -444,13 +471,18 @@
 				5A44E4D0290AC92500577B4A /* MapViewState.swift in Sources */,
 				5A44E4A0290AA87100577B4A /* AuthenticationViewModel.swift in Sources */,
 				5A44E4C9290AC77A00577B4A /* RideType.swift in Sources */,
+				5A44E4E7290ADA2D00577B4A /* UserAvaterComponent.swift in Sources */,
+				5A44E4E1290AD8C700577B4A /* SideMenuCellView.swift in Sources */,
 				5A44E498290A9DAE00577B4A /* PrimaryTextFieldView.swift in Sources */,
 				5A44E4BF290AC6AB00577B4A /* UserService.swift in Sources */,
 				5A44E4D5290AD5BA00577B4A /* HomeViewModel.swift in Sources */,
 				5A44E4C3290AC70000577B4A /* User.swift in Sources */,
 				5A44E496290A9D0000577B4A /* View.swift in Sources */,
+				5A44E4E9290ADA3D00577B4A /* CustomLazyImage.swift in Sources */,
 				5A44E4D9290AD61300577B4A /* SearchViewModel.swift in Sources */,
+				5A44E4DF290AD8AA00577B4A /* SideMenuView.swift in Sources */,
 				5A44E494290A9CAD00577B4A /* PrimaryButtonView.swift in Sources */,
+				5A44E4E3290AD8FF00577B4A /* SideMenuOptionType.swift in Sources */,
 				5A44E4A4290AAF9400577B4A /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
