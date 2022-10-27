@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @EnvironmentObject var authVM: AuthenticationViewModel
-    @State private var showOnboard = false
+    @AppStorage("isShowOnboarding") var isShowOnboarding: Bool = true
     var viewState: LoginViewState = .login
     var body: some View {
         NavigationView {
@@ -23,7 +23,7 @@ struct LoginView: View {
             .background(Color.primaryBg)
             .navigationBarHidden(true)
         }
-        .fullScreenCover(isPresented: $showOnboard) {
+        .fullScreenCover(isPresented: $isShowOnboarding) {
             OnboardingView()
         }
     }

@@ -24,6 +24,8 @@
 		5A44E49D290AA73700577B4A /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E49C290AA73700577B4A /* VerificationView.swift */; };
 		5A44E4A0290AA87100577B4A /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E49F290AA87100577B4A /* AuthenticationViewModel.swift */; };
 		5A44E4A2290AA90200577B4A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4A1290AA90200577B4A /* String.swift */; };
+		5A44E4A4290AAF9400577B4A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4A3290AAF9400577B4A /* LocationManager.swift */; };
+		5A44E4A6290AB69C00577B4A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4A5290AB69C00577B4A /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		5A44E49C290AA73700577B4A /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 		5A44E49F290AA87100577B4A /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		5A44E4A1290AA90200577B4A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		5A44E4A3290AAF9400577B4A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		5A44E4A5290AB69C00577B4A /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,11 +83,11 @@
 			isa = PBXGroup;
 			children = (
 				5A44E489290A954B00577B4A /* Info.plist */,
+				5A44E47A290A8E9600577B4A /* App */,
 				5A44E47E290A8ED900577B4A /* Managers */,
 				5A44E47D290A8EB700577B4A /* Services */,
 				5A44E47C290A8EAF00577B4A /* Models */,
 				5A44E47B290A8EA300577B4A /* Extensions */,
-				5A44E47A290A8E9600577B4A /* App */,
 				5A44E478290A8E5700577B4A /* Utils */,
 				5A44E479290A8E5D00577B4A /* Core */,
 				5A44E46C290A8E5000577B4A /* ContentView.swift */,
@@ -105,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				5A44E483290A94E200577B4A /* Fonts */,
+				5A44E4A5290AB69C00577B4A /* Helpers.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 		5A44E47E290A8ED900577B4A /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				5A44E4A3290AAF9400577B4A /* LocationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -302,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A44E46D290A8E5000577B4A /* ContentView.swift in Sources */,
+				5A44E4A6290AB69C00577B4A /* Helpers.swift in Sources */,
 				5A44E491290A9B2E00577B4A /* Colors.swift in Sources */,
 				5A44E48F290A975200577B4A /* OnboardingView.swift in Sources */,
 				5A44E49A290AA19100577B4A /* LoginView.swift in Sources */,
@@ -313,6 +320,7 @@
 				5A44E498290A9DAE00577B4A /* PrimaryTextFieldView.swift in Sources */,
 				5A44E496290A9D0000577B4A /* View.swift in Sources */,
 				5A44E494290A9CAD00577B4A /* PrimaryButtonView.swift in Sources */,
+				5A44E4A4290AAF9400577B4A /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

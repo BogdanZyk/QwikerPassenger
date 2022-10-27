@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @AppStorage("isShowOnboarding") var isShowOnboarding: Bool = true
+    @ObservedObject var locationManager = LocationManager.shared
     @State private var currentStep: OnBoardType = .step1
     @Environment(\.dismiss) var dismiss
     var body: some View {
@@ -20,9 +22,15 @@ struct OnboardingView: View {
             .tabViewStyle(.page(indexDisplayMode: .never))
             pageControlView
             nextButton
-       
         }
         .background(Color.primaryBg)
+        .onChange(of: locationManager.isAuthorization) { isAuthorization in
+            print(isAuthorization)
+            if isAuthorization{
+                dismiss()
+                isShowOnboarding = false
+            }
+        }
     }
 }
 
@@ -51,8 +59,17 @@ extension OnboardingView{
     }
     
     private var nextButton: some View{
-        PrimaryButtonView(title: currentStep == .step4 ? "Allow location" : "Next") {
-            nextAction()
+        Group{
+            if locationManager.showAlert && currentStep == .step4{
+                PrimaryButtonView(title: "Allow location in setting") {
+                    Helpers.openSettings()
+                }
+            }
+            PrimaryButtonView(title: currentStep == .step4 ? "Allow location" : "Next") {
+                withAnimation {
+                    nextAction()
+                }
+            }
         }
         .padding(.horizontal)
         .padding(.top, 40)
@@ -78,7 +95,7 @@ extension OnboardingView{
         case .step3:
             currentStep = .step4
         case .step4:
-            dismiss()
+            locationManager.requestLocation()
         }
     }
 }

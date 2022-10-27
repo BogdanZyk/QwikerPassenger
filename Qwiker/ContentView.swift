@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var locationManager = LocationManager.shared
+    @StateObject var authViewModel = AuthenticationViewModel()
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        LoginView()
+            .environmentObject(authViewModel)
+            .alert("Allow your location in the settings", isPresented: $locationManager.showAlert) {
+                Button("Open settings", action: Helpers.openSettings)
+            }
     }
 }
 
