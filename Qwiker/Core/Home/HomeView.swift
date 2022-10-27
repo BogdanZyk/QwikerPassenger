@@ -16,7 +16,7 @@ struct HomeView: View {
         NavigationView {
             ZStack(alignment: .bottom) {
                 ZStack(alignment: .top){
-                    mapView
+                    DragMapView()
                     mainActionBtn
                 }
                 sideMenuView
@@ -38,10 +38,7 @@ struct HomeView_Previews: PreviewProvider {
 
 extension HomeView{
     
-    private var mapView: some View{
-        MapViewRepresentable(mapState: $homeVM.mapState)
-            .ignoresSafeArea()
-    }
+
     
     private var sideMenuView: some View{
         Group{

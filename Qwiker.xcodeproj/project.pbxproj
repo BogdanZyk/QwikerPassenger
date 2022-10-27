@@ -55,6 +55,7 @@
 		5A44E4E5290AD9B800577B4A /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4E4290AD9B800577B4A /* Preview.swift */; };
 		5A44E4E7290ADA2D00577B4A /* UserAvaterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4E6290ADA2D00577B4A /* UserAvaterComponent.swift */; };
 		5A44E4E9290ADA3D00577B4A /* CustomLazyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4E8290ADA3D00577B4A /* CustomLazyImage.swift */; };
+		5A44E4EB290AE06500577B4A /* DragMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4EA290AE06500577B4A /* DragMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		5A44E4E4290AD9B800577B4A /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		5A44E4E6290ADA2D00577B4A /* UserAvaterComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvaterComponent.swift; sourceTree = "<group>"; };
 		5A44E4E8290ADA3D00577B4A /* CustomLazyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLazyImage.swift; sourceTree = "<group>"; };
+		5A44E4EA290AE06500577B4A /* DragMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				5A44E4DB290AD6B400577B4A /* MapViewRepresantable.swift */,
+				5A44E4EA290AE06500577B4A /* DragMapView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				5A44E48F290A975200577B4A /* OnboardingView.swift in Sources */,
 				5A44E49A290AA19100577B4A /* LoginView.swift in Sources */,
 				5A44E488290A952100577B4A /* FontsExt.swift in Sources */,
+				5A44E4EB290AE06500577B4A /* DragMapView.swift in Sources */,
 				5A44E4CB290AC79700577B4A /* Vehicle.swift in Sources */,
 				5A44E4E5290AD9B800577B4A /* Preview.swift in Sources */,
 				5A44E49D290AA73700577B4A /* VerificationView.swift in Sources */,
