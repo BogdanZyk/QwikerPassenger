@@ -70,6 +70,7 @@ extension OnboardingView{
                     nextAction()
                 }
             }
+            .animation(nil, value: UUID().uuidString)
         }
         .padding(.horizontal)
         .padding(.top, 40)
