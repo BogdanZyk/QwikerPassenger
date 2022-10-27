@@ -10,14 +10,21 @@ import SwiftUI
 struct LoginView: View {
     @EnvironmentObject var authVM: AuthenticationViewModel
     @AppStorage("isShowOnboarding") var isShowOnboarding: Bool = true
-    var viewState: LoginViewState = .login
+    @State private var viewState: LoginViewState = .login
     var body: some View {
         NavigationView {
-            VStack(spacing: 25){
-                title
-                inputSection
-                Spacer()
-                alredyAccountSection
+            ZStack{
+              
+                switch viewState {
+                case .login:
+                    signInView
+                        .transition(.move(edge: .leading))
+                case .signup:
+                    EmptyView()
+                    createAccoutView
+                        .transition(.move(edge: .leading))
+                }
+                
                 NavigationLink(isActive: $authVM.isShowVerifView) {
                     VerificationView()
                         .environmentObject(authVM)
@@ -27,13 +34,11 @@ struct LoginView: View {
 
             }
             .handle(error: $authVM.error)
-            .allFrame()
-            .background(Color.primaryBg)
             .navigationBarHidden(true)
         }
-//        .fullScreenCover(isPresented: $isShowOnboarding) {
-//            OnboardingView()
-//        }
+        .fullScreenCover(isPresented: $isShowOnboarding) {
+            OnboardingView()
+        }
     }
 }
 
@@ -45,6 +50,29 @@ struct LoginView_Previews: PreviewProvider {
 }
 
 extension LoginView{
+    
+    
+    private var createAccoutView: some View{
+        VStack(spacing: 20){
+            title
+            inputSection
+            Spacer()
+            alredyAccountSection
+        }
+        .allFrame()
+        .background(Color.primaryBg)
+    }
+    
+    private var signInView: some View{
+        VStack(spacing: 20){
+            title
+            inputSection
+            Spacer()
+            alredyAccountSection
+        }
+        .allFrame()
+        .background(Color.primaryBg)
+    }
    
     private var inputSection: some View{
         VStack(spacing: 20) {
@@ -65,6 +93,7 @@ extension LoginView{
             if viewState == .login{
                 validText(authVM.validTextPhone)
             }else{
+                validText(authVM.validTextPhone)
                 validText(authVM.validTextName)
             }
         }.padding(.vertical, -10)
@@ -108,10 +137,10 @@ extension LoginView{
     private var alredyAccountSection: some View{
         HStack {
             Text(viewState.alredyTitle)
-            NavigationLink {
-                LoginView(viewState: viewState == .login ? .signup : .login)
-                        .navigationBarHidden(true)
-                        .environmentObject(authVM)
+            Button {
+                withAnimation {
+                    viewState = viewState == .login ? .signup : .login
+                }
             } label: {
                 Text(viewState == .login ? "Sign up" : "Log in")
                     .font(.poppinsMedium(size: 18))

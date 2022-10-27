@@ -54,7 +54,7 @@ extension VerificationView{
         VStack(alignment: .center, spacing: 20) {
             Text("Enter verification code")
                 .font(.poppinsMedium(size: 23))
-            Text("A code has been sent to ").font(.poppinsRegular(size: 14)).foregroundColor(.gray) + Text("+91 4545454710").font(.poppinsMedium(size: 16))
+            Text("A code has been sent to ").font(.poppinsRegular(size: 14)).foregroundColor(.gray) + Text(authVM.phoneNumber).font(.poppinsMedium(size: 16))
         }
     }
     private var OTPField: some View{

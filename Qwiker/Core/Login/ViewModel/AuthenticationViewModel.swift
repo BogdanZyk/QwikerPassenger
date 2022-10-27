@@ -139,8 +139,7 @@ final class AuthenticationViewModel: ObservableObject{
         let isValidPhone = phoneNumber.isValidPhone()
         validTextPhone = isValidPhone ? "" : "Incorrect telephone number"
         validTextName = userName.isEmpty ? "No empty user name" : ""
-        print(isValidPhone)
-        return state == .login ? isValidPhone : !userName.isEmpty
+        return state == .login ? isValidPhone : (!userName.isEmpty && isValidPhone)
     }
     
 }

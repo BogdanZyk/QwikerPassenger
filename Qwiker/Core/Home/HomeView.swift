@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var authVM: AuthenticationViewModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Button {
+                authVM.signOut()
+            } label: {
+                Text("signOut")
+            }
+        }
     }
 }
 
