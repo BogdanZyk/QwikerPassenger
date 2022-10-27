@@ -24,6 +24,7 @@ struct DragMapView: View {
 struct DragMapView_Previews: PreviewProvider {
     static var previews: some View {
         DragMapView()
+            .environmentObject(HomeViewModel())
             .environmentObject(SearchViewModel())
     }
 }

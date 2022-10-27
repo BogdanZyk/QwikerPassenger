@@ -17,7 +17,8 @@ struct HomeView: View {
             ZStack(alignment: .bottom) {
                 ZStack(alignment: .top){
                     DragMapView()
-                    mainActionBtn
+                    searchSection
+                    mainHomeButton
                 }
                 sideMenuView
             }
@@ -38,7 +39,7 @@ struct HomeView_Previews: PreviewProvider {
 
 extension HomeView{
     
-
+    
     
     private var sideMenuView: some View{
         Group{
@@ -70,5 +71,51 @@ extension HomeView{
         }
         .hLeading()
         .padding()
+    }
+    
+    private var locationSearchView: some View{
+        LocationSearchView(mapState: $homeVM.mapState)
+            .transition(.move(edge: .bottom))
+            .environmentObject(searchVM)
+            
+    }
+    
+
+}
+
+
+// MARK: Search section
+extension HomeView {
+    private var searchSection: some View{
+        Group{
+            if homeVM.mapState == .searchingForLocation{
+                locationSearchView
+            }else if homeVM.mapState == .noInput {
+                searchActivationButton
+            }
+        }
+    }
+}
+
+// MARK: Header section
+extension HomeView {
+    private var mainHomeButton: some View{
+        MainHomeActionButton(mapState: $homeVM.mapState, showSideMenu: $showSideMenu)
+            .padding(.leading)
+            .offset(y: homeVM.mapState == .locationSelected || homeVM.mapState == .polylineAdded ? getRect().height - getRect().height / 2.1 : 0)
+            .animation(nil, value: UUID().uuidString)
+    }
+    
+    private var searchActivationButton: some View{
+        VStack(spacing: 20){
+            LocationSearchActivationView()
+                .onTapGesture {
+                    withAnimation(.spring()){
+                        homeVM.mapState = .searchingForLocation
+                    }
+                }
+        }
+        .padding(.horizontal)
+        .padding(.top, 60)
     }
 }

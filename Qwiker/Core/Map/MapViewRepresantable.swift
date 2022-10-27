@@ -12,6 +12,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     let mapView = MKMapView()
     var locationManager = LocationManager.shared
     @EnvironmentObject var searchViewModel: SearchViewModel
+    @EnvironmentObject var homeViewModel: HomeViewModel
     @Binding var mapState: MapViewState
     
     init(mapState: Binding<MapViewState>) {
@@ -78,7 +79,7 @@ extension MapViewRepresentable {
         
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             let over = MKPolylineRenderer(overlay: overlay)
-            over.strokeColor = UIColor(named: "primaryFont")
+            over.strokeColor = UIColor(named: "primaryBlue")
             over.lineWidth = 6
             return over
         }
@@ -86,16 +87,19 @@ extension MapViewRepresentable {
         func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
             print("CHANGE REGION")
             if parent.mapState == .noInput{
-                //parent.searchViewModel.updatedRegion = mapView.region
+                DispatchQueue.main.async(qos: .userInitiated) {
+                    self.parent.searchViewModel.updatedRegion = mapView.region
+                }
                 currentLocation = mapView.region.center
             }
         }
         
         func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
-            withAnimation {
-                //parent.searchViewModel.isAnimatePin = true
+            DispatchQueue.main.async(qos: .userInitiated) {
+                withAnimation {
+                    self.parent.searchViewModel.isAnimatePin = true
+                }
             }
-            
         }
         
         func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -132,13 +136,13 @@ extension MapViewRepresentable {
         //MARK: Helpers
         
         func addAnnotationAndGeneratePolyline() {
-//            guard let destinationCoordinate = parent.searchViewModel.destinationAppLocation?.coordinate, let currenCoordinate = currentLocation else { return }
-//            let currentAnno = CurrentAnnotation(coordinate: currenCoordinate)
-//            let destinationAnno = MKPointAnnotation()
-//            destinationAnno.coordinate = destinationCoordinate
-//            addAndSelectAnnotation(withCoordinate: currenCoordinate, anno: currentAnno)
-//            addAndSelectAnnotation(withCoordinate: destinationCoordinate, anno: destinationAnno)
-//            configurePolyline(withDestinationCoordinate: destinationCoordinate)
+            guard let destinationCoordinate = parent.searchViewModel.destinationAppLocation?.coordinate, let currenCoordinate = currentLocation else { return }
+            let currentAnno = CurrentAnnotation(coordinate: currenCoordinate)
+            let destinationAnno = MKPointAnnotation()
+            destinationAnno.coordinate = destinationCoordinate
+            addAndSelectAnnotation(withCoordinate: currenCoordinate, anno: currentAnno)
+            addAndSelectAnnotation(withCoordinate: destinationCoordinate, anno: destinationAnno)
+            configurePolyline(withDestinationCoordinate: destinationCoordinate)
         }
         
         func addAndSelectAnnotation(withCoordinate coordinate: CLLocationCoordinate2D, anno: MKAnnotation){
@@ -149,14 +153,14 @@ extension MapViewRepresentable {
         func configurePolyline(withDestinationCoordinate coordinate: CLLocationCoordinate2D) {
             guard let currentLocation = currentLocation else { return }
             
-//            parent.searchViewModel.getDestinationRoute(from: currentLocation, to: coordinate) { route in
-//                self.parent.mapState = .polylineAdded
-//                self.parent.mapView.addOverlay(route.polyline)
-//                let rect = self.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect,
-//                                                               edgePadding: .init(top: 64, left: 32, bottom: 300, right: 32))
-//                self.parent.locationManager.currentRect = rect
-//                self.parent.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
-//            }
+            parent.homeViewModel.getDestinationRoute(from: currentLocation, to: coordinate) { route in
+                self.parent.mapState = .polylineAdded
+                self.parent.mapView.addOverlay(route.polyline)
+                let rect = self.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect,
+                                                               edgePadding: .init(top: 64, left: 32, bottom: 300, right: 32))
+                self.parent.locationManager.currentRect = rect
+                self.parent.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
+            }
         }
         
         func clearMapView() {
