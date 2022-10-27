@@ -11,6 +11,10 @@
 		5A44E46D290A8E5000577B4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E46C290A8E5000577B4A /* ContentView.swift */; };
 		5A44E46F290A8E5100577B4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A44E46E290A8E5100577B4A /* Assets.xcassets */; };
 		5A44E472290A8E5100577B4A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A44E471290A8E5100577B4A /* Preview Assets.xcassets */; };
+		5A44E485290A94EE00577B4A /* Medel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A44E484290A94EE00577B4A /* Medel.ttf */; };
+		5A44E488290A952100577B4A /* FontsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E487290A952100577B4A /* FontsExt.swift */; };
+		5A44E48B290A960100577B4A /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A44E48A290A960100577B4A /* Poppins-Regular.ttf */; };
+		5A44E48D290A960A00577B4A /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A44E48C290A960A00577B4A /* Poppins-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,11 @@
 		5A44E46C290A8E5000577B4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5A44E46E290A8E5100577B4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A44E471290A8E5100577B4A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5A44E484290A94EE00577B4A /* Medel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Medel.ttf; sourceTree = "<group>"; };
+		5A44E487290A952100577B4A /* FontsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsExt.swift; sourceTree = "<group>"; };
+		5A44E489290A954B00577B4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5A44E48A290A960100577B4A /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		5A44E48C290A960A00577B4A /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +60,14 @@
 		5A44E469290A8E4F00577B4A /* Qwiker */ = {
 			isa = PBXGroup;
 			children = (
-				5A44E46A290A8E4F00577B4A /* QwikerApp.swift */,
+				5A44E489290A954B00577B4A /* Info.plist */,
+				5A44E47E290A8ED900577B4A /* Managers */,
+				5A44E47D290A8EB700577B4A /* Services */,
+				5A44E47C290A8EAF00577B4A /* Models */,
+				5A44E47B290A8EA300577B4A /* Extensions */,
+				5A44E47A290A8E9600577B4A /* App */,
+				5A44E478290A8E5700577B4A /* Utils */,
+				5A44E479290A8E5D00577B4A /* Core */,
 				5A44E46C290A8E5000577B4A /* ContentView.swift */,
 				5A44E46E290A8E5100577B4A /* Assets.xcassets */,
 				5A44E470290A8E5100577B4A /* Preview Content */,
@@ -65,6 +81,100 @@
 				5A44E471290A8E5100577B4A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5A44E478290A8E5700577B4A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5A44E483290A94E200577B4A /* Fonts */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5A44E479290A8E5D00577B4A /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5A44E482290A8F0A00577B4A /* SidebarMenu */,
+				5A44E481290A8F0700577B4A /* Home */,
+				5A44E480290A8EF900577B4A /* Onboard */,
+				5A44E47F290A8EEA00577B4A /* Login */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		5A44E47A290A8E9600577B4A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5A44E46A290A8E4F00577B4A /* QwikerApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5A44E47B290A8EA300577B4A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5A44E47C290A8EAF00577B4A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5A44E47D290A8EB700577B4A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5A44E47E290A8ED900577B4A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		5A44E47F290A8EEA00577B4A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		5A44E480290A8EF900577B4A /* Onboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboard;
+			sourceTree = "<group>";
+		};
+		5A44E481290A8F0700577B4A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5A44E482290A8F0A00577B4A /* SidebarMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SidebarMenu;
+			sourceTree = "<group>";
+		};
+		5A44E483290A94E200577B4A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5A44E48C290A960A00577B4A /* Poppins-Medium.ttf */,
+				5A44E48A290A960100577B4A /* Poppins-Regular.ttf */,
+				5A44E484290A94EE00577B4A /* Medel.ttf */,
+				5A44E487290A952100577B4A /* FontsExt.swift */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +236,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A44E472290A8E5100577B4A /* Preview Assets.xcassets in Resources */,
+				5A44E485290A94EE00577B4A /* Medel.ttf in Resources */,
 				5A44E46F290A8E5100577B4A /* Assets.xcassets in Resources */,
+				5A44E48B290A960100577B4A /* Poppins-Regular.ttf in Resources */,
+				5A44E48D290A960A00577B4A /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A44E46D290A8E5000577B4A /* ContentView.swift in Sources */,
+				5A44E488290A952100577B4A /* FontsExt.swift in Sources */,
 				5A44E46B290A8E5000577B4A /* QwikerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +384,7 @@
 				DEVELOPMENT_TEAM = 92PU6D6MCQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Qwiker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +414,7 @@
 				DEVELOPMENT_TEAM = 92PU6D6MCQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Qwiker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
