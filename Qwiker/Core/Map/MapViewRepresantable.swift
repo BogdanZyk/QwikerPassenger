@@ -13,11 +13,10 @@ struct MapViewRepresentable: UIViewRepresentable {
     var locationManager = LocationManager.shared
     @EnvironmentObject var searchViewModel: SearchViewModel
     @EnvironmentObject var homeViewModel: HomeViewModel
-    @Binding var mapState: MapViewState
     
-    init(mapState: Binding<MapViewState>) {
-        self._mapState = mapState
-    }
+//    init(mapState: Binding<MapViewState>) {
+//
+//    }
     
     // MARK: - Protocol Functions
     
@@ -30,7 +29,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        switch mapState {
+        switch homeViewModel.mapState {
         case .noInput:
             context.coordinator.clearMapView()
             context.coordinator.addDriversToMapAndUpdateLocation(homeViewModel.drivers)
@@ -86,7 +85,7 @@ extension MapViewRepresentable {
         
         func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
             print("CHANGE REGION")
-            if parent.mapState == .noInput{
+            if parent.homeViewModel.mapState == .noInput{
                 DispatchQueue.main.async(qos: .userInitiated) {
                     self.parent.searchViewModel.updatedRegion = mapView.region
                 }
@@ -161,7 +160,7 @@ extension MapViewRepresentable {
             guard let currentLocation = currentLocation else { return }
             
             parent.homeViewModel.getDestinationRoute(from: currentLocation, to: coordinate) { route in
-                self.parent.mapState = .polylineAdded
+                self.parent.homeViewModel.mapState = .polylineAdded
                 self.parent.mapView.addOverlay(route.polyline)
                 let rect = self.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect,
                                                                edgePadding: .init(top: 64, left: 32, bottom: 400, right: 32))

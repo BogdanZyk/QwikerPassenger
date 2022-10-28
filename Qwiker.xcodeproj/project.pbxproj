@@ -31,6 +31,7 @@
 		5A2A5C17290C06F400310290 /* MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C16290C06F400310290 /* MapKit.swift */; };
 		5A2A5C19290C0A6000310290 /* RideRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C18290C0A6000310290 /* RideRequestViewModel.swift */; };
 		5A2A5C1B290C18E700310290 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C1A290C18E700310290 /* UIApplication.swift */; };
+		5A2A5C1E290C2C2300310290 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C1D290C2C2300310290 /* Double.swift */; };
 		5A44E46B290A8E5000577B4A /* QwikerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E46A290A8E4F00577B4A /* QwikerApp.swift */; };
 		5A44E46D290A8E5000577B4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E46C290A8E5000577B4A /* ContentView.swift */; };
 		5A44E46F290A8E5100577B4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A44E46E290A8E5100577B4A /* Assets.xcassets */; };
@@ -94,6 +95,7 @@
 		5A2A5C16290C06F400310290 /* MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKit.swift; sourceTree = "<group>"; };
 		5A2A5C18290C0A6000310290 /* RideRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRequestViewModel.swift; sourceTree = "<group>"; };
 		5A2A5C1A290C18E700310290 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		5A2A5C1D290C2C2300310290 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		5A44E467290A8E4F00577B4A /* Qwiker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qwiker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A44E46A290A8E4F00577B4A /* QwikerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwikerApp.swift; sourceTree = "<group>"; };
 		5A44E46C290A8E5000577B4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				5A2A5C14290BE14000310290 /* UIImage.swift */,
 				5A2A5C16290C06F400310290 /* MapKit.swift */,
 				5A2A5C1A290C18E700310290 /* UIApplication.swift */,
+				5A2A5C1D290C2C2300310290 /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				5A2A5C19290C0A6000310290 /* RideRequestViewModel.swift in Sources */,
 				5A44E4E7290ADA2D00577B4A /* UserAvaterComponent.swift in Sources */,
 				5A2A5C06290BCB0400310290 /* PaymentInfoSheet.swift in Sources */,
+				5A2A5C1E290C2C2300310290 /* Double.swift in Sources */,
 				5A26AA1B290B27F200E2D5AC /* LocationSearchView.swift in Sources */,
 				5A44E4E1290AD8C700577B4A /* SideMenuCellView.swift in Sources */,
 				5A44E498290A9DAE00577B4A /* PrimaryTextFieldView.swift in Sources */,

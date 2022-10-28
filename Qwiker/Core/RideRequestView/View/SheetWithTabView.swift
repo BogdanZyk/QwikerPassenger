@@ -14,7 +14,6 @@ struct SheetWithTabView: View{
     @Namespace private var animation
     @Binding var showPaymentInfoSheet: Bool
     @Binding var offset: CGFloat
-    @State private var selectedRideType: RideType = .economy
     @State private var showDetailsView: Bool = false
     var body: some View{
         ZStack(alignment: .top){
@@ -31,7 +30,7 @@ struct SheetWithTabView: View{
             }
             draggIcon
             if showDetailsView {
-                CarDetailView(animation: animation, showDetailsView: $showDetailsView, type: selectedRideType, offset: offset)
+                CarDetailView(animation: animation, showDetailsView: $showDetailsView, type: homeVM.selectedRideType, offset: offset)
             }
         }
     }
@@ -61,7 +60,7 @@ extension SheetWithTabView{
     
     private var expandedTabViewSection: some View{
         VStack(spacing: 0) {
-            TabView(selection: $selectedRideType) {
+            TabView(selection: $homeVM.selectedRideType) {
                 ForEach(RideType.allCases, id:\.self) {type in
                     VStack(alignment: .leading, spacing: 10){
                         locationButtonsView
@@ -108,14 +107,14 @@ extension SheetWithTabView{
                                 .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
                         }
                         .frame(width: getRect().width / 2.35, height: 70)
-                        .scaleEffect(type == selectedRideType ? 1.1 : 1, anchor: .center)
-                        .background(type == selectedRideType ? Color.primaryBlue : Color.black.opacity(0.2), in: RoundedRectangle(cornerRadius: 3).stroke(lineWidth: type == selectedRideType ? 2 : 1))
+                        .scaleEffect(type == homeVM.selectedRideType ? 1.1 : 1, anchor: .center)
+                        .background(type == homeVM.selectedRideType ? Color.primaryBlue : Color.black.opacity(0.2), in: RoundedRectangle(cornerRadius: 3).stroke(lineWidth: type == homeVM.selectedRideType ? 2 : 1))
                         .padding(.vertical, 2)
                         .id(type)
                         .onTapGesture {
                             withAnimation(.easeOut) {
                                 reader.scrollTo(type, anchor: .center)
-                                selectedRideType = type
+                                homeVM.selectedRideType = type
                             }
                         }
                     }
@@ -183,8 +182,8 @@ extension SheetWithTabView{
                     .resizable()
                     .frame(width: 35, height: 35)
             }
-            PrimaryButtonView(showLoader: false, title: "Request \(selectedRideType.title)") {
-                
+            PrimaryButtonView(showLoader: false, title: "Request \(homeVM.selectedRideType.title)") {
+                homeVM.requestRide()
             }
             Button {
                 
@@ -225,7 +224,7 @@ extension SheetWithTabView{
             HStack{
                 ForEach(RideType.allCases, id: \.self){type in
                     Circle()
-                        .fill(selectedRideType == type ? Color.gray.opacity(0.3) : Color.black.opacity(0.5))
+                        .fill(homeVM.selectedRideType == type ? Color.gray.opacity(0.3) : Color.black.opacity(0.5))
                         .frame(width: 8, height: 8)
                 }
             }

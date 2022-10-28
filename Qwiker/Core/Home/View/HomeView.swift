@@ -27,10 +27,7 @@ struct HomeView: View {
                     .onReceive(searchVM.$destinationAppLocation) { location in
                         onReceiveForDestinationLocation(location)
                     }
-                if homeVM.mapState == .locationSelected || homeVM.mapState == .polylineAdded{
-                    RideRequestExpandSheetView()
-                        .transition(.move(edge: .bottom))
-                }
+                homeVM.viewForState()
             }
             .environmentObject(searchVM)
             .environmentObject(homeVM)
@@ -83,7 +80,7 @@ extension HomeView{
     
     private var locationSearchView: some View{
         LocationSearchView(mapState: $homeVM.mapState)
-            .transition(.move(edge: .bottom))
+            .transition(.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom)))
             .environmentObject(searchVM)
             
     }
@@ -133,7 +130,7 @@ extension HomeView {
         VStack(spacing: 20){
             LocationSearchActivationView()
                 .onTapGesture {
-                    withAnimation(.spring()){
+                    withAnimation(.easeInOut){
                         homeVM.mapState = .searchingForLocation
                     }
                 }

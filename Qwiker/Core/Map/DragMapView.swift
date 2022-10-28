@@ -12,7 +12,7 @@ struct DragMapView: View {
     @EnvironmentObject var searchVM: SearchViewModel
     var body: some View {
         ZStack{
-            MapViewRepresentable(mapState: $homeVM.mapState)
+            MapViewRepresentable()
                 .ignoresSafeArea()
             if homeVM.mapState == .noInput{
                 locationPin

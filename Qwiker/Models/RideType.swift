@@ -70,16 +70,18 @@ enum RideType: Int, CaseIterable, Identifiable, Codable{
     
     func price(for distanceInMeters: Double) -> Double{
         let distanceInMiles = distanceInMeters / 1600
+        var price = 0.0
         
         switch self{
         case .economy:
-            return distanceInMiles * 1.1 + baseFare
+            price = distanceInMiles * 1.1 + baseFare
         case .comfort:
-            return distanceInMiles * 1.3 + baseFare
+            price = distanceInMiles * 1.3 + baseFare
         case .bisness:
-            return distanceInMiles * 1.5 + baseFare
+            price = distanceInMiles * 1.5 + baseFare
         case .sport:
-            return distanceInMiles * 1.8 + baseFare
+            price = distanceInMiles * 1.8 + baseFare
         }
+        return price.roundToDecimal(2)
     }
 }

@@ -13,7 +13,7 @@ struct MainHomeActionButton: View {
     @Binding var showSideMenu: Bool
     var body: some View {
         Button {
-            withAnimation(.spring()){
+            withAnimation(.easeInOut){
                 actionForState()
             }
         } label: {
@@ -48,13 +48,10 @@ extension MainHomeActionButton{
                 showSideMenu.toggle()
             }
         case .searchingForLocation:
+            UIApplication.shared.endEditing()
             mapState = .noInput
-            
         case .locationSelected, .polylineAdded:
-            
             mapState = .noInput
-            //locationSearchVM.clearMapView()
-            
         case .tripRequested:
             
             mapState = .noInput

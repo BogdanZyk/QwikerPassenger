@@ -23,6 +23,7 @@ final class HomeViewModel: ObservableObject{
     @Published var pickupTime: String?
     @Published var dropOffTime: String?
     @Published var user: User?
+    @Published var selectedRideType: RideType = .economy
     
     var didExecuteFetchDrivers = false
     var userLocation: AppLocation?
@@ -35,7 +36,7 @@ final class HomeViewModel: ObservableObject{
     private var ridePrice = 0.0
     private var listenersDictionary = [String: ListenerRegistration]()
     private var tripDistanceInMeters = 0.0
-    private var selectedRideType: RideType = .economy
+    
     
     
     
@@ -48,6 +49,42 @@ final class HomeViewModel: ObservableObject{
     }
 
     
+    //MARK: - Home View for state logic
+    
+    
+    func viewForState() -> some View {
+//        guard let user = user else {
+//           return AnyView(EmptyView())
+//        }
+        switch mapState {
+        case .tripRequested:
+            return AnyView(ProgressView().padding(20).background(Color.white))
+           // return AnyView(TripLoadingView())
+        case .tripAccepted:
+            return AnyView(EmptyView())
+            //return AnyView(EnRouteToPickupLocationView())
+        case .driverArrived:
+            return AnyView(EmptyView())
+            //return AnyView(DriverArrivalView())
+        case .tripInProgress:
+            return AnyView(EmptyView())
+            //return AnyView(TripInProgressView())
+        case .arrivedAtDestination:
+            return AnyView(EmptyView())
+            //return AnyView(TripArrivalView(user: user))
+        case .polylineAdded:
+            if trip != nil {
+                return AnyView(EmptyView())
+                //return AnyView(EnRouteToPickupLocationView())
+            } else {
+                return AnyView(RideRequestExpandSheetView()
+                    .transition(.move(edge: .bottom)))
+            }
+        default:
+            return AnyView(EmptyView())
+        }
+        
+    }
     
     
     
@@ -186,9 +223,11 @@ extension HomeViewModel {
         }
     }
     
-    func requestRide(_ rideType: RideType) {
+    //MARK: - Request ride for driverQueue
+    
+    func requestRide() {
         guard let userCoordinate = userLocation?.coordinate else { return }
-        self.ridePrice = rideType.price(for: self.tripDistanceInMeters)
+        ridePrice = selectedRideType.price(for: tripDistanceInMeters)
         
         if driverQueue.isEmpty {
             guard let trip = trip else { return }
