@@ -24,6 +24,10 @@
 		5A2A5C08290BCBAE00310290 /* RideRequestExpandSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C07290BCBAE00310290 /* RideRequestExpandSheetView.swift */; };
 		5A2A5C0A290BCBD400310290 /* SheetWithTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C09290BCBD400310290 /* SheetWithTabView.swift */; };
 		5A2A5C0C290BCF1600310290 /* ExpandedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C0B290BCF1600310290 /* ExpandedView.swift */; };
+		5A2A5C0F290BE0A000310290 /* CurrentAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C0E290BE0A000310290 /* CurrentAnnotation.swift */; };
+		5A2A5C11290BE0BD00310290 /* CustomLocationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C10290BE0BD00310290 /* CustomLocationAnnotationView.swift */; };
+		5A2A5C13290BE0E800310290 /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C12290BE0E800310290 /* DriverAnnotation.swift */; };
+		5A2A5C15290BE14000310290 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C14290BE14000310290 /* UIImage.swift */; };
 		5A44E46B290A8E5000577B4A /* QwikerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E46A290A8E4F00577B4A /* QwikerApp.swift */; };
 		5A44E46D290A8E5000577B4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E46C290A8E5000577B4A /* ContentView.swift */; };
 		5A44E46F290A8E5100577B4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A44E46E290A8E5100577B4A /* Assets.xcassets */; };
@@ -80,6 +84,10 @@
 		5A2A5C07290BCBAE00310290 /* RideRequestExpandSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRequestExpandSheetView.swift; sourceTree = "<group>"; };
 		5A2A5C09290BCBD400310290 /* SheetWithTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetWithTabView.swift; sourceTree = "<group>"; };
 		5A2A5C0B290BCF1600310290 /* ExpandedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedView.swift; sourceTree = "<group>"; };
+		5A2A5C0E290BE0A000310290 /* CurrentAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAnnotation.swift; sourceTree = "<group>"; };
+		5A2A5C10290BE0BD00310290 /* CustomLocationAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLocationAnnotationView.swift; sourceTree = "<group>"; };
+		5A2A5C12290BE0E800310290 /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
+		5A2A5C14290BE14000310290 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		5A44E467290A8E4F00577B4A /* Qwiker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qwiker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A44E46A290A8E4F00577B4A /* QwikerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwikerApp.swift; sourceTree = "<group>"; };
 		5A44E46C290A8E5000577B4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -197,6 +205,16 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		5A2A5C0D290BE09200310290 /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				5A2A5C0E290BE0A000310290 /* CurrentAnnotation.swift */,
+				5A2A5C10290BE0BD00310290 /* CustomLocationAnnotationView.swift */,
+				5A2A5C12290BE0E800310290 /* DriverAnnotation.swift */,
+			);
+			path = Annotations;
+			sourceTree = "<group>";
+		};
 		5A44E45E290A8E4F00577B4A = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +298,7 @@
 				5A44E495290A9D0000577B4A /* View.swift */,
 				5A44E4A1290AA90200577B4A /* String.swift */,
 				5A44E4E4290AD9B800577B4A /* Preview.swift */,
+				5A2A5C14290BE14000310290 /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -425,6 +444,7 @@
 		5A44E4DA290AD67600577B4A /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				5A2A5C0D290BE09200310290 /* Annotations */,
 				5A44E4DB290AD6B400577B4A /* MapViewRepresantable.swift */,
 				5A44E4EA290AE06500577B4A /* DragMapView.swift */,
 			);
@@ -530,6 +550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A26AA16290B221400E2D5AC /* LocationSearchActivationView.swift in Sources */,
+				5A2A5C15290BE14000310290 /* UIImage.swift in Sources */,
 				5A44E46D290A8E5000577B4A /* ContentView.swift in Sources */,
 				5A2A5C0A290BCBD400310290 /* SheetWithTabView.swift in Sources */,
 				5A44E4CE290AC7C300577B4A /* FbConstant.swift in Sources */,
@@ -542,6 +563,7 @@
 				5A44E488290A952100577B4A /* FontsExt.swift in Sources */,
 				5A44E4EB290AE06500577B4A /* DragMapView.swift in Sources */,
 				5A44E4CB290AC79700577B4A /* Vehicle.swift in Sources */,
+				5A2A5C0F290BE0A000310290 /* CurrentAnnotation.swift in Sources */,
 				5A44E4E5290AD9B800577B4A /* Preview.swift in Sources */,
 				5A44E49D290AA73700577B4A /* VerificationView.swift in Sources */,
 				5A44E4A2290AA90200577B4A /* String.swift in Sources */,
@@ -563,6 +585,7 @@
 				5A44E4E1290AD8C700577B4A /* SideMenuCellView.swift in Sources */,
 				5A44E498290A9DAE00577B4A /* PrimaryTextFieldView.swift in Sources */,
 				5A26AA19290B259300E2D5AC /* MainHomeActionButton.swift in Sources */,
+				5A2A5C11290BE0BD00310290 /* CustomLocationAnnotationView.swift in Sources */,
 				5A44E4BF290AC6AB00577B4A /* UserService.swift in Sources */,
 				5A44E4D5290AD5BA00577B4A /* HomeViewModel.swift in Sources */,
 				5A44E4C3290AC70000577B4A /* User.swift in Sources */,
@@ -573,6 +596,7 @@
 				5A2A5C0C290BCF1600310290 /* ExpandedView.swift in Sources */,
 				5A44E494290A9CAD00577B4A /* PrimaryButtonView.swift in Sources */,
 				5A2A5C08290BCBAE00310290 /* RideRequestExpandSheetView.swift in Sources */,
+				5A2A5C13290BE0E800310290 /* DriverAnnotation.swift in Sources */,
 				5A44E4E3290AD8FF00577B4A /* SideMenuOptionType.swift in Sources */,
 				5A44E4A4290AAF9400577B4A /* LocationManager.swift in Sources */,
 			);

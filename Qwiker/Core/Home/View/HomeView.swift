@@ -25,6 +25,7 @@ struct HomeView: View {
                         guard let userLocation = location, !homeVM.didExecuteFetchDrivers else { return }
                         homeVM.userLocation = userLocation
                         homeVM.fetchNearbyDrivers(withCoordinates: userLocation.coordinate)
+//                        print(location)
                     }
                     .onReceive(searchVM.$destinationAppLocation) { location in
                         homeVM.selectedLocation = location

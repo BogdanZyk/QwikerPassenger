@@ -253,7 +253,7 @@ extension HomeViewModel {
     //TODO: Extract to PassengerService
     func fetchNearbyDrivers(withCoordinates coordinates: CLLocationCoordinate2D) {
         let queryBounds = GFUtils.queryBounds(forLocation: coordinates, withRadius: radius)
-        //didExecuteFetchDrivers = true
+        didExecuteFetchDrivers = true
         
         let queries = queryBounds.map { bound -> Query in
             return FbConstant.COLLECTION_DRIVERS
@@ -292,7 +292,7 @@ extension HomeViewModel {
         for i in 0 ..< drivers.count {
             let driver = drivers[i]
             
-            let driverListener = FbConstant.COLLECTION_RIDES.document(driver.id ?? "").addSnapshotListener { snapshot, error in
+            let driverListener = FbConstant.COLLECTION_DRIVERS.document(driver.id ?? "").addSnapshotListener { snapshot, error in
                 guard let driver = try? snapshot?.data(as: Rider.self) else { return }
                 self.drivers[i].isActive = driver.isActive
                 self.drivers[i].coordinates = driver.coordinates
@@ -330,21 +330,21 @@ extension HomeViewModel {
 
 
 
-////MARK: - Riders for test
-//extension HomeViewModel{
-//    private func addRider(){
-//        let location = CLLocationCoordinate2D(latitude: 37.33482142133996, longitude: -122.0306921041692)
-//        let hash = GFUtils.geoHash(forLocation: location)
-//        let rider = Rider(fullname: "Tester", email: "test@test.com",  phoneNumber: "88009943455", coordinates: GeoPoint(latitude: location.latitude, longitude: location.longitude), geohash: hash, isActive: true)
-//
-//        guard let encodedRider = try? Firestore.Encoder().encode(rider) else { return }
-//
-//        FbConstant.COLLECTION_DRIVERS.document().setData(encodedRider) { error in
-//            if let error = error{
-//                print(error)
-//                return
-//            }
-//            print("Rider save!")
-//        }
-//    }
-//}
+//MARK: - Riders for test
+extension HomeViewModel{
+    private func addRider(){
+        let location = CLLocationCoordinate2D(latitude: 37.33482142133996, longitude: -122.0306921041692)
+        let hash = GFUtils.geoHash(forLocation: location)
+        let rider = Rider(fullname: "Tester", email: "test@test.com",  phoneNumber: "88009943455", coordinates: GeoPoint(latitude: location.latitude, longitude: location.longitude), geohash: hash, isActive: true)
+
+        guard let encodedRider = try? Firestore.Encoder().encode(rider) else { return }
+
+        FbConstant.COLLECTION_DRIVERS.document().setData(encodedRider) { error in
+            if let error = error{
+                print(error)
+                return
+            }
+            print("Rider save!")
+        }
+    }
+}

@@ -33,6 +33,7 @@ struct MapViewRepresentable: UIViewRepresentable {
         switch mapState {
         case .noInput:
             context.coordinator.clearMapView()
+            context.coordinator.addDriversToMapAndUpdateLocation(homeViewModel.drivers)
         case .searchingForLocation:
             break
         case .locationSelected:
@@ -115,6 +116,13 @@ extension MapViewRepresentable {
                 return view
             }
             
+            if let annotation = annotation as? DriverAnnotation {
+                let view = MKAnnotationView(annotation: annotation, reuseIdentifier: "driver")
+                let image = UIImage(named: "car-top-view")?.imageResize(sizeChange: CGSize.init(width: 40, height: 30))
+                view.image = image
+                return view
+            }
+            
             return nil
         }
         
@@ -163,9 +171,34 @@ extension MapViewRepresentable {
             }
         }
         
+        //MARK: - Add drivers annonatations
+        
+        func addDriversToMapAndUpdateLocation(_ drivers: [Rider]) {
+            drivers.forEach { driver in
+                let driverCoordinate = CLLocationCoordinate2D(latitude: driver.coordinates.latitude,longitude: driver.coordinates.longitude)
+                let annotation = DriverAnnotation( uid: driver.id ?? NSUUID().uuidString, coordinate: driverCoordinate)
+                
+                var driverIsVisible: Bool {
+                    return self.parent.mapView.annotations.contains(where: { annotation -> Bool in
+                        guard let driverAnno = annotation as? DriverAnnotation else { return false }
+                        if driverAnno.uid == driver.id ?? "" {
+                            driverAnno.updatePosition(withCoordinate: driverCoordinate)
+                            return true
+                        }
+                        return false
+                    })
+                }
+                
+                if !driverIsVisible{
+                    self.parent.mapView.addAnnotation(annotation)
+                }
+            }
+        }
+        
         func clearMapView() {
-            guard !parent.mapView.overlays.isEmpty, !parent.mapView.annotations.isEmpty else { return }
-            removeAnnotationsAndOverlays(parent.mapView.annotations)
+            let annotations = parent.mapView.annotations.filter({ !$0.isKind(of: DriverAnnotation.self) })
+            guard !parent.mapView.overlays.isEmpty, !annotations.isEmpty else { return }
+            removeAnnotationsAndOverlays(annotations)
             if let currentRegion = currentRegion {
                 parent.mapView.setRegion(currentRegion, animated: true)
             }
@@ -179,47 +212,9 @@ extension MapViewRepresentable {
 }
 
 
-class CurrentAnnotation: NSObject, MKAnnotation {
-    @objc dynamic var coordinate: CLLocationCoordinate2D
 
-    
-    init(coordinate: CLLocationCoordinate2D) {
-        self.coordinate = coordinate
-    }
-    
-    func updatePosition(withCoordinate coordinate: CLLocationCoordinate2D) {
-        UIView.animate(withDuration: 0.2) {
-            self.coordinate = coordinate
-        }
-    }
-}
 
-class CustomLocationAnnotationView: MKAnnotationView {
-    var isCurrent: Bool = false
-    private let annotationFrame = CGRect(x: 0, y: 0, width: 20, height: 20)
-    override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
-        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-        self.frame = annotationFrame
-        self.backgroundColor = .clear
-    }
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) not implemented!")
-    }
 
-    override func draw(_ rect: CGRect) {
-        if isCurrent{
-            UIColor.black.setFill()
-            let outerPath = UIBezierPath(ovalIn: rect)
-            outerPath.fill()
-            UIColor.white.setFill()
-            let centerPath = UIBezierPath(ovalIn: CGRect(x: 6, y: 6, width: 8, height: 8))
-            centerPath.fill()
-        }else{
-            let rectangle = UIBezierPath(rect: rect)
-            UIColor.black.setFill()
-            rectangle.fill()
-        }
-    }
-}
+
 
