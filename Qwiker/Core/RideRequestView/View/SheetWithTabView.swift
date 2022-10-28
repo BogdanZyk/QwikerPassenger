@@ -148,7 +148,7 @@ extension SheetWithTabView{
                     .aspectRatio(contentMode: .fit)
                     .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
                     .frame(height: 150)
-                    .padding(.leading)
+                    .padding()
                     .hLeading()
                     .scaleEffect(Double(abs(offset) * 0.01) / 5)
                     .opacity(Double(abs(offset) * 0.01) / 5)

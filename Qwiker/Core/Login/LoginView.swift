@@ -38,6 +38,7 @@ struct LoginView: View {
         }
         .fullScreenCover(isPresented: $isShowOnboarding) {
             OnboardingView()
+                .preferredColorScheme(.light)
         }
     }
 }

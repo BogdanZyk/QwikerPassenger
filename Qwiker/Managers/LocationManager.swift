@@ -11,7 +11,7 @@ import CoreLocation
 import MapKit
 import SwiftUI
 
-let SPAN = MKCoordinateSpan(latitudeDelta: 0.008, longitudeDelta: 0.008)
+let SPAN = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
 
 class LocationManager: NSObject, ObservableObject{
     
@@ -61,10 +61,10 @@ class LocationManager: NSObject, ObservableObject{
     //MARK: - Map helpers
     
     
-    private func createCustomRegion(coordinates: CLLocationCoordinate2D) {
-        let region = CLCircularRegion(center: coordinates, radius: 25, identifier: "type.rawValue")
-        locationManager.startMonitoring(for: region)
-    }
+//    private func createCustomRegion(coordinates: CLLocationCoordinate2D) {
+//        let region = CLCircularRegion(center: coordinates, radius: 25, identifier: "type.rawValue")
+//        locationManager.startMonitoring(for: region)
+//    }
     
     func setUserLocationInMap(){
         guard let userLocation = userLocation else {return}

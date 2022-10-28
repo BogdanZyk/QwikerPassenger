@@ -16,16 +16,9 @@ struct LocationSearchView: View {
     var body: some View {
         VStack(spacing: 0){
             headerSectionView
-            //if isAnimate{
-                searchResultSectionView
-                    
-            //}
+            searchResultSectionView
         }
-//        .onAppear{
-//            withAnimation(.spring()){
-//                isAnimate.toggle()
-//            }
-//        }
+        
         .onChange(of: focused ?? .destinationLocation) { newValue in
             searchVM.focusType = newValue
         }
@@ -39,7 +32,7 @@ struct LocationSearchView: View {
             searchVM.focusType = nil
         }
         .padding(.horizontal)
-        .padding(.top, 60)
+        .padding(.top, getRect().height / 14)
         .background(Color.primaryBg)
     }
 }
@@ -98,6 +91,7 @@ extension LocationSearchView{
                 ForEach(searchVM.searchResults, id: \.self) {
                     result in
                     Button {
+                        UIApplication.shared.endEditing()
                         searchVM.setLocationForFocusField(for: focused ?? .currentLocation, location: result) {
                             withAnimation(.spring()){
                                 mapState = .locationSelected

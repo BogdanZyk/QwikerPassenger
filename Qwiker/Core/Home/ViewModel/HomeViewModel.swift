@@ -28,7 +28,7 @@ final class HomeViewModel: ObservableObject{
     var userLocation: AppLocation?
     var selectedLocation: AppLocation?
     
-    private let radius: Double = 50 * 100
+    private let radius: Double = 800
     private var driverQueue = [Rider]()
     
     private var tripService = TripService()
@@ -84,6 +84,7 @@ extension HomeViewModel {
             }
             
             guard let route = response?.routes.first else { return }
+            self.configurePickupAndDropOffTime(with: route.expectedTravelTime)
             completion(route)
         }
     }
@@ -272,19 +273,18 @@ extension HomeViewModel {
         var drivers = [Rider]()
         documents.forEach { doc in
             guard let driver = try? doc.data(as: Rider.self) else { return }
-            print(driver)
             let coordinates = CLLocation(latitude: driver.coordinates.latitude, longitude: driver.coordinates.longitude)
             let centerPoint = CLLocation(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
             
             let distance = GFUtils.distance(from: centerPoint, to: coordinates)
             if distance <= radius {
+                
                 drivers.append(driver)
             }
         }
-        
+        print(drivers)
         self.drivers.append(contentsOf: drivers)
         self.driverQueue = self.drivers
-        print(drivers)
         self.addListenerToDrivers()
     }
     
@@ -333,7 +333,7 @@ extension HomeViewModel {
 //MARK: - Riders for test
 extension HomeViewModel{
     private func addRider(){
-        let location = CLLocationCoordinate2D(latitude: 37.33482142133996, longitude: -122.0306921041692)
+        let location = CLLocationCoordinate2D(latitude: 47.228633403351864, longitude: 39.71641259567925)
         let hash = GFUtils.geoHash(forLocation: location)
         let rider = Rider(fullname: "Tester", email: "test@test.com",  phoneNumber: "88009943455", coordinates: GeoPoint(latitude: location.latitude, longitude: location.longitude), geohash: hash, isActive: true)
 

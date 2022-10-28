@@ -34,13 +34,8 @@ struct MapViewRepresentable: UIViewRepresentable {
         case .noInput:
             context.coordinator.clearMapView()
             context.coordinator.addDriversToMapAndUpdateLocation(homeViewModel.drivers)
-        case .searchingForLocation:
-            break
         case .locationSelected:
-            context.coordinator.clearMapView()
             context.coordinator.addAnnotationAndGeneratePolyline()
-        case .polylineAdded:
-            break
         default:
             break
         }
@@ -59,8 +54,10 @@ extension MapViewRepresentable {
         // MARK: - Properties
         
         let parent: MapViewRepresentable
+        var userLocation: MKUserLocation?
         var currentLocation: CLLocationCoordinate2D?
         var currentRegion: MKCoordinateRegion?
+        var didSetVisibleMapRectForTrip = false
         // MARK: - Lifecycle
         
         init(parent: MapViewRepresentable) {
@@ -70,6 +67,8 @@ extension MapViewRepresentable {
         
         // MARK: - MKMapViewDelegate
         func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+            guard userLocation != self.userLocation else {return}
+            self.userLocation = userLocation
             let region = MKCoordinateRegion(
                 center: userLocation.coordinate,
                 span: SPAN
@@ -165,7 +164,7 @@ extension MapViewRepresentable {
                 self.parent.mapState = .polylineAdded
                 self.parent.mapView.addOverlay(route.polyline)
                 let rect = self.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect,
-                                                               edgePadding: .init(top: 64, left: 32, bottom: 300, right: 32))
+                                                               edgePadding: .init(top: 64, left: 32, bottom: 400, right: 32))
                 self.parent.locationManager.currentRect = rect
                 self.parent.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
             }
@@ -196,10 +195,11 @@ extension MapViewRepresentable {
         }
         
         func clearMapView() {
+            didSetVisibleMapRectForTrip = false
             let annotations = parent.mapView.annotations.filter({ !$0.isKind(of: DriverAnnotation.self) })
             guard !parent.mapView.overlays.isEmpty, !annotations.isEmpty else { return }
             removeAnnotationsAndOverlays(annotations)
-            if let currentRegion = currentRegion {
+            if let currentRegion = currentRegion{
                 parent.mapView.setRegion(currentRegion, animated: true)
             }
         }

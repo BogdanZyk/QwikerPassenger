@@ -55,7 +55,7 @@ extension SideMenuView{
                     VStack(alignment: .leading, spacing: 6) {
                         Text(user.fullname)
                             .font(.system(size: 18, weight: .semibold))
-                        Text("+\(user.phoneNumber)")
+                        Text(user.phoneNumber)
                             .font(.system(size: 16))
                     }
                 }

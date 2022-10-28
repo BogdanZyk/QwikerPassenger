@@ -22,13 +22,10 @@ struct HomeView: View {
                 }
                 sideMenuView
                     .onReceive(searchVM.$currentAppLocation) { location in
-                        guard let userLocation = location, !homeVM.didExecuteFetchDrivers else { return }
-                        homeVM.userLocation = userLocation
-                        homeVM.fetchNearbyDrivers(withCoordinates: userLocation.coordinate)
-                        //                        print(location)
+                        onReceiveForCurrentLocation(location)
                     }
                     .onReceive(searchVM.$destinationAppLocation) { location in
-                        homeVM.selectedLocation = location
+                        onReceiveForDestinationLocation(location)
                     }
                 if homeVM.mapState == .locationSelected || homeVM.mapState == .polylineAdded{
                     RideRequestExpandSheetView()
@@ -50,10 +47,8 @@ struct HomeView_Previews: PreviewProvider {
 }
 
 
+
 extension HomeView{
-    
-    
-    
     private var sideMenuView: some View{
         Group{
             if showSideMenu {
@@ -94,6 +89,21 @@ extension HomeView{
     }
     
 
+}
+
+//MARK: - onReceive actions
+
+extension HomeView {
+    private func onReceiveForCurrentLocation(_ location: AppLocation?){
+        homeVM.userLocation = location
+        if let userLocation = location, homeVM.mapState == .noInput{
+            homeVM.fetchNearbyDrivers(withCoordinates: userLocation.coordinate)
+        }
+    }
+    
+    private func onReceiveForDestinationLocation(_ location: AppLocation?){
+        homeVM.selectedLocation = location
+    }
 }
 
 

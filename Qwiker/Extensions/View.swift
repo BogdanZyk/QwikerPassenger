@@ -50,4 +50,8 @@ extension View{
             .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
+    func withoutAnimation() -> some View {
+        self.animation(nil, value: UUID())
+    }
+    
 }
