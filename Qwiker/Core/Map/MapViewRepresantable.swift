@@ -158,9 +158,10 @@ extension MapViewRepresentable {
 
         func configurePolyline(withDestinationCoordinate coordinate: CLLocationCoordinate2D) {
             guard let currentLocation = currentLocation else { return }
-            
-            parent.homeViewModel.getDestinationRoute(from: currentLocation, to: coordinate) { route in
+            withAnimation(.easeInOut) {
                 self.parent.homeViewModel.mapState = .polylineAdded
+            }
+            parent.homeViewModel.getDestinationRoute(from: currentLocation, to: coordinate) { route in
                 self.parent.mapView.addOverlay(route.polyline)
                 let rect = self.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect,
                                                                edgePadding: .init(top: 64, left: 32, bottom: 400, right: 32))
