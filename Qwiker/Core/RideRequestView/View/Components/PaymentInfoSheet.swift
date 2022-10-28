@@ -42,11 +42,11 @@ struct PaymentInfoSheet_Previews: PreviewProvider {
 extension PaymentInfoSheet{
     private var headerView: some View{
         Text("Payment methods")
-            .font(.title3)
+            .font(.poppinsMedium(size: 20))
             .foregroundColor(.white)
             .hCenter()
             .frame(height: 60)
-            .background(Color.black)
+            .background(Color.primaryBlue)
     }
     
     private var cardSection: some View{
@@ -133,12 +133,13 @@ extension PaymentInfoSheet{
     }
     
     private var submitButton: some View{
-        PrimaryButtonView(title: "Continue", font: .poppinsRegular(size: 18), isBackground: false, border: true){
+        PrimaryButtonView(title: "Continue", font: .poppinsRegular(size: 18), bgColor: .gray, fontColor: .primaryBlue, isBackground: false, border: true){
             withAnimation {
                 showPaymentInfoSheet.toggle()
             }
         }
         .padding(.horizontal)
+        .padding(.bottom)
     }
     
     private var divider: some View{

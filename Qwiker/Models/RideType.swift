@@ -9,61 +9,61 @@
 import Foundation
 
 enum RideType: Int, CaseIterable, Identifiable, Codable{
-    case uberx
-    case black
-    case uberXL
-    case select
+    case economy
+    case comfort
+    case bisness
+    case sport
     
     var id: Int {rawValue}
     
     var title: String{
         switch self{
-        case .uberx:
-            return "UberX"
-        case .black:
-            return "Black"
-        case .uberXL:
-            return "UberXL"
-        case .select:
-            return "Select"
+        case .economy:
+            return "Econom"
+        case .comfort:
+            return "Comfort"
+        case .bisness:
+            return "Bisness"
+        case .sport:
+            return "Sport"
         }
     }
     
     var imageName: String{
         switch self{
-        case .uberx:
-            return "uber-x"
-        case .black:
-            return "uber-black"
-        case .uberXL:
-            return "uber-x"
-        case .select:
-            return "uber-x"
+        case .economy:
+            return "economy-car"
+        case .comfort:
+            return "comfort-car"
+        case .bisness:
+            return "bisness-car"
+        case .sport:
+            return "sport-car"
         }
     }
     
     var aboutText: String{
         switch self {
-        case .uberx:
+        case .economy:
             return "Everyday trips"
-        case .black:
+        case .bisness:
             return "Business class travel"
-        case .uberXL:
-            return "More space"
-        case .select:
+        case .sport:
+            return "Trips in a sports car"
+        case .comfort:
             return "More comfort"
         }
     }
     
     var baseFare: Double{
         switch self{
-        case .uberx:
-            return 5
-        case .black:
-            return 20
-        case .uberXL:
+        case .economy:
+            return 2
+        case .bisness:
+            return 7
+        case .comfort:
             return 10
-        case .select:
+        case .sport:
             return 15
         }
     }
@@ -72,14 +72,14 @@ enum RideType: Int, CaseIterable, Identifiable, Codable{
         let distanceInMiles = distanceInMeters / 1600
         
         switch self{
-        case .uberx:
+        case .economy:
+            return distanceInMiles * 1.1 + baseFare
+        case .comfort:
+            return distanceInMiles * 1.3 + baseFare
+        case .bisness:
             return distanceInMiles * 1.5 + baseFare
-        case .black:
-            return distanceInMiles * 2.0 + baseFare
-        case .uberXL:
-            return distanceInMiles * 1.75 + baseFare
-        case .select:
-            return distanceInMiles * 1.85 + baseFare
+        case .sport:
+            return distanceInMiles * 1.8 + baseFare
         }
     }
 }

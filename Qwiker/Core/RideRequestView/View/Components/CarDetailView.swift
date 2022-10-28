@@ -21,14 +21,13 @@ struct CarDetailView: View {
             VStack(alignment: .leading, spacing: 10){
                 Text(type.title)
                     .fixedSize(horizontal: true, vertical: false)
-                    .font(.largeTitle.bold())
+                    .font(.medelRegular(size: 40))
                     .matchedGeometryEffect(id: type.rawValue, in: animation)
                 Image(type.imageName)
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio(contentMode: .fit)
                     .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-                    .frame(height: 150)
-                    .offset(x: -100, y: -20)
+                    .frame(height: 200)
                     .clipped()
                     .matchedGeometryEffect(id: type.title, in: animation)
                 CustomDivider().padding(.horizontal, -16)
@@ -41,7 +40,7 @@ struct CarDetailView: View {
                 .font(.title3.weight(.medium))
                 
                 Spacer()
-                PrimaryButtonView(title: "Close", font: .poppinsRegular(size: 18), isBackground: false, border: true) {
+                PrimaryButtonView(title: "Close", font: .poppinsRegular(size: 18), bgColor: .gray, fontColor: .primaryBlue, isBackground: false, border: true){
                     withAnimation {
                         showDetailsView.toggle()
                     }
@@ -62,6 +61,6 @@ struct CarDetailView: View {
 struct CarDetailView_Previews: PreviewProvider {
     @Namespace static var animation
     static var previews: some View {
-        CarDetailView(animation: animation, showDetailsView: .constant(true), type: .uberx, offset: 0)
+        CarDetailView(animation: animation, showDetailsView: .constant(true), type: .economy, offset: 0)
     }
 }

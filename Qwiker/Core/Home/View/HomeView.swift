@@ -25,11 +25,15 @@ struct HomeView: View {
                         guard let userLocation = location, !homeVM.didExecuteFetchDrivers else { return }
                         homeVM.userLocation = userLocation
                         homeVM.fetchNearbyDrivers(withCoordinates: userLocation.coordinate)
-//                        print(location)
+                        //                        print(location)
                     }
                     .onReceive(searchVM.$destinationAppLocation) { location in
                         homeVM.selectedLocation = location
                     }
+                if homeVM.mapState == .locationSelected || homeVM.mapState == .polylineAdded{
+                    RideRequestExpandSheetView()
+                        .transition(.move(edge: .bottom))
+                }
             }
             .environmentObject(searchVM)
             .environmentObject(homeVM)

@@ -21,6 +21,7 @@ struct RideRequestExpandSheetView: View {
                     .transition(.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom).combined(with: .opacity)))
             }
         }
+        .padding(.bottom, 20)
     }
 }
 

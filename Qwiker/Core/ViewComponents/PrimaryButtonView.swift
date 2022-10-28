@@ -12,6 +12,7 @@ struct PrimaryButtonView: View {
     let title: String
     var font: Font = .poppinsMedium(size: 20)
     var bgColor: Color = .primaryBlue
+    var fontColor: Color = .white
     var isBackground: Bool = true
     var border: Bool = false
     let action: () -> Void
@@ -21,13 +22,13 @@ struct PrimaryButtonView: View {
         } label: {
             Text(title)
                 .font(font)
-                .foregroundColor(.white)
+                .foregroundColor(fontColor)
                 .frame(height: 50)
                 .hCenter()
                 .background(isBackground ? bgColor : Color.clear)
                 .background{
                     if border{
-                        RoundedRectangle(cornerRadius: 5).stroke()
+                        RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1.5)
                             .fill(bgColor)
                     }
                 }

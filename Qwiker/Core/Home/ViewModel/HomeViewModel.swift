@@ -35,7 +35,7 @@ final class HomeViewModel: ObservableObject{
     private var ridePrice = 0.0
     private var listenersDictionary = [String: ListenerRegistration]()
     private var tripDistanceInMeters = 0.0
-    private var selectedRideType: RideType = .uberx
+    private var selectedRideType: RideType = .economy
     
     
     

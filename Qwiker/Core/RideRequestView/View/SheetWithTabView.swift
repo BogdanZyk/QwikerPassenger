@@ -14,7 +14,7 @@ struct SheetWithTabView: View{
     @Namespace private var animation
     @Binding var showPaymentInfoSheet: Bool
     @Binding var offset: CGFloat
-    @State private var selectedRideType: RideType = .uberx
+    @State private var selectedRideType: RideType = .economy
     @State private var showDetailsView: Bool = false
     var body: some View{
         ZStack(alignment: .top){
@@ -41,7 +41,6 @@ struct SheetWithTabView_Previews: PreviewProvider {
     static var previews: some View {
         RideRequestExpandSheetView()
             .environmentObject(dev.homeViewModel)
-            .preferredColorScheme(.dark)
     }
 }
 
@@ -56,7 +55,7 @@ extension SheetWithTabView{
             Spacer()
         }
         .frame(width: getRect().width)
-        .background(Color.primaryBg)
+        .background(Color.white)
         .cornerRadius(12)
     }
     
@@ -75,7 +74,7 @@ extension SheetWithTabView{
                         
                     }
                     .frame(width: getRect().width)
-                    .background(Color.primaryBg)
+                    .background(Color.white)
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
@@ -93,29 +92,25 @@ extension SheetWithTabView{
                 HStack{
                     ForEach(RideType.allCases, id: \.self) { type in
                         HStack{
-                            VStack(alignment: .leading, spacing: 5){
-                                //Text(homeVM.ridePriceForType(type))
+                            VStack(alignment: .leading, spacing: 4){
+                                Text(homeVM.ridePriceForType(type))
+                                    .font(.poppinsRegular(size: 12))
                                 Text("\(type.title)")
-                                    .fontWeight(.bold)
+                                    .font(.poppinsMedium(size: 14))
                             }
                             .font(.subheadline)
-                            .foregroundColor(Color.primaryBg)
-                            
-                            Spacer()
+                            .foregroundColor(Color.black)
+                            .padding(.horizontal, 8)
                             Image(type.imageName)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
+                                .frame(width: 60)
                                 .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
                         }
-                        .padding(.leading)
-                        .frame(width: getRect().width / 2.5, height: 70)
-                        .background{
-                            if selectedRideType == type{
-                                Color.primaryBlue.opacity(0.3)
-                                    .matchedGeometryEffect(id: "TAB", in: animation)
-                            }
-                        }
-                        .background(Color.black.opacity(0.2), in: RoundedRectangle(cornerRadius: 3).stroke(lineWidth: 0.8))
+                        .frame(width: getRect().width / 2.35, height: 70)
+                        .scaleEffect(type == selectedRideType ? 1.1 : 1, anchor: .center)
+                        .background(type == selectedRideType ? Color.primaryBlue : Color.black.opacity(0.2), in: RoundedRectangle(cornerRadius: 3).stroke(lineWidth: type == selectedRideType ? 2 : 1))
+                        .padding(.vertical, 2)
                         .id(type)
                         .onTapGesture {
                             withAnimation(.easeOut) {
@@ -139,23 +134,22 @@ extension SheetWithTabView{
         VStack(alignment: .leading, spacing: 0){
             HStack{
                 Text(type.title)
-                    .font(.title.weight(.medium))
+                    .font(.medelRegular(size: 33))
                     .lineLimit(1)
                     .matchedGeometryEffect(id: type.rawValue, in: animation)
                 Spacer()
-                //Text(homeVM.ridePriceForType(type))
-                    .font(.title3.weight(.light))
+                Text(homeVM.ridePriceForType(type))
+                    .font(.poppinsMedium(size: 20))
             }
             .padding(.horizontal)
             HStack{
                 Image(type.imageName)
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio(contentMode: .fit)
                     .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-                    .frame(width: 200, height: 150)
-                    .padding()
+                    .frame(height: 150)
+                    .padding(.leading)
                     .hLeading()
-                    .offset(x: -30, y: -30)
                     .scaleEffect(Double(abs(offset) * 0.01) / 5)
                     .opacity(Double(abs(offset) * 0.01) / 5)
                     .clipped()
@@ -291,10 +285,10 @@ extension SheetWithTabView{
                 .frame(width: 8, height: 8)
             VStack(alignment: .leading, spacing: 15){
                 HStack(spacing: 10) {
-//                    Text(isDestination ? homeVM.selectedLocation?.title ?? "" : "Current location")
-//                        .lineLimit(1)
-//                        .font(.subheadline.weight(.medium))
-                    // .foregroundColor(isDestination ? Color.black : .gray)
+                    Text(isDestination ? homeVM.selectedLocation?.title ?? "Destination" : homeVM.userLocation?.title ?? "Current location")
+                        .lineLimit(1)
+                        .font(.subheadline.weight(.medium))
+                     .foregroundColor(isDestination ? Color.black : .gray)
                     if isDestination{
                         if let time = homeVM.dropOffTime{
                             Text(time)
