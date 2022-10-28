@@ -21,6 +21,14 @@ struct HomeView: View {
                     mainHomeButton
                 }
                 sideMenuView
+                    .onReceive(searchVM.$currentAppLocation) { location in
+                        guard let userLocation = location, !homeVM.didExecuteFetchDrivers else { return }
+                        homeVM.userLocation = userLocation
+                        homeVM.fetchNearbyDrivers(withCoordinates: userLocation.coordinate)
+                    }
+                    .onReceive(searchVM.$destinationAppLocation) { location in
+                        homeVM.selectedLocation = location
+                    }
             }
             .environmentObject(searchVM)
             .environmentObject(homeVM)

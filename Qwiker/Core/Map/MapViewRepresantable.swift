@@ -165,7 +165,6 @@ extension MapViewRepresentable {
         
         func clearMapView() {
             guard !parent.mapView.overlays.isEmpty, !parent.mapView.annotations.isEmpty else { return }
-            //parent.searchViewModel.destinationAppLocation = nil
             removeAnnotationsAndOverlays(parent.mapView.annotations)
             if let currentRegion = currentRegion {
                 parent.mapView.setRegion(currentRegion, animated: true)
