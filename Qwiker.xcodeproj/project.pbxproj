@@ -18,6 +18,12 @@
 		5A26AA19290B259300E2D5AC /* MainHomeActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26AA18290B259300E2D5AC /* MainHomeActionButton.swift */; };
 		5A26AA1B290B27F200E2D5AC /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26AA1A290B27F200E2D5AC /* LocationSearchView.swift */; };
 		5A26AA1D290B2B4900E2D5AC /* LocationResultViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26AA1C290B2B4900E2D5AC /* LocationResultViewCell.swift */; };
+		5A2A5C00290BCA6A00310290 /* JumpingDraggIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5BFF290BCA6A00310290 /* JumpingDraggIcon.swift */; };
+		5A2A5C03290BCAB200310290 /* CarDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C02290BCAB200310290 /* CarDetailView.swift */; };
+		5A2A5C06290BCB0400310290 /* PaymentInfoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C05290BCB0400310290 /* PaymentInfoSheet.swift */; };
+		5A2A5C08290BCBAE00310290 /* RideRequestExpandSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C07290BCBAE00310290 /* RideRequestExpandSheetView.swift */; };
+		5A2A5C0A290BCBD400310290 /* SheetWithTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C09290BCBD400310290 /* SheetWithTabView.swift */; };
+		5A2A5C0C290BCF1600310290 /* ExpandedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C0B290BCF1600310290 /* ExpandedView.swift */; };
 		5A44E46B290A8E5000577B4A /* QwikerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E46A290A8E4F00577B4A /* QwikerApp.swift */; };
 		5A44E46D290A8E5000577B4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E46C290A8E5000577B4A /* ContentView.swift */; };
 		5A44E46F290A8E5100577B4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A44E46E290A8E5100577B4A /* Assets.xcassets */; };
@@ -68,6 +74,12 @@
 		5A26AA18290B259300E2D5AC /* MainHomeActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeActionButton.swift; sourceTree = "<group>"; };
 		5A26AA1A290B27F200E2D5AC /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		5A26AA1C290B2B4900E2D5AC /* LocationResultViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationResultViewCell.swift; sourceTree = "<group>"; };
+		5A2A5BFF290BCA6A00310290 /* JumpingDraggIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpingDraggIcon.swift; sourceTree = "<group>"; };
+		5A2A5C02290BCAB200310290 /* CarDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailView.swift; sourceTree = "<group>"; };
+		5A2A5C05290BCB0400310290 /* PaymentInfoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInfoSheet.swift; sourceTree = "<group>"; };
+		5A2A5C07290BCBAE00310290 /* RideRequestExpandSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRequestExpandSheetView.swift; sourceTree = "<group>"; };
+		5A2A5C09290BCBD400310290 /* SheetWithTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetWithTabView.swift; sourceTree = "<group>"; };
+		5A2A5C0B290BCF1600310290 /* ExpandedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedView.swift; sourceTree = "<group>"; };
 		5A44E467290A8E4F00577B4A /* Qwiker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qwiker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A44E46A290A8E4F00577B4A /* QwikerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwikerApp.swift; sourceTree = "<group>"; };
 		5A44E46C290A8E5000577B4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -149,27 +161,40 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		5A26AA1E290B386100E2D5AC /* RideRequest */ = {
+		5A2A5BF9290BCA1600310290 /* RideRequestView */ = {
 			isa = PBXGroup;
 			children = (
-				5A26AA20290B386F00E2D5AC /* ViewModel */,
-				5A26AA1F290B386B00E2D5AC /* View */,
+				5A2A5BFB290BCA3000310290 /* ViewModel */,
+				5A2A5BFA290BCA2900310290 /* View */,
 			);
-			path = RideRequest;
+			path = RideRequestView;
 			sourceTree = "<group>";
 		};
-		5A26AA1F290B386B00E2D5AC /* View */ = {
+		5A2A5BFA290BCA2900310290 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5A2A5BFE290BCA5F00310290 /* Components */,
+				5A2A5C07290BCBAE00310290 /* RideRequestExpandSheetView.swift */,
+				5A2A5C09290BCBD400310290 /* SheetWithTabView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		5A26AA20290B386F00E2D5AC /* ViewModel */ = {
+		5A2A5BFB290BCA3000310290 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5A2A5BFE290BCA5F00310290 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5A2A5BFF290BCA6A00310290 /* JumpingDraggIcon.swift */,
+				5A2A5C02290BCAB200310290 /* CarDetailView.swift */,
+				5A2A5C05290BCB0400310290 /* PaymentInfoSheet.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		5A44E45E290A8E4F00577B4A = {
@@ -228,7 +253,7 @@
 		5A44E479290A8E5D00577B4A /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				5A26AA1E290B386100E2D5AC /* RideRequest */,
+				5A2A5BF9290BCA1600310290 /* RideRequestView */,
 				5A44E4DA290AD67600577B4A /* Map */,
 				5A44E4D6290AD5F400577B4A /* Search */,
 				5A44E492290A9C9900577B4A /* ViewComponents */,
@@ -343,6 +368,7 @@
 				5A44E497290A9DAE00577B4A /* PrimaryTextFieldView.swift */,
 				5A44E4E6290ADA2D00577B4A /* UserAvaterComponent.swift */,
 				5A44E4E8290ADA3D00577B4A /* CustomLazyImage.swift */,
+				5A2A5C0B290BCF1600310290 /* ExpandedView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -505,6 +531,7 @@
 			files = (
 				5A26AA16290B221400E2D5AC /* LocationSearchActivationView.swift in Sources */,
 				5A44E46D290A8E5000577B4A /* ContentView.swift in Sources */,
+				5A2A5C0A290BCBD400310290 /* SheetWithTabView.swift in Sources */,
 				5A44E4CE290AC7C300577B4A /* FbConstant.swift in Sources */,
 				5A44E4A6290AB69C00577B4A /* Helpers.swift in Sources */,
 				5A44E4C1290AC6DD00577B4A /* TripService.swift in Sources */,
@@ -520,6 +547,8 @@
 				5A44E4A2290AA90200577B4A /* String.swift in Sources */,
 				5A44E4D2290ACA8100577B4A /* ErrorHandler.swift in Sources */,
 				5A44E4C7290AC75B00577B4A /* AppLocation.swift in Sources */,
+				5A2A5C00290BCA6A00310290 /* JumpingDraggIcon.swift in Sources */,
+				5A2A5C03290BCAB200310290 /* CarDetailView.swift in Sources */,
 				5A44E4DC290AD6B400577B4A /* MapViewRepresantable.swift in Sources */,
 				5A44E4C5290AC73A00577B4A /* Trip.swift in Sources */,
 				5A44E46B290A8E5000577B4A /* QwikerApp.swift in Sources */,
@@ -529,6 +558,7 @@
 				5A44E4A0290AA87100577B4A /* AuthenticationViewModel.swift in Sources */,
 				5A44E4C9290AC77A00577B4A /* RideType.swift in Sources */,
 				5A44E4E7290ADA2D00577B4A /* UserAvaterComponent.swift in Sources */,
+				5A2A5C06290BCB0400310290 /* PaymentInfoSheet.swift in Sources */,
 				5A26AA1B290B27F200E2D5AC /* LocationSearchView.swift in Sources */,
 				5A44E4E1290AD8C700577B4A /* SideMenuCellView.swift in Sources */,
 				5A44E498290A9DAE00577B4A /* PrimaryTextFieldView.swift in Sources */,
@@ -540,7 +570,9 @@
 				5A44E4E9290ADA3D00577B4A /* CustomLazyImage.swift in Sources */,
 				5A44E4D9290AD61300577B4A /* SearchViewModel.swift in Sources */,
 				5A44E4DF290AD8AA00577B4A /* SideMenuView.swift in Sources */,
+				5A2A5C0C290BCF1600310290 /* ExpandedView.swift in Sources */,
 				5A44E494290A9CAD00577B4A /* PrimaryButtonView.swift in Sources */,
+				5A2A5C08290BCBAE00310290 /* RideRequestExpandSheetView.swift in Sources */,
 				5A44E4E3290AD8FF00577B4A /* SideMenuOptionType.swift in Sources */,
 				5A44E4A4290AAF9400577B4A /* LocationManager.swift in Sources */,
 			);

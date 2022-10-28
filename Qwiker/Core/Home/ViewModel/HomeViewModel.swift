@@ -24,6 +24,18 @@ final class HomeViewModel: ObservableObject{
     @Published var dropOffTime: String?
     @Published var user: User?
     
+    var didExecuteFetchDrivers = false
+    var userLocation: AppLocation?
+    var selectedLocation: AppLocation?
+    
+    private let radius: Double = 50 * 100
+    private var driverQueue = [User]()
+    
+    private var tripService = TripService()
+    private var ridePrice = 0.0
+    private var listenersDictionary = [String: ListenerRegistration]()
+    private var tripDistanceInMeters = 0.0
+    private var selectedRideType: RideType = .uberx
     
     
     
