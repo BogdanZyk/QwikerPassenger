@@ -76,6 +76,7 @@
 		5A44E4EB290AE06500577B4A /* DragMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4EA290AE06500577B4A /* DragMapView.swift */; };
 		5A6A886F29107A9D00699320 /* MapHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A886E29107A9D00699320 /* MapHelpers.swift */; };
 		5A6A887229107F3800699320 /* RiderInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A887129107F3800699320 /* RiderInfoView.swift */; };
+		5A6A88742910831400699320 /* LocationRowsViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A88732910831400699320 /* LocationRowsViewComponent.swift */; };
 		5AD57C46290FBA210078C4F8 /* TripLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C45290FBA210078C4F8 /* TripLoadingView.swift */; };
 		5AD57C48290FBA650078C4F8 /* DriverArrivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C47290FBA650078C4F8 /* DriverArrivalView.swift */; };
 		5AD57C4A290FBAB80078C4F8 /* EnRouteToPickupLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C49290FBAB80078C4F8 /* EnRouteToPickupLocationView.swift */; };
@@ -150,6 +151,7 @@
 		5A44E4EA290AE06500577B4A /* DragMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragMapView.swift; sourceTree = "<group>"; };
 		5A6A886E29107A9D00699320 /* MapHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHelpers.swift; sourceTree = "<group>"; };
 		5A6A887129107F3800699320 /* RiderInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderInfoView.swift; sourceTree = "<group>"; };
+		5A6A88732910831400699320 /* LocationRowsViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRowsViewComponent.swift; sourceTree = "<group>"; };
 		5AD57C45290FBA210078C4F8 /* TripLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripLoadingView.swift; sourceTree = "<group>"; };
 		5AD57C47290FBA650078C4F8 /* DriverArrivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverArrivalView.swift; sourceTree = "<group>"; };
 		5AD57C49290FBAB80078C4F8 /* EnRouteToPickupLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnRouteToPickupLocationView.swift; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 			isa = PBXGroup;
 			children = (
 				5A6A887129107F3800699320 /* RiderInfoView.swift */,
+				5A6A88732910831400699320 /* LocationRowsViewComponent.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				5A2A5C15290BE14000310290 /* UIImage.swift in Sources */,
 				5AD57C48290FBA650078C4F8 /* DriverArrivalView.swift in Sources */,
 				5A44E46D290A8E5000577B4A /* ContentView.swift in Sources */,
+				5A6A88742910831400699320 /* LocationRowsViewComponent.swift in Sources */,
 				5A2A5C0A290BCBD400310290 /* SheetWithTabView.swift in Sources */,
 				5A6A886F29107A9D00699320 /* MapHelpers.swift in Sources */,
 				5A44E4CE290AC7C300577B4A /* FbConstant.swift in Sources */,

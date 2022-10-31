@@ -54,32 +54,9 @@ extension EnRouteToPickupLocationView{
 extension EnRouteToPickupLocationView{
     
     private var locationSectionView: some View{
-        VStack(alignment: .leading, spacing: 0) {
-            locationLabel()
-            Rectangle()
-                .fill(Color.primaryBlue)
-                .frame(width: 1, height: 12)
-                .padding(.horizontal, 3)
-            locationLabel(isDestination: true)
-        }
+        LocationRowsViewComponent(selectLocationTitle: homeVM.userLocation?.title, destinationLocationTitle: homeVM.selectedLocation?.title)
     }
     
-    private func locationLabel(isDestination: Bool = false) -> some View{
-        HStack(alignment: .lastTextBaseline) {
-            Circle()
-                .fill(isDestination ? Color.primaryBlue : Color.secondaryGrey)
-                .frame(width: 8, height: 8)
-            VStack(alignment: .leading, spacing: 15){
-                HStack(spacing: 10) {
-                    Text(isDestination ? homeVM.selectedLocation?.title ?? "Destination" : homeVM.userLocation?.title ?? "Current location")
-                        .lineLimit(1)
-                        .font(.subheadline.weight(.medium))
-                     .foregroundColor(Color.black)
-                }
-            }
-        }
-        .hLeading()
-    }
 }
 
 //MARK: - Payment Method Section View
