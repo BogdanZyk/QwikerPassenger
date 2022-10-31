@@ -15,6 +15,7 @@ struct Vehicle: Codable {
     let color: VehicleColors
     let licensePlateNumber: String
     let type: RideType
+    let number: String
 }
 
 enum VehicleColors: Int, CaseIterable, Identifiable, Codable {

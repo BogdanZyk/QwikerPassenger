@@ -60,8 +60,7 @@ final class HomeViewModel: ObservableObject{
         case .tripRequested:
             return AnyView(TripLoadingView())
         case .tripAccepted:
-            return AnyView(EmptyView())
-            //return AnyView(EnRouteToPickupLocationView())
+            return AnyView(EnRouteToPickupLocationView())
         case .driverArrived:
             return AnyView(EmptyView())
             //return AnyView(DriverArrivalView())
@@ -71,13 +70,8 @@ final class HomeViewModel: ObservableObject{
         case .arrivedAtDestination:
             return AnyView(EmptyView())
             //return AnyView(TripArrivalView(user: user))
-        case .polylineAdded:
-            if trip != nil {
-                return AnyView(EmptyView())
-                //return AnyView(EnRouteToPickupLocationView())
-            } else {
-                return AnyView(RideRequestExpandSheetView())
-            }
+        case .locationSelected:
+            return AnyView(RideRequestExpandSheetView())
         default:
             return AnyView(EmptyView())
         }
@@ -103,8 +97,13 @@ extension HomeViewModel {
     
     private func reset() {
         mapState = .noInput
+        setCurrentUserRegion()
         selectedLocation = nil
         trip = nil
+    }
+    
+    func setCurrentUserRegion(){
+        LocationManager.shared.setUserLocationInMap()
     }
     
     func getDestinationRoute(from userLocation: CLLocationCoordinate2D,
@@ -237,11 +236,12 @@ extension HomeViewModel {
     func requestRide() {
         guard let userCoordinate = userLocation?.coordinate else { return }
         ridePrice = selectedRideType.price(for: tripDistanceInMeters)
-        
+        print("DEBAG", driverQueue.count)
         if driverQueue.isEmpty {
             guard let trip = trip else { return }
             updateTripState(trip, state: .rejectedByAllDrivers) { _ in
                 self.deleteTrip()
+                self.reset()
                 self.fetchNearbyDrivers(withCoordinates: userCoordinate)
             }
         } else {
@@ -267,8 +267,7 @@ extension HomeViewModel {
         guard let user = user, let currentUid = user.id else { return }
         guard let driverUid = driver.id, driver.isActive else { return }
         guard let userLocation = userLocation, let selectedLocation = selectedLocation else { return }
-        
-        if let trip = trip {
+        if let trip = trip, trip.tripState != .cancelled, trip.tripState != .complete {
             let updatedData: [String: Any] = [
                 "tripState": TripState.requested.rawValue,
                 "driverUid": driverUid
@@ -294,7 +293,10 @@ extension HomeViewModel {
                             driverName: driver.fullname,
                             passengerName: user.fullname,
                             driverImageUrl: driver.profileImageUrl ?? "",
-                            passengerImageUrl: user.profileImageUrl)
+                            passengerImageUrl: user.profileImageUrl,
+                            carModel: driver.vehicle?.model,
+                            carNumber: driver.vehicle?.number,
+                            carColor: driver.vehicle?.color.description)
             
             guard let encodedTrip = try? Firestore.Encoder().encode(trip) else { return }
             

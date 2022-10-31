@@ -28,6 +28,9 @@ struct Trip: Codable, Identifiable{
     let passengerName: String
     let driverImageUrl: String
     let passengerImageUrl: String?
+    let carModel: String?
+    let carNumber: String?
+    let carColor: String?
     
     var tripId: String { return id ?? "" }
     

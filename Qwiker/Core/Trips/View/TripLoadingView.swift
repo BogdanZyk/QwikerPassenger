@@ -10,19 +10,12 @@ import SwiftUI
 struct TripLoadingView: View {
     @EnvironmentObject var homeVM: HomeViewModel
     var body: some View {
-        VStack(spacing: 15) {
+        BottomSheetView {
             imageView
             loadingText
             loaderView
             cancelTripButtonView
         }
-        .padding()
-        .padding(.bottom, 50)
-        .hCenter()
-        .background(Color.white)
-        .clipShape(CustomCorners(corners: [.topLeft, .topRight], radius: 12))
-        .frame(maxHeight: getRect().height / 2)
-        .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 0)
     }
 }
 
@@ -36,6 +29,8 @@ struct TripLoadingView_Previews: PreviewProvider {
         .environmentObject(HomeViewModel())
     }
 }
+
+
 
 
 extension TripLoadingView{

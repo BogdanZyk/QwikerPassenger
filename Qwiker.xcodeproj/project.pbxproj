@@ -81,6 +81,7 @@
 		5AD57C4E290FBB580078C4F8 /* TripInProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C4D290FBB580078C4F8 /* TripInProgressView.swift */; };
 		5AD57C50290FBD520078C4F8 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C4F290FBD520078C4F8 /* SpinnerView.swift */; };
 		5AD57C52290FBF390078C4F8 /* CustomCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C51290FBF390078C4F8 /* CustomCorners.swift */; };
+		5AD57C54290FCD790078C4F8 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C53290FCD790078C4F8 /* BottomSheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,6 +153,7 @@
 		5AD57C4D290FBB580078C4F8 /* TripInProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripInProgressView.swift; sourceTree = "<group>"; };
 		5AD57C4F290FBD520078C4F8 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		5AD57C51290FBF390078C4F8 /* CustomCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorners.swift; sourceTree = "<group>"; };
+		5AD57C53290FCD790078C4F8 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -417,6 +419,7 @@
 				5A2A5C0B290BCF1600310290 /* ExpandedView.swift */,
 				5AD57C4F290FBD520078C4F8 /* SpinnerView.swift */,
 				5AD57C51290FBF390078C4F8 /* CustomCorners.swift */,
+				5AD57C53290FCD790078C4F8 /* BottomSheetView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				5A2A5C0A290BCBD400310290 /* SheetWithTabView.swift in Sources */,
 				5A44E4CE290AC7C300577B4A /* FbConstant.swift in Sources */,
 				5A44E4A6290AB69C00577B4A /* Helpers.swift in Sources */,
+				5AD57C54290FCD790078C4F8 /* BottomSheetView.swift in Sources */,
 				5A44E4C1290AC6DD00577B4A /* TripService.swift in Sources */,
 				5A44E491290A9B2E00577B4A /* Colors.swift in Sources */,
 				5A44E4BD290AC61B00577B4A /* HomeView.swift in Sources */,

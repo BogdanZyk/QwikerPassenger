@@ -27,6 +27,7 @@ struct HomeView: View {
                     .onReceive(searchVM.$destinationAppLocation) { location in
                         onReceiveForDestinationLocation(location)
                     }
+               
                 if let view = homeVM.viewForState(){
                     withAnimation(.spring()) {
                         view

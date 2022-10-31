@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainHomeActionButton: View {
+    @EnvironmentObject var homeVM: HomeViewModel
     @EnvironmentObject var locationSearchVM: SearchViewModel
     @Binding var mapState: MapViewState
     @Binding var showSideMenu: Bool
@@ -37,6 +38,7 @@ struct MainHomeActionButton_Previews: PreviewProvider {
         }
         .padding()
         .environmentObject(SearchViewModel())
+        .environmentObject(dev.homeViewModel)
     }
 }
 
@@ -47,15 +49,16 @@ extension MainHomeActionButton{
             withAnimation(.spring()) {
                 showSideMenu.toggle()
             }
+            homeVM.setCurrentUserRegion()
         case .searchingForLocation:
             UIApplication.shared.endEditing()
             mapState = .noInput
         case .locationSelected, .polylineAdded:
             mapState = .noInput
+            homeVM.setCurrentUserRegion()
         case .tripRequested:
-            
             mapState = .noInput
-            //locationSearchVM.clearMapView()
+            homeVM.setCurrentUserRegion()
             
         default: break
         }

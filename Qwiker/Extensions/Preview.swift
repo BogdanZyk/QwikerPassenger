@@ -39,7 +39,10 @@ class DeveloperPreview {
                         driverName: "John Smith",
                         passengerName: "Stephan Dowless",
                         driverImageUrl: "",
-                        passengerImageUrl: "")
+                        passengerImageUrl: "",
+                        carModel: "Volkswagen",
+                        carNumber: "HG5045",
+                        carColor: "White")
     
     let userLocation = CLLocation(latitude: 37.75, longitude: -122.432)
     
