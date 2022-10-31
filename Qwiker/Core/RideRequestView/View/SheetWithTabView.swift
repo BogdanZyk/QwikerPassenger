@@ -112,9 +112,11 @@ extension SheetWithTabView{
                         .padding(.vertical, 2)
                         .id(type)
                         .onTapGesture {
-                            withAnimation(.easeOut) {
-                                reader.scrollTo(type, anchor: .center)
-                                homeVM.selectedRideType = type
+                            DispatchQueue.main.async {
+                                withAnimation(.easeOut) {
+                                    homeVM.selectedRideType = type
+                                    reader.scrollTo(type, anchor: .center)
+                                }
                             }
                         }
                     }
@@ -185,6 +187,7 @@ extension SheetWithTabView{
             PrimaryButtonView(showLoader: false, title: "Request \(homeVM.selectedRideType.title)") {
                 homeVM.requestRide()
             }
+            .withoutAnimation()
             Button {
                 
                 withAnimation(.easeInOut){

@@ -50,34 +50,6 @@ final class HomeViewModel: ObservableObject{
 
     
     //MARK: - Home View for state logic
-    
-    
-    func viewForState() -> some View {
-//        guard let user = user else {
-//           return AnyView(EmptyView())
-//        }
-        switch mapState {
-        case .tripRequested:
-            return AnyView(TripLoadingView())
-        case .tripAccepted:
-            return AnyView(EnRouteToPickupLocationView())
-        case .driverArrived:
-            return AnyView(EmptyView())
-            //return AnyView(DriverArrivalView())
-        case .tripInProgress:
-            return AnyView(EmptyView())
-            //return AnyView(TripInProgressView())
-        case .arrivedAtDestination:
-            return AnyView(EmptyView())
-            //return AnyView(TripArrivalView(user: user))
-        case .locationSelected:
-            return AnyView(RideRequestExpandSheetView())
-        default:
-            return AnyView(EmptyView())
-        }
-        
-    }
-    
     var isShowMainActionButton: Bool{
         switch mapState {
         case .tripRequested, .tripAccepted, .driverArrived, .tripInProgress,
@@ -200,7 +172,10 @@ extension HomeViewModel {
                 if self.selectedLocation == nil {
                     self.selectedLocation = AppLocation(title: trip.dropoffLocationName, coordinate: trip.dropoffLocationCoordinates)
                 }
-                self.updateViewStateForTrip(trip)
+                withAnimation {
+                    self.updateViewStateForTrip(trip)
+                }
+                
             case .removed:
                 print("DEBUG: Trip cancelled by driver")
                 //TODO: Show notification to passenger that trip was cancelled
@@ -223,9 +198,11 @@ extension HomeViewModel {
             self.mapState = .arrivedAtDestination
         case .complete:
             self.mapState = .tripCompleted
-            //self.saveCompletedTrip(trip)
+            self.saveCompletedTrip(trip)
         case .cancelled:
             self.mapState = .noInput
+        case .requested:
+            self.mapState = .tripRequested
         default:
             break
         }
@@ -300,9 +277,7 @@ extension HomeViewModel {
             
             guard let encodedTrip = try? Firestore.Encoder().encode(trip) else { return }
             
-            FbConstant.COLLECTION_RIDES.document().setData(encodedTrip) { _ in
-                self.mapState = .tripRequested
-            }
+            FbConstant.COLLECTION_RIDES.document().setData(encodedTrip)
         }
     }
     
@@ -369,17 +344,17 @@ extension HomeViewModel {
     }
     
     
-//    func saveCompletedTrip(_ trip: Trip) {
-//        guard let uid = Auth.auth().currentUser?.uid else { return }
-//        guard let encodedTrip = try? Firestore.Encoder().encode(trip) else { return }
-//        FbConstant.COLLECTION_USERS
-//            .document(uid)
-//            .collection("user-trips")
-//            .document(trip.tripId)
-//            .setData(encodedTrip) { _ in
-//                self.mapState = .noInput
-//            }
-//    }
+    func saveCompletedTrip(_ trip: Trip) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let encodedTrip = try? Firestore.Encoder().encode(trip) else { return }
+        FbConstant.COLLECTION_USERS
+            .document(uid)
+            .collection("user-trips")
+            .document(trip.tripId)
+            .setData(encodedTrip) { _ in
+                //self.mapState = .noInput
+            }
+    }
 
 }
 

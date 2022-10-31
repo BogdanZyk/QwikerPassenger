@@ -27,13 +27,11 @@ struct HomeView: View {
                     .onReceive(searchVM.$destinationAppLocation) { location in
                         onReceiveForDestinationLocation(location)
                     }
-               
-                if let view = homeVM.viewForState(){
-                    withAnimation(.spring()) {
-                        view
-                            .transition(.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom)))
-                    }
-                }
+                
+                viewForState
+                    .transition(.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom)))
+                
+                
             }
             .environmentObject(searchVM)
             .environmentObject(homeVM)
@@ -152,8 +150,35 @@ extension HomeView {
 }
 
 
-//extension HomeView{
-//    private var bottomSheetViewForViewState: some View{
-//
-//    }
-//}
+extension HomeView{
+    @ViewBuilder var viewForState: some View {
+        //        guard let user = user else {
+        //           return AnyView(EmptyView())
+        //        }
+        switch homeVM.mapState {
+        case .tripRequested:
+            AnyView(TripLoadingView())
+        case .tripAccepted:
+            AnyView(EnRouteToPickupLocationView())
+        case .driverArrived:
+            AnyView(EmptyView())
+            //return AnyView(DriverArrivalView())
+        case .tripInProgress:
+            AnyView(EmptyView())
+            //return AnyView(TripInProgressView())
+        case .arrivedAtDestination:
+            AnyView(EmptyView())
+            //return AnyView(TripArrivalView(user: user))
+        case .locationSelected:
+            AnyView(RideRequestExpandSheetView())
+        default:
+            AnyView(EmptyView())
+        }
+    }
+    
+    @ViewBuilder var loaderView: some View{
+        if homeVM.mapState == .tripRequested{
+            AnyView(TripLoadingView())
+        }
+    }
+}
