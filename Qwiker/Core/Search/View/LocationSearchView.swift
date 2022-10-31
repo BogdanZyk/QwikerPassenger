@@ -93,7 +93,7 @@ extension LocationSearchView{
                     Button {
                         UIApplication.shared.endEditing()
                         searchVM.setLocationForFocusField(for: focused ?? .currentLocation, location: result) {
-                            withAnimation(.spring()){
+                            withAnimation(.easeInOut){
                                 mapState = .locationSelected
                             }
                         }

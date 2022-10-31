@@ -27,7 +27,12 @@ struct HomeView: View {
                     .onReceive(searchVM.$destinationAppLocation) { location in
                         onReceiveForDestinationLocation(location)
                     }
-                homeVM.viewForState()
+                if let view = homeVM.viewForState(){
+                    withAnimation(.spring()) {
+                        view
+                            .transition(.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom)))
+                    }
+                }
             }
             .environmentObject(searchVM)
             .environmentObject(homeVM)
@@ -120,10 +125,15 @@ extension HomeView {
 // MARK: Header section
 extension HomeView {
     private var mainHomeButton: some View{
-        MainHomeActionButton(mapState: $homeVM.mapState, showSideMenu: $showSideMenu)
-            .padding(.leading)
-            .offset(y: homeVM.mapState == .locationSelected || homeVM.mapState == .polylineAdded ? getRect().height - getRect().height / 2.1 : 0)
-            .animation(nil, value: UUID().uuidString)
+        Group{
+            if homeVM.isShowMainActionButton{
+                MainHomeActionButton(mapState: $homeVM.mapState, showSideMenu: $showSideMenu)
+                    .padding(.leading)
+                    .offset(y: homeVM.mapState == .locationSelected || homeVM.mapState == .polylineAdded ? getRect().height - getRect().height / 2.1 : 0)
+                    .animation(nil, value: UUID().uuidString)
+            }
+        }
+
     }
     
     private var searchActivationButton: some View{
@@ -139,3 +149,10 @@ extension HomeView {
         .padding(.top, 60)
     }
 }
+
+
+//extension HomeView{
+//    private var bottomSheetViewForViewState: some View{
+//
+//    }
+//}

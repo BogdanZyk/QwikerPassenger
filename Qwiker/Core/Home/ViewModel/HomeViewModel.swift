@@ -58,8 +58,7 @@ final class HomeViewModel: ObservableObject{
 //        }
         switch mapState {
         case .tripRequested:
-            return AnyView(ProgressView().padding(20).background(Color.white))
-           // return AnyView(TripLoadingView())
+            return AnyView(TripLoadingView())
         case .tripAccepted:
             return AnyView(EmptyView())
             //return AnyView(EnRouteToPickupLocationView())
@@ -77,8 +76,7 @@ final class HomeViewModel: ObservableObject{
                 return AnyView(EmptyView())
                 //return AnyView(EnRouteToPickupLocationView())
             } else {
-                return AnyView(RideRequestExpandSheetView()
-                    .transition(.move(edge: .bottom)))
+                return AnyView(RideRequestExpandSheetView())
             }
         default:
             return AnyView(EmptyView())
@@ -86,8 +84,16 @@ final class HomeViewModel: ObservableObject{
         
     }
     
-    
-    
+    var isShowMainActionButton: Bool{
+        switch mapState {
+        case .tripRequested, .tripAccepted, .driverArrived, .tripInProgress,
+                .arrivedAtDestination, .tripCompleted, .tripCancelled:
+            return false
+        default:
+            return true
+        }
+    }
+
 
 }
 
@@ -183,7 +189,8 @@ extension HomeViewModel {
 extension HomeViewModel {
     
     private func addTripObserver(){
-        tripService.addTripObserverForPassanger { snapshot, error in
+        tripService.addTripObserverForPassanger {[weak self] snapshot, error in
+            guard let self = self else {return}
             guard let change = snapshot?.documentChanges.first, change.type == .added || change.type == .modified else { return }
             switch change.type {
             case .added, .modified:
@@ -194,32 +201,34 @@ extension HomeViewModel {
                 if self.selectedLocation == nil {
                     self.selectedLocation = AppLocation(title: trip.dropoffLocationName, coordinate: trip.dropoffLocationCoordinates)
                 }
-                
-                switch trip.tripState {
-                case .rejectedByDriver:
-                    break
-                    //self.requestRide(self.selectedRideType)
-                case .accepted:
-                    self.mapState = .tripAccepted
-                case .driverArrived:
-                    self.mapState = .driverArrived
-                case .inProgress:
-                    self.mapState = .tripInProgress
-                case .arrivedAtDestination:
-                    self.mapState = .arrivedAtDestination
-                case .complete:
-                    self.mapState = .tripCompleted
-                    //self.saveCompletedTrip(trip)
-                case .cancelled:
-                    self.mapState = .noInput
-                default:
-                    break
-                }
+                self.updateViewStateForTrip(trip)
             case .removed:
                 print("DEBUG: Trip cancelled by driver")
                 //TODO: Show notification to passenger that trip was cancelled
                 self.mapState = .noInput
             }
+        }
+    }
+    
+    private func updateViewStateForTrip(_ trip: Trip){
+        switch trip.tripState {
+        case .rejectedByDriver:
+            self.requestRide()
+        case .accepted:
+            self.mapState = .tripAccepted
+        case .driverArrived:
+            self.mapState = .driverArrived
+        case .inProgress:
+            self.mapState = .tripInProgress
+        case .arrivedAtDestination:
+            self.mapState = .arrivedAtDestination
+        case .complete:
+            self.mapState = .tripCompleted
+            //self.saveCompletedTrip(trip)
+        case .cancelled:
+            self.mapState = .noInput
+        default:
+            break
         }
     }
     
@@ -247,6 +256,11 @@ extension HomeViewModel {
         updateTripState(trip, state: .cancelled) { _ in
             self.reset()
         }
+    }
+    
+    func cancelSearchTrip(){
+        deleteTrip()
+        self.reset()
     }
     
     private func sendRideRequestToDriver(_ driver: Rider) {

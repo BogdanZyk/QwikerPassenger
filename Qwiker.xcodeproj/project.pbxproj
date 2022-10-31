@@ -74,6 +74,13 @@
 		5A44E4E7290ADA2D00577B4A /* UserAvaterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4E6290ADA2D00577B4A /* UserAvaterComponent.swift */; };
 		5A44E4E9290ADA3D00577B4A /* CustomLazyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4E8290ADA3D00577B4A /* CustomLazyImage.swift */; };
 		5A44E4EB290AE06500577B4A /* DragMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4EA290AE06500577B4A /* DragMapView.swift */; };
+		5AD57C46290FBA210078C4F8 /* TripLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C45290FBA210078C4F8 /* TripLoadingView.swift */; };
+		5AD57C48290FBA650078C4F8 /* DriverArrivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C47290FBA650078C4F8 /* DriverArrivalView.swift */; };
+		5AD57C4A290FBAB80078C4F8 /* EnRouteToPickupLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C49290FBAB80078C4F8 /* EnRouteToPickupLocationView.swift */; };
+		5AD57C4C290FBB2C0078C4F8 /* TripArrivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C4B290FBB2B0078C4F8 /* TripArrivalView.swift */; };
+		5AD57C4E290FBB580078C4F8 /* TripInProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C4D290FBB580078C4F8 /* TripInProgressView.swift */; };
+		5AD57C50290FBD520078C4F8 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C4F290FBD520078C4F8 /* SpinnerView.swift */; };
+		5AD57C52290FBF390078C4F8 /* CustomCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C51290FBF390078C4F8 /* CustomCorners.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +145,13 @@
 		5A44E4E6290ADA2D00577B4A /* UserAvaterComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvaterComponent.swift; sourceTree = "<group>"; };
 		5A44E4E8290ADA3D00577B4A /* CustomLazyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLazyImage.swift; sourceTree = "<group>"; };
 		5A44E4EA290AE06500577B4A /* DragMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragMapView.swift; sourceTree = "<group>"; };
+		5AD57C45290FBA210078C4F8 /* TripLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripLoadingView.swift; sourceTree = "<group>"; };
+		5AD57C47290FBA650078C4F8 /* DriverArrivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverArrivalView.swift; sourceTree = "<group>"; };
+		5AD57C49290FBAB80078C4F8 /* EnRouteToPickupLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnRouteToPickupLocationView.swift; sourceTree = "<group>"; };
+		5AD57C4B290FBB2B0078C4F8 /* TripArrivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripArrivalView.swift; sourceTree = "<group>"; };
+		5AD57C4D290FBB580078C4F8 /* TripInProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripInProgressView.swift; sourceTree = "<group>"; };
+		5AD57C4F290FBD520078C4F8 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		5AD57C51290FBF390078C4F8 /* CustomCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorners.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +294,7 @@
 		5A44E479290A8E5D00577B4A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5AD57C41290FBA070078C4F8 /* Trips */,
 				5A2A5BF9290BCA1600310290 /* RideRequestView */,
 				5A44E4DA290AD67600577B4A /* Map */,
 				5A44E4D6290AD5F400577B4A /* Search */,
@@ -400,6 +415,8 @@
 				5A44E4E6290ADA2D00577B4A /* UserAvaterComponent.swift */,
 				5A44E4E8290ADA3D00577B4A /* CustomLazyImage.swift */,
 				5A2A5C0B290BCF1600310290 /* ExpandedView.swift */,
+				5AD57C4F290FBD520078C4F8 /* SpinnerView.swift */,
+				5AD57C51290FBF390078C4F8 /* CustomCorners.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -469,6 +486,26 @@
 				5A44E4DE290AD8AA00577B4A /* SideMenuView.swift */,
 				5A44E4E0290AD8C700577B4A /* SideMenuCellView.swift */,
 				5A44E4E2290AD8FF00577B4A /* SideMenuOptionType.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5AD57C41290FBA070078C4F8 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				5AD57C42290FBA110078C4F8 /* View */,
+			);
+			path = Trips;
+			sourceTree = "<group>";
+		};
+		5AD57C42290FBA110078C4F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5AD57C45290FBA210078C4F8 /* TripLoadingView.swift */,
+				5AD57C47290FBA650078C4F8 /* DriverArrivalView.swift */,
+				5AD57C49290FBAB80078C4F8 /* EnRouteToPickupLocationView.swift */,
+				5AD57C4B290FBB2B0078C4F8 /* TripArrivalView.swift */,
+				5AD57C4D290FBB580078C4F8 /* TripInProgressView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -563,6 +600,7 @@
 			files = (
 				5A26AA16290B221400E2D5AC /* LocationSearchActivationView.swift in Sources */,
 				5A2A5C15290BE14000310290 /* UIImage.swift in Sources */,
+				5AD57C48290FBA650078C4F8 /* DriverArrivalView.swift in Sources */,
 				5A44E46D290A8E5000577B4A /* ContentView.swift in Sources */,
 				5A2A5C0A290BCBD400310290 /* SheetWithTabView.swift in Sources */,
 				5A44E4CE290AC7C300577B4A /* FbConstant.swift in Sources */,
@@ -571,6 +609,7 @@
 				5A44E491290A9B2E00577B4A /* Colors.swift in Sources */,
 				5A44E4BD290AC61B00577B4A /* HomeView.swift in Sources */,
 				5A44E48F290A975200577B4A /* OnboardingView.swift in Sources */,
+				5AD57C52290FBF390078C4F8 /* CustomCorners.swift in Sources */,
 				5A44E49A290AA19100577B4A /* LoginView.swift in Sources */,
 				5A44E488290A952100577B4A /* FontsExt.swift in Sources */,
 				5A44E4EB290AE06500577B4A /* DragMapView.swift in Sources */,
@@ -583,6 +622,7 @@
 				5A44E4C7290AC75B00577B4A /* AppLocation.swift in Sources */,
 				5A2A5C1B290C18E700310290 /* UIApplication.swift in Sources */,
 				5A2A5C00290BCA6A00310290 /* JumpingDraggIcon.swift in Sources */,
+				5AD57C4E290FBB580078C4F8 /* TripInProgressView.swift in Sources */,
 				5A2A5C03290BCAB200310290 /* CarDetailView.swift in Sources */,
 				5A44E4DC290AD6B400577B4A /* MapViewRepresantable.swift in Sources */,
 				5A44E4C5290AC73A00577B4A /* Trip.swift in Sources */,
@@ -600,10 +640,13 @@
 				5A44E4E1290AD8C700577B4A /* SideMenuCellView.swift in Sources */,
 				5A44E498290A9DAE00577B4A /* PrimaryTextFieldView.swift in Sources */,
 				5A26AA19290B259300E2D5AC /* MainHomeActionButton.swift in Sources */,
+				5AD57C46290FBA210078C4F8 /* TripLoadingView.swift in Sources */,
 				5A2A5C11290BE0BD00310290 /* CustomLocationAnnotationView.swift in Sources */,
 				5A44E4BF290AC6AB00577B4A /* UserService.swift in Sources */,
 				5A44E4D5290AD5BA00577B4A /* HomeViewModel.swift in Sources */,
 				5A44E4C3290AC70000577B4A /* User.swift in Sources */,
+				5AD57C50290FBD520078C4F8 /* SpinnerView.swift in Sources */,
+				5AD57C4A290FBAB80078C4F8 /* EnRouteToPickupLocationView.swift in Sources */,
 				5A44E496290A9D0000577B4A /* View.swift in Sources */,
 				5A44E4E9290ADA3D00577B4A /* CustomLazyImage.swift in Sources */,
 				5A44E4D9290AD61300577B4A /* SearchViewModel.swift in Sources */,
@@ -613,6 +656,7 @@
 				5A2A5C08290BCBAE00310290 /* RideRequestExpandSheetView.swift in Sources */,
 				5A2A5C17290C06F400310290 /* MapKit.swift in Sources */,
 				5A2A5C13290BE0E800310290 /* DriverAnnotation.swift in Sources */,
+				5AD57C4C290FBB2C0078C4F8 /* TripArrivalView.swift in Sources */,
 				5A44E4E3290AD8FF00577B4A /* SideMenuOptionType.swift in Sources */,
 				5A44E4A4290AAF9400577B4A /* LocationManager.swift in Sources */,
 			);
