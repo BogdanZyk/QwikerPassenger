@@ -36,55 +36,30 @@ struct EnRouteToPickupLocationView_Previews: PreviewProvider {
 
 extension EnRouteToPickupLocationView{
     private var title: some View{
-        Text("Your Ride is arriving in 3 mins")
+        Text("Your Ride is arriving in \(homeVM.dropOffTime ?? "3 mins")")
             .font(.poppinsMedium(size: 18))
     }
     
     private var rideSectionView: some View{
-        HStack(alignment: .top, spacing: 15){
+        Group{
             if let trip = homeVM.trip{
-                UserAvatarViewComponent(pathImage: nil, size: CGSize(width: 55, height: 55))
-                VStack(alignment: .leading, spacing: 2){
-                    Label {
-                        Image(systemName: "star.fill")
-                            .foregroundColor(.yellow)
-                        Text("4.9")
-                            .font(.poppinsRegular(size: 14))
-                            .foregroundColor(.gray)
-                    } icon: {
-                        Text(trip.driverName)
-                            .font(.poppinsMedium(size: 16))
-                    }
-                    Text("\(trip.carColor ?? "") \(trip.carModel ?? "") ").font(.poppinsMedium(size: 14))
-                    Text(trip.carNumber ?? "").font(.poppinsRegular(size: 14)).foregroundColor(.gray)
-                }
+                RiderInfoView(trip: trip)
             }
-            Spacer()
-            driveActionButton
         }
     }
-    private var driveActionButton: some View{
-        HStack(spacing: 5){
-            Image(systemName: "phone.fill")
-                .imageScale(.small)
-                .foregroundColor(.white)
-                .padding(8)
-                .background(Color.primaryBlue, in: Circle())
-            Image(systemName: "text.bubble.fill")
-                .imageScale(.small)
-                .foregroundColor(.white)
-                .padding(8)
-                .background(Color.primaryBlue, in: Circle())
-        }
-    }
+
 }
 
 //MARK: - Location label section
 extension EnRouteToPickupLocationView{
     
     private var locationSectionView: some View{
-        VStack(alignment: .leading, spacing: 15) {
+        VStack(alignment: .leading, spacing: 0) {
             locationLabel()
+            Rectangle()
+                .fill(Color.primaryBlue)
+                .frame(width: 1, height: 12)
+                .padding(.horizontal, 3)
             locationLabel(isDestination: true)
         }
     }
@@ -164,3 +139,5 @@ extension EnRouteToPickupLocationView{
         }
     }
 }
+
+

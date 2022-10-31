@@ -38,7 +38,7 @@ class DeveloperPreview {
                         tripState: .inProgress,
                         driverName: "John Smith",
                         passengerName: "Stephan Dowless",
-                        driverImageUrl: "",
+                        driverImageUrl: "https://firebasestorage.googleapis.com/v0/b/weego-f90c2.appspot.com/o/istockphoto-1138008134-170667a.jpeg?alt=media&token=a14a83e2-ae0c-43a0-8682-9ae866136111",
                         passengerImageUrl: "",
                         carModel: "Volkswagen",
                         carNumber: "HG5045",

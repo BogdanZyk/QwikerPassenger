@@ -81,23 +81,7 @@ extension HomeViewModel {
     func getDestinationRoute(from userLocation: CLLocationCoordinate2D,
                              to destinationCoordinate: CLLocationCoordinate2D,
                              completion: @escaping(MKRoute) -> Void) {
-        let userPlacemark = MKPlacemark(coordinate: userLocation)
-        
-        let request = MKDirections.Request()
-        request.source = MKMapItem(placemark: userPlacemark)
-        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: destinationCoordinate))
-        request.transportType = .automobile
-        
-        let directions = MKDirections(request: request)
-        
-        
-        directions.calculate { response, error in
-            if let error = error {
-                print("DEBUG: Failed to generate polyline with error \(error.localizedDescription)")
-                return
-            }
-            
-            guard let route = response?.routes.first else { return }
+        MapHelpers.getDestinationRoute(from: userLocation, to: destinationCoordinate) { route in
             self.configurePickupAndDropOffTime(with: route.expectedTravelTime)
             completion(route)
         }
@@ -112,18 +96,11 @@ extension HomeViewModel {
     }
     
     func ridePriceForType(_ type: RideType) -> String {
-        guard let selectedLocation = selectedLocation, let userCoordinates = userLocation else { return "0.0" }
-        let userLocation = CLLocation(latitude: userCoordinates.coordinate.latitude, longitude: userCoordinates.coordinate.longitude)
-        self.tripDistanceInMeters = userLocation.distance(from: CLLocation(latitude: selectedLocation.coordinate.latitude, longitude: selectedLocation.coordinate.longitude))
-        
-        return type.price(for: tripDistanceInMeters).formatted(.currency(code: "USD"))
+       let distanceAndPrice =  MapHelpers.ridePriceAndDestinceForType(type, currentLocation: userLocation, destinationLocation: selectedLocation)
+        self.tripDistanceInMeters = distanceAndPrice.tripDistanceInMeters
+        return distanceAndPrice.price
     }
-    
-    func createPickupAndDropoffRegionsForTrip() {
-       // guard let trip = trip else { return }
-//        LocationManager.shared.createPickupRegionForTrip(trip)
-//        LocationManager.shared.createDropoffRegionForTrip(trip)
-    }
+
 }
 
 

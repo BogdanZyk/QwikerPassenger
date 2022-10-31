@@ -74,6 +74,8 @@
 		5A44E4E7290ADA2D00577B4A /* UserAvaterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4E6290ADA2D00577B4A /* UserAvaterComponent.swift */; };
 		5A44E4E9290ADA3D00577B4A /* CustomLazyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4E8290ADA3D00577B4A /* CustomLazyImage.swift */; };
 		5A44E4EB290AE06500577B4A /* DragMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4EA290AE06500577B4A /* DragMapView.swift */; };
+		5A6A886F29107A9D00699320 /* MapHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A886E29107A9D00699320 /* MapHelpers.swift */; };
+		5A6A887229107F3800699320 /* RiderInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A887129107F3800699320 /* RiderInfoView.swift */; };
 		5AD57C46290FBA210078C4F8 /* TripLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C45290FBA210078C4F8 /* TripLoadingView.swift */; };
 		5AD57C48290FBA650078C4F8 /* DriverArrivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C47290FBA650078C4F8 /* DriverArrivalView.swift */; };
 		5AD57C4A290FBAB80078C4F8 /* EnRouteToPickupLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C49290FBAB80078C4F8 /* EnRouteToPickupLocationView.swift */; };
@@ -146,6 +148,8 @@
 		5A44E4E6290ADA2D00577B4A /* UserAvaterComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvaterComponent.swift; sourceTree = "<group>"; };
 		5A44E4E8290ADA3D00577B4A /* CustomLazyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLazyImage.swift; sourceTree = "<group>"; };
 		5A44E4EA290AE06500577B4A /* DragMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragMapView.swift; sourceTree = "<group>"; };
+		5A6A886E29107A9D00699320 /* MapHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHelpers.swift; sourceTree = "<group>"; };
+		5A6A887129107F3800699320 /* RiderInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderInfoView.swift; sourceTree = "<group>"; };
 		5AD57C45290FBA210078C4F8 /* TripLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripLoadingView.swift; sourceTree = "<group>"; };
 		5AD57C47290FBA650078C4F8 /* DriverArrivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverArrivalView.swift; sourceTree = "<group>"; };
 		5AD57C49290FBAB80078C4F8 /* EnRouteToPickupLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnRouteToPickupLocationView.swift; sourceTree = "<group>"; };
@@ -285,9 +289,9 @@
 		5A44E478290A8E5700577B4A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5A6A886D29107A9100699320 /* Helpers */,
 				5A44E4CC290AC7B600577B4A /* Constants */,
 				5A44E483290A94E200577B4A /* Fonts */,
-				5A44E4A5290AB69C00577B4A /* Helpers.swift */,
 				5A44E4D1290ACA8000577B4A /* ErrorHandler.swift */,
 			);
 			path = Utils;
@@ -493,6 +497,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		5A6A886D29107A9100699320 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5A44E4A5290AB69C00577B4A /* Helpers.swift */,
+				5A6A886E29107A9D00699320 /* MapHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5A6A887029107E8A00699320 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				5A6A887129107F3800699320 /* RiderInfoView.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
 		5AD57C41290FBA070078C4F8 /* Trips */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,6 +525,7 @@
 		5AD57C42290FBA110078C4F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5A6A887029107E8A00699320 /* ViewComponents */,
 				5AD57C45290FBA210078C4F8 /* TripLoadingView.swift */,
 				5AD57C47290FBA650078C4F8 /* DriverArrivalView.swift */,
 				5AD57C49290FBAB80078C4F8 /* EnRouteToPickupLocationView.swift */,
@@ -606,11 +628,13 @@
 				5AD57C48290FBA650078C4F8 /* DriverArrivalView.swift in Sources */,
 				5A44E46D290A8E5000577B4A /* ContentView.swift in Sources */,
 				5A2A5C0A290BCBD400310290 /* SheetWithTabView.swift in Sources */,
+				5A6A886F29107A9D00699320 /* MapHelpers.swift in Sources */,
 				5A44E4CE290AC7C300577B4A /* FbConstant.swift in Sources */,
 				5A44E4A6290AB69C00577B4A /* Helpers.swift in Sources */,
 				5AD57C54290FCD790078C4F8 /* BottomSheetView.swift in Sources */,
 				5A44E4C1290AC6DD00577B4A /* TripService.swift in Sources */,
 				5A44E491290A9B2E00577B4A /* Colors.swift in Sources */,
+				5A6A887229107F3800699320 /* RiderInfoView.swift in Sources */,
 				5A44E4BD290AC61B00577B4A /* HomeView.swift in Sources */,
 				5A44E48F290A975200577B4A /* OnboardingView.swift in Sources */,
 				5AD57C52290FBF390078C4F8 /* CustomCorners.swift in Sources */,
