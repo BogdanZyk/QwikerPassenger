@@ -20,7 +20,6 @@ struct LoginView: View {
                     signInView
                         .transition(.move(edge: .leading))
                 case .signup:
-                    EmptyView()
                     createAccoutView
                         .transition(.move(edge: .leading))
                 }

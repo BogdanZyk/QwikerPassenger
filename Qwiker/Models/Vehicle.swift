@@ -11,7 +11,7 @@ import Foundation
 struct Vehicle: Codable {
     let make: String
     let model: String
-    let year: Int
+    let year: String
     let color: VehicleColors
     let licensePlateNumber: String
     let type: RideType

@@ -273,7 +273,6 @@
 				5A44E47B290A8EA300577B4A /* Extensions */,
 				5A44E478290A8E5700577B4A /* Utils */,
 				5A44E479290A8E5D00577B4A /* Core */,
-				5A44E46C290A8E5000577B4A /* ContentView.swift */,
 				5A44E46E290A8E5100577B4A /* Assets.xcassets */,
 				5A44E470290A8E5100577B4A /* Preview Content */,
 			);
@@ -318,6 +317,7 @@
 		5A44E47A290A8E9600577B4A /* App */ = {
 			isa = PBXGroup;
 			children = (
+				5A44E46C290A8E5000577B4A /* ContentView.swift */,
 				5A44E46A290A8E4F00577B4A /* QwikerApp.swift */,
 			);
 			path = App;

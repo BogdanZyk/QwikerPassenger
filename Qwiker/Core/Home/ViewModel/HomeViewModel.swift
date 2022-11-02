@@ -188,18 +188,18 @@ extension HomeViewModel {
     //MARK: - Request ride for driverQueue
     
     func requestRide() {
-        guard let userCoordinate = userLocation?.coordinate else { return }
         ridePrice = selectedRideType.price(for: tripDistanceInMeters)
-        print("DEBAG", driverQueue.count)
+        print("DEBUG", driverQueue.count)
         if driverQueue.isEmpty {
-            guard let trip = trip else { return }
-            updateTripState(trip, state: .rejectedByAllDrivers) { _ in
+            //guard let trip = trip else { return }
+            //updateTripState(trip, state: .rejectedByAllDrivers) { _ in
                 self.deleteTrip()
                 self.reset()
-                self.fetchNearbyDrivers(withCoordinates: userCoordinate)
-            }
+            //}
         } else {
+            print("DEBUG", driverQueue.compactMap({$0.isActive}))
             let driver = driverQueue.removeFirst()
+            print("DEBUG", driver.fullname)
             sendRideRequestToDriver(driver)
         }
     }
@@ -226,7 +226,7 @@ extension HomeViewModel {
                 "tripState": TripState.requested.rawValue,
                 "driverUid": driverUid
             ]
-            FbConstant.COLLECTION_RIDES.document(trip.tripId).updateData(updatedData) { _ in
+            FbConstant.COLLECTION_RIDES.document(trip.tripId).updateData(updatedData) { error in
                 print("DEBUG: Updated trip data..")
             }
         } else {
@@ -260,6 +260,10 @@ extension HomeViewModel {
     
     //TODO: Extract to PassengerService
     func fetchNearbyDrivers(withCoordinates coordinates: CLLocationCoordinate2D) {
+        print("DEBUG", "fetchNearbyDrivers")
+        withAnimation {
+            drivers.removeAll()
+        }
         let queryBounds = GFUtils.queryBounds(forLocation: coordinates, withRadius: radius)
         didExecuteFetchDrivers = true
         
@@ -285,14 +289,16 @@ extension HomeViewModel {
             
             let distance = GFUtils.distance(from: centerPoint, to: coordinates)
             if distance <= radius {
-                
-                drivers.append(driver)
+                if !(drivers.contains(where: {$0.id == driver.id})){
+                    drivers.append(driver)
+                }
             }
         }
-        print(drivers)
+        
         self.drivers.append(contentsOf: drivers)
         self.driverQueue = self.drivers
         self.addListenerToDrivers()
+        print("DEBUG:", self.drivers.compactMap({$0.fullname}))
     }
     
     func addListenerToDrivers() {
@@ -301,6 +307,7 @@ extension HomeViewModel {
             
             let driverListener = FbConstant.COLLECTION_DRIVERS.document(driver.id ?? "").addSnapshotListener { snapshot, error in
                 guard let driver = try? snapshot?.data(as: Rider.self) else { return }
+                print("DEBUG",driver.isActive)
                 self.drivers[i].isActive = driver.isActive
                 self.drivers[i].coordinates = driver.coordinates
             }

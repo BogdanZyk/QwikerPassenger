@@ -25,7 +25,6 @@ struct OnboardingView: View {
         }
         .background(Color.primaryBg)
         .onChange(of: locationManager.isAuthorization) { isAuthorization in
-            print(isAuthorization)
             if isAuthorization{
                 dismiss()
                 isShowOnboarding = false
