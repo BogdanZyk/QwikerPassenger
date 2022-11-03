@@ -1,5 +1,5 @@
 //
-//  Trip.swift
+//  RequestedTrip.swift
 //  Qwiker
 //
 //  Created by Богдан Зыков on 27.10.2022.
@@ -11,7 +11,7 @@ import Firebase
 import CoreLocation
 
 
-struct Trip: Codable, Identifiable{
+struct RequestedTrip: Codable, Identifiable{
     
     @DocumentID var id: String?
     let driverUid: String

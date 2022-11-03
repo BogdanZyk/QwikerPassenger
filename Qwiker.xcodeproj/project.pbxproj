@@ -57,7 +57,7 @@
 		5A44E4BF290AC6AB00577B4A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4BE290AC6AB00577B4A /* UserService.swift */; };
 		5A44E4C1290AC6DD00577B4A /* TripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4C0290AC6DD00577B4A /* TripService.swift */; };
 		5A44E4C3290AC70000577B4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4C2290AC70000577B4A /* User.swift */; };
-		5A44E4C5290AC73A00577B4A /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4C4290AC73A00577B4A /* Trip.swift */; };
+		5A44E4C5290AC73A00577B4A /* RequestedTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4C4290AC73A00577B4A /* RequestedTrip.swift */; };
 		5A44E4C7290AC75B00577B4A /* AppLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4C6290AC75B00577B4A /* AppLocation.swift */; };
 		5A44E4C9290AC77A00577B4A /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4C8290AC77A00577B4A /* RideType.swift */; };
 		5A44E4CB290AC79700577B4A /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E4CA290AC79700577B4A /* Vehicle.swift */; };
@@ -132,7 +132,7 @@
 		5A44E4BE290AC6AB00577B4A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		5A44E4C0290AC6DD00577B4A /* TripService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripService.swift; sourceTree = "<group>"; };
 		5A44E4C2290AC70000577B4A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		5A44E4C4290AC73A00577B4A /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		5A44E4C4290AC73A00577B4A /* RequestedTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestedTrip.swift; sourceTree = "<group>"; };
 		5A44E4C6290AC75B00577B4A /* AppLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocation.swift; sourceTree = "<group>"; };
 		5A44E4C8290AC77A00577B4A /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
 		5A44E4CA290AC79700577B4A /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
@@ -342,7 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				5A44E4C2290AC70000577B4A /* User.swift */,
-				5A44E4C4290AC73A00577B4A /* Trip.swift */,
+				5A44E4C4290AC73A00577B4A /* RequestedTrip.swift */,
 				5A44E4C6290AC75B00577B4A /* AppLocation.swift */,
 				5A44E4C8290AC77A00577B4A /* RideType.swift */,
 				5A44E4CA290AC79700577B4A /* Vehicle.swift */,
@@ -657,7 +657,7 @@
 				5AD57C4E290FBB580078C4F8 /* TripInProgressView.swift in Sources */,
 				5A2A5C03290BCAB200310290 /* CarDetailView.swift in Sources */,
 				5A44E4DC290AD6B400577B4A /* MapViewRepresantable.swift in Sources */,
-				5A44E4C5290AC73A00577B4A /* Trip.swift in Sources */,
+				5A44E4C5290AC73A00577B4A /* RequestedTrip.swift in Sources */,
 				5A44E46B290A8E5000577B4A /* QwikerApp.swift in Sources */,
 				5A44E4D0290AC92500577B4A /* MapViewState.swift in Sources */,
 				5A26AA1D290B2B4900E2D5AC /* LocationResultViewCell.swift in Sources */,

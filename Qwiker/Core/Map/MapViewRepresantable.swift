@@ -32,9 +32,10 @@ struct MapViewRepresentable: UIViewRepresentable {
         case .locationSelected:
             context.coordinator.addAnnotationAndGeneratePolyline()
         case .tripAccepted:
-            guard let trip = homeViewModel.trip else { return }
-            context.coordinator.configureMapForTrip(trip)
-            context.coordinator.updateDriverPositionForTrip(trip)
+            context.coordinator.configureMapForTrip()
+            context.coordinator.updateDriverPositionAndOverlayForTripState()
+        case .tripInProgress:
+            context.coordinator.updateDriverPositionAndOverlayForTripState()
         default:
             break
         }
@@ -55,8 +56,8 @@ extension MapViewRepresentable {
         let parent: MapViewRepresentable
         var userLocation: MKUserLocation?
         var currentLocation: CLLocationCoordinate2D?
-        var currentRegion: MKCoordinateRegion?
         var didSetVisibleMapRectForTrip = false
+        var acceptDriverCoordinate: CLLocationCoordinate2D?
         // MARK: - Lifecycle
         
         init(parent: MapViewRepresentable) {
@@ -72,7 +73,6 @@ extension MapViewRepresentable {
                 center: userLocation.coordinate,
                 span: SPAN
             )
-            self.currentRegion = region
             parent.mapView.setRegion(region, animated: true)
         }
         
@@ -90,7 +90,6 @@ extension MapViewRepresentable {
                     self.parent.searchViewModel.updatedRegion = mapView.region
                     self.currentLocation = mapView.region.center
                 }
-                print("DEBUG", currentLocation)
             }
         }
         
@@ -158,30 +157,42 @@ extension MapViewRepresentable {
             self.parent.mapView.selectAnnotation(anno, animated: true)
         }
         
-        func addAnnotationAndGeneratePolylineToPassenger() {
-            guard let trip = parent.homeViewModel.trip else { return }
+        //trip in accept
+        func addAnnotationAndGeneratePolylineToPassenger(_ driverCoordinate: CLLocationCoordinate2D) {
+            guard let trip = parent.homeViewModel.trip, let savedDriverCoordinate = acceptDriverCoordinate else { return }
             addAndSelectAnnotation(withCoordinate: trip.pickupLocationCoordiantes, anno: MKPointAnnotation())
-            guard let latitude = trip.driverLocation?.latitude, let longitude = trip.driverLocation?.longitude else {return}
-            let driverLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            print("DEBAG driverLocation", driverLocation)
-            print("DEBAG pickupLocationCoordiantes", trip.pickupLocationCoordiantes)
-            self.configurePolyline(currentLocation: driverLocation, withDestinationCoordinate: trip.pickupLocationCoordiantes)
+            
+            if driverCoordinate != savedDriverCoordinate{
+                parent.mapView.removeOverlays(parent.mapView.overlays)
+                self.configurePolyline(currentLocation: driverCoordinate, withDestinationCoordinate: trip.pickupLocationCoordiantes)
+            }
+        }
+        
+        //trip in progress
+        func addAnnotationAndGeneratePolylineToDestination(_ driverCoordinate: CLLocationCoordinate2D){
+            guard let trip = parent.homeViewModel.trip, let savedDriverCoordinate = acceptDriverCoordinate else { return }
+            if driverCoordinate != savedDriverCoordinate{
+                parent.mapView.removeOverlays(parent.mapView.overlays)
+                self.configurePolyline(currentLocation: driverCoordinate, withDestinationCoordinate: trip.dropoffLocationCoordinates)
+            }
         }
         
         
-        func configureMapForTrip(_ trip: Trip) {
+        func configureMapForTrip() {
+            guard let trip = parent.homeViewModel.trip else { return }
             if !didSetVisibleMapRectForTrip {
                 var driverAnnotations = parent.mapView.annotations.filter({ $0.isKind(of: DriverAnnotation.self) }) as! [DriverAnnotation]
                 driverAnnotations.removeAll(where: {$0.uid == trip.driverUid})
                 removeAnnotationsAndOverlays(driverAnnotations)
             }
-            addAnnotationAndGeneratePolylineToPassenger()
+            
             didSetVisibleMapRectForTrip = true
         }
         
-        func updateDriverPositionForTrip(_ trip: Trip) {
-            guard let tripDriver = parent.homeViewModel.drivers.first(where: { $0.uid == trip.driverUid }) else { return }
+        func updateDriverPositionAndOverlayForTripState() {
+            guard let trip = parent.homeViewModel.trip,  let tripDriver = parent.homeViewModel.drivers.first(where: { $0.uid == trip.driverUid }) else { return }
             let driverCoordinates = CLLocationCoordinate2D(latitude: tripDriver.coordinates.latitude,longitude: tripDriver.coordinates.longitude)
+           
             let driverAnnotations = parent.mapView.annotations.filter({ $0.isKind(of: DriverAnnotation.self) }) as? [DriverAnnotation]
             
             if let driverAnno = driverAnnotations?.first(where: { $0.uid == trip.driverUid }){
@@ -191,7 +202,16 @@ extension MapViewRepresentable {
                 driverCoordinates)
                 parent.mapView.addAnnotation(annotation)
             }
-
+            
+            //update overlays
+            
+            if parent.homeViewModel.mapState == .tripAccepted{
+                addAnnotationAndGeneratePolylineToPassenger(driverCoordinates)
+            }else if parent.homeViewModel.mapState == .tripInProgress{
+                addAnnotationAndGeneratePolylineToDestination(driverCoordinates)
+            }
+    
+            self.acceptDriverCoordinate = driverCoordinates
         }
 
         func configurePolyline(currentLocation: CLLocationCoordinate2D?,  withDestinationCoordinate coordinate: CLLocationCoordinate2D) {

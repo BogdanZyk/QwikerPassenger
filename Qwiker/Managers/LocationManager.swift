@@ -60,12 +60,6 @@ class LocationManager: NSObject, ObservableObject{
     
     //MARK: - Map helpers
     
-    
-//    private func createCustomRegion(coordinates: CLLocationCoordinate2D) {
-//        let region = CLCircularRegion(center: coordinates, radius: 25, identifier: "type.rawValue")
-//        locationManager.startMonitoring(for: region)
-//    }
-    
     func setUserLocationInMap(){
         guard let userLocation = userLocation else {return}
         let region = MKCoordinateRegion(center: userLocation.coordinate, span: SPAN)

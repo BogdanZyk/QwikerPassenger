@@ -14,12 +14,12 @@ struct TripService {
     
     // MARK: - Properties
     
-    var trip: Trip?
+    var trip: RequestedTrip?
     var user: User?
     
     // MARK: - Helpers
     
-   func updateTripState(_ trip: Trip, state: TripState, completion: FirestoreCompletion) {
+   func updateTripState(_ trip: RequestedTrip, state: TripState, completion: FirestoreCompletion) {
        FbConstant.COLLECTION_RIDES.document(trip.tripId).updateData(["tripState": state.rawValue], completion: completion)
     }
     

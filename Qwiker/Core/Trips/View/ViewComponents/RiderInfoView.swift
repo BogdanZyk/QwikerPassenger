@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RiderInfoView: View {
-    let trip: Trip
+    let trip: RequestedTrip
     var body: some View {
         HStack(alignment: .top, spacing: 15){
             UserAvatarViewComponent(pathImage: trip.driverImageUrl, size: CGSize(width: 55, height: 55))

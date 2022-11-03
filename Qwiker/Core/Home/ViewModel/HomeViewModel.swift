@@ -18,7 +18,7 @@ import SwiftUI
 final class HomeViewModel: ObservableObject{
     
     @Published var drivers = [Rider]()
-    @Published var trip: Trip?
+    @Published var trip: RequestedTrip?
     @Published var mapState = MapViewState.noInput
     @Published var pickupTime: String?
     @Published var dropOffTime: String?
@@ -119,7 +119,7 @@ extension HomeViewModel {
         }
     }
     
-    private func updateTripState(_ trip: Trip, state: TripState, completion: ((Error?) -> Void)?) {
+    private func updateTripState(_ trip: RequestedTrip, state: TripState, completion: ((Error?) -> Void)?) {
         tripService.updateTripState(trip, state: state, completion: completion)
     }
 
@@ -142,7 +142,7 @@ extension HomeViewModel {
             guard let change = snapshot?.documentChanges.first, change.type == .added || change.type == .modified else { return }
             switch change.type {
             case .added, .modified:
-                guard let trip = try? change.document.data(as: Trip.self) else { return }
+                guard let trip = try? change.document.data(as: RequestedTrip.self) else { return }
                 self.trip = trip
                 self.tripService.trip = trip
                 
@@ -161,7 +161,7 @@ extension HomeViewModel {
         }
     }
     
-    private func updateViewStateForTrip(_ trip: Trip){
+    private func updateViewStateForTrip(_ trip: RequestedTrip){
         switch trip.tripState {
         case .rejectedByDriver:
             self.requestRide()
@@ -234,7 +234,7 @@ extension HomeViewModel {
             let dropoffGeoPoint = GeoPoint(latitude: selectedLocation.coordinate.latitude, longitude: selectedLocation.coordinate.longitude)
             let driverGeoPoint = GeoPoint(latitude: driver.coordinates.latitude, longitude: driver.coordinates.longitude)
             
-            let trip = Trip(driverUid: driverUid,
+            let trip = RequestedTrip(driverUid: driverUid,
                             passengerUid: currentUid,
                             pickupLocation: pickupGeoPoint,
                             dropoffLocation: dropoffGeoPoint,
@@ -328,7 +328,7 @@ extension HomeViewModel {
     }
     
     
-    func saveCompletedTrip(_ trip: Trip) {
+    func saveCompletedTrip(_ trip: RequestedTrip) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         guard let encodedTrip = try? Firestore.Encoder().encode(trip) else { return }
         FbConstant.COLLECTION_USERS

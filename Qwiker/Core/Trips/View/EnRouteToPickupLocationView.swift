@@ -18,6 +18,7 @@ struct EnRouteToPickupLocationView: View {
                 totalSectionView
             Spacer()
         }
+        
     }
 }
 

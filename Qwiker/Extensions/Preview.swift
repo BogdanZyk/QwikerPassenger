@@ -26,7 +26,7 @@ class DeveloperPreview {
     
     let mockSelectedLocation = AppLocation(title: "Starbucks", coordinate: CLLocationCoordinate2D(latitude: 37.6, longitude: -122.43))
     
-    let mockTrip = Trip(driverUid: NSUUID().uuidString,
+    let mockTrip = RequestedTrip(driverUid: NSUUID().uuidString,
                         passengerUid: NSUUID().uuidString,
                         pickupLocation: GeoPoint(latitude: 37.6, longitude: -122.43),
                         dropoffLocation: GeoPoint(latitude: 37.55, longitude: -122.4),
