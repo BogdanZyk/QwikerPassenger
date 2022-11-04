@@ -25,7 +25,7 @@ final class HomeViewModel: ObservableObject{
     @Published var user: User?
     @Published var currentRoute: MKRoute?
     @Published var selectedRideType: RideType = .economy
-    
+    @Published var isShowCompletedSheet: Bool = false
     var didExecuteFetchDrivers = false
     var userLocation: AppLocation?
     var selectedLocation: AppLocation?
@@ -176,8 +176,8 @@ extension HomeViewModel {
         case .arrivedAtDestination:
             self.mapState = .arrivedAtDestination
         case .complete:
-            self.mapState = .tripCompleted
-            self.saveCompletedTrip(trip)
+            self.reset()
+            self.isShowCompletedSheet.toggle()
         case .cancelled:
             self.mapState = .noInput
         case .requested:
@@ -330,17 +330,7 @@ extension HomeViewModel {
     }
     
     
-    func saveCompletedTrip(_ trip: RequestedTrip) {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        guard let encodedTrip = try? Firestore.Encoder().encode(trip) else { return }
-        FbConstant.COLLECTION_USERS
-            .document(uid)
-            .collection("user-trips")
-            .document(trip.tripId)
-            .setData(encodedTrip) { _ in
-                //self.mapState = .noInput
-            }
-    }
+
 
 }
 

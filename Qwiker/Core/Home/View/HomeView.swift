@@ -37,6 +37,10 @@ struct HomeView: View {
             .environmentObject(homeVM)
             .navigationBarHidden(true)
             .edgesIgnoringSafeArea(.bottom)
+            .sheet(isPresented: $homeVM.isShowCompletedSheet, onDismiss: {}) {
+                TripCompletedView()
+                    .environmentObject(homeVM)
+            }
         }
     }
 }

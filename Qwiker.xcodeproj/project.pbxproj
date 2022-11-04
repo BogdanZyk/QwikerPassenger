@@ -87,6 +87,7 @@
 		5AD57C54290FCD790078C4F8 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C53290FCD790078C4F8 /* BottomSheetView.swift */; };
 		5ADC67302915051B0063014E /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC672F2915051B0063014E /* RatingView.swift */; };
 		5ADC673229150EA80063014E /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC673129150EA80063014E /* TimeInterval.swift */; };
+		5ADC673929151DDA0063014E /* TripCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC673829151DDA0063014E /* TripCompletedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,6 +165,7 @@
 		5AD57C53290FCD790078C4F8 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		5ADC672F2915051B0063014E /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		5ADC673129150EA80063014E /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
+		5ADC673829151DDA0063014E /* TripCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCompletedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -526,7 +528,9 @@
 		5AD57C41290FBA070078C4F8 /* Trips */ = {
 			isa = PBXGroup;
 			children = (
+				5ADC673729151DC50063014E /* ViewModel */,
 				5AD57C42290FBA110078C4F8 /* View */,
+				5ADC673829151DDA0063014E /* TripCompletedView.swift */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -542,6 +546,13 @@
 				5AD57C4D290FBB580078C4F8 /* TripInProgressView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5ADC673729151DC50063014E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -645,6 +656,7 @@
 				5A44E4C1290AC6DD00577B4A /* TripService.swift in Sources */,
 				5A44E491290A9B2E00577B4A /* Colors.swift in Sources */,
 				5A6A887229107F3800699320 /* RiderInfoView.swift in Sources */,
+				5ADC673929151DDA0063014E /* TripCompletedView.swift in Sources */,
 				5A44E4BD290AC61B00577B4A /* HomeView.swift in Sources */,
 				5A44E48F290A975200577B4A /* OnboardingView.swift in Sources */,
 				5AD57C52290FBF390078C4F8 /* CustomCorners.swift in Sources */,
