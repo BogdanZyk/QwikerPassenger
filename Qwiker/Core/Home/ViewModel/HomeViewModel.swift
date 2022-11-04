@@ -23,6 +23,7 @@ final class HomeViewModel: ObservableObject{
     @Published var pickupTime: String?
     @Published var dropOffTime: String?
     @Published var user: User?
+    @Published var currentRoute: MKRoute?
     @Published var selectedRideType: RideType = .economy
     
     var didExecuteFetchDrivers = false
@@ -45,7 +46,6 @@ final class HomeViewModel: ObservableObject{
     
     init() {
         fetchUser()
-        //addRider()
     }
 
     
@@ -81,8 +81,10 @@ extension HomeViewModel {
     func getDestinationRoute(from userLocation: CLLocationCoordinate2D,
                              to destinationCoordinate: CLLocationCoordinate2D,
                              completion: @escaping(MKRoute) -> Void) {
-        MapHelpers.getDestinationRoute(from: userLocation, to: destinationCoordinate) { route in
+        MapHelpers.getDestinationRoute(from: userLocation, to: destinationCoordinate) {[weak self] route in
+            guard let self = self else {return}
             self.configurePickupAndDropOffTime(with: route.expectedTravelTime)
+            self.currentRoute = route
             completion(route)
         }
     }
@@ -344,21 +346,4 @@ extension HomeViewModel {
 
 
 
-//MARK: - Riders for test
-extension HomeViewModel{
-    private func addRider(){
-        let location = CLLocationCoordinate2D(latitude: 47.228633403351864, longitude: 39.71641259567925)
-        let hash = GFUtils.geoHash(forLocation: location)
-        let rider = Rider(fullname: "Tester", email: "test@test.com",  phoneNumber: "88009943455", coordinates: GeoPoint(latitude: location.latitude, longitude: location.longitude), geohash: hash, isActive: true)
 
-        guard let encodedRider = try? Firestore.Encoder().encode(rider) else { return }
-
-        FbConstant.COLLECTION_DRIVERS.document().setData(encodedRider) { error in
-            if let error = error{
-                print(error)
-                return
-            }
-            print("Rider save!")
-        }
-    }
-}

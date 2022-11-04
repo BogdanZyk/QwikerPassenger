@@ -163,8 +163,7 @@ extension HomeView{
         case .driverArrived:
             AnyView(DriverArrivalView())
         case .tripInProgress:
-            AnyView(EmptyView())
-            //return AnyView(TripInProgressView())
+            AnyView(TripInProgressView())
         case .arrivedAtDestination:
             AnyView(EmptyView())
             //return AnyView(TripArrivalView(user: user))

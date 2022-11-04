@@ -85,6 +85,8 @@
 		5AD57C50290FBD520078C4F8 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C4F290FBD520078C4F8 /* SpinnerView.swift */; };
 		5AD57C52290FBF390078C4F8 /* CustomCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C51290FBF390078C4F8 /* CustomCorners.swift */; };
 		5AD57C54290FCD790078C4F8 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C53290FCD790078C4F8 /* BottomSheetView.swift */; };
+		5ADC67302915051B0063014E /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC672F2915051B0063014E /* RatingView.swift */; };
+		5ADC673229150EA80063014E /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC673129150EA80063014E /* TimeInterval.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,6 +162,8 @@
 		5AD57C4F290FBD520078C4F8 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		5AD57C51290FBF390078C4F8 /* CustomCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorners.swift; sourceTree = "<group>"; };
 		5AD57C53290FCD790078C4F8 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		5ADC672F2915051B0063014E /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		5ADC673129150EA80063014E /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +338,7 @@
 				5A2A5C16290C06F400310290 /* MapKit.swift */,
 				5A2A5C1A290C18E700310290 /* UIApplication.swift */,
 				5A2A5C1D290C2C2300310290 /* Double.swift */,
+				5ADC673129150EA80063014E /* TimeInterval.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -426,6 +431,7 @@
 				5AD57C4F290FBD520078C4F8 /* SpinnerView.swift */,
 				5AD57C51290FBF390078C4F8 /* CustomCorners.swift */,
 				5AD57C53290FCD790078C4F8 /* BottomSheetView.swift */,
+				5ADC672F2915051B0063014E /* RatingView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -659,6 +665,7 @@
 				5A44E4DC290AD6B400577B4A /* MapViewRepresantable.swift in Sources */,
 				5A44E4C5290AC73A00577B4A /* RequestedTrip.swift in Sources */,
 				5A44E46B290A8E5000577B4A /* QwikerApp.swift in Sources */,
+				5ADC67302915051B0063014E /* RatingView.swift in Sources */,
 				5A44E4D0290AC92500577B4A /* MapViewState.swift in Sources */,
 				5A26AA1D290B2B4900E2D5AC /* LocationResultViewCell.swift in Sources */,
 				5A26AA11290B1E5E00E2D5AC /* Rider.swift in Sources */,
@@ -671,6 +678,7 @@
 				5A26AA1B290B27F200E2D5AC /* LocationSearchView.swift in Sources */,
 				5A44E4E1290AD8C700577B4A /* SideMenuCellView.swift in Sources */,
 				5A44E498290A9DAE00577B4A /* PrimaryTextFieldView.swift in Sources */,
+				5ADC673229150EA80063014E /* TimeInterval.swift in Sources */,
 				5A26AA19290B259300E2D5AC /* MainHomeActionButton.swift in Sources */,
 				5AD57C46290FBA210078C4F8 /* TripLoadingView.swift in Sources */,
 				5A2A5C11290BE0BD00310290 /* CustomLocationAnnotationView.swift in Sources */,

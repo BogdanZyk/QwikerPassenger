@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RiderInfoView: View {
     let trip: RequestedTrip
+    var isHiddenButton: Bool = false
     var body: some View {
         HStack(alignment: .top, spacing: 15){
             UserAvatarViewComponent(pathImage: trip.driverImageUrl, size: CGSize(width: 55, height: 55))
@@ -27,7 +28,9 @@ struct RiderInfoView: View {
                 Text(trip.carNumber ?? "").font(.poppinsRegular(size: 14)).foregroundColor(.gray)
             }
             Spacer()
-            driveActionButton
+            if !isHiddenButton{
+                driveActionButton
+            }
         }
     }
 }

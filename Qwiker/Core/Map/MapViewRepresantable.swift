@@ -171,6 +171,7 @@ extension MapViewRepresentable {
         //trip in progress
         func addAnnotationAndGeneratePolylineToDestination(_ driverCoordinate: CLLocationCoordinate2D){
             guard let trip = parent.homeViewModel.trip, let savedDriverCoordinate = acceptDriverCoordinate else { return }
+            addAndSelectAnnotation(withCoordinate: trip.dropoffLocationCoordinates, anno: MKPointAnnotation())
             if driverCoordinate != savedDriverCoordinate{
                 parent.mapView.removeOverlays(parent.mapView.overlays)
                 self.configurePolyline(currentLocation: driverCoordinate, withDestinationCoordinate: trip.dropoffLocationCoordinates)
@@ -204,7 +205,6 @@ extension MapViewRepresentable {
             }
             
             //update overlays
-            
             if parent.homeViewModel.mapState == .tripAccepted{
                 addAnnotationAndGeneratePolylineToPassenger(driverCoordinates)
             }else if parent.homeViewModel.mapState == .tripInProgress{
@@ -217,7 +217,6 @@ extension MapViewRepresentable {
         func configurePolyline(currentLocation: CLLocationCoordinate2D?,  withDestinationCoordinate coordinate: CLLocationCoordinate2D) {
             guard let currentLocation = currentLocation, parent.mapView.overlays.isEmpty else { return }
             parent.homeViewModel.getDestinationRoute(from: currentLocation, to: coordinate) {route in
-                print("DEBUG Add overlay")
                 self.parent.mapView.addOverlay(route.polyline)
                 let rect = self.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect,
                                                                edgePadding: .init(top: 64, left: 32, bottom: 400, right: 32))

@@ -37,7 +37,7 @@ struct EnRouteToPickupLocationView_Previews: PreviewProvider {
 
 extension EnRouteToPickupLocationView{
     private var title: some View{
-        Text("Your Ride is arriving in \(homeVM.dropOffTime ?? "3 mins")")
+        Text("Your Ride is arriving in \(homeVM.currentRoute?.expectedTravelTime.stringTimeInMinutes ?? "10 min")")
             .font(.poppinsMedium(size: 18))
     }
     
