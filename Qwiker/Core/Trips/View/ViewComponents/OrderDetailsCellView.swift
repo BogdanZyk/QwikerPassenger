@@ -16,11 +16,11 @@ struct OrderDetailsCellView: View{
                 Image(systemName: "info.circle")
                 VStack(alignment: .leading){
                     Text("Order details")
-                        .font(.poppinsRegular(size: 16))
+                        .font(.poppinsMedium(size: 16))
                         .foregroundColor(.black)
                     if let tripCoast = trip?.tripCost{
                         Text("Your fare is \(tripCoast.toCurrency())")
-                            .font(.callout)
+                            .font(.poppinsRegular(size: 12))
                             .foregroundColor(.gray)
                     }
                 }

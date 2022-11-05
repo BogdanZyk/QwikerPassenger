@@ -15,9 +15,7 @@ struct DriverArrivalView: View {
             SheetWithScrollView{
                 title
                 actionButtonsSection
-                locationSectionView
-                CurrentPaymentMethodCellView()
-                OrderDetailsCellView(trip: homeVM.trip)
+                tripInfoSection
                 bottomActionButtons
             }
         }
@@ -71,11 +69,10 @@ extension DriverArrivalView{
         }
         .padding(.vertical, 10)
     }
- 
-    private var locationSectionView: some View{
-        VStack(spacing: 20) {
-            LocationRowsViewComponent(selectLocationTitle: homeVM.userLocation?.title, destinationLocationTitle: homeVM.selectedLocation?.title)
-            CustomDivider(lineHeight: 15).padding(.horizontal, -16)
+ @ViewBuilder
+    private var tripInfoSection: some View{
+        if let trip = homeVM.trip{
+            TripDetailsInfoView(trip: trip)
         }
     }
     

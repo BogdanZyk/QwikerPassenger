@@ -25,15 +25,15 @@ struct ExpandedView<Content: View> : View{
     var body: some View{
         GeometryReader { proxy in
             ZStack(alignment: .top){
-                content(minHeight, proxy.frame(in: .global), $offset)
-                    .offset(y: proxy.frame(in: .global).height - minHeight)
+                content(minHeight, proxy.frame(in: .local), $offset)
+                    .offset(y: proxy.frame(in: .local).height - minHeight)
                     .offset(y: offset)
                     .gesture(DragGesture()
                         .onChanged({ value in
-                            onChange(value, proxyFrame: proxy.frame(in: .global))
+                            onChange(value, proxyFrame: proxy.frame(in: .local))
                         })
                             .onEnded({ value in
-                                onEnded(value, proxyFrame: proxy.frame(in: .global))
+                                onEnded(value, proxyFrame: proxy.frame(in: .local))
                             })
                     )
             }

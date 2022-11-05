@@ -8,17 +8,14 @@
 import SwiftUI
 
 struct EnRouteToPickupLocationView: View {
-    @State private var showUserLocation: Bool = false
+
     @EnvironmentObject var homeVM: HomeViewModel
     var body: some View {
         ExpandedView(minHeight: getRect().height / 3, maxHeight: getRect().height / 1.2) { minHeight, rect, offset in
             SheetWithScrollView{
                 title
                 riderSectionView
-                locationSectionView
-                currentPaymentMethodSectionView
-                showMeDriverToggle
-                orderDetails
+                tripInfoSection
                 buttonsSectionView
             }
         }
@@ -63,47 +60,16 @@ extension EnRouteToPickupLocationView{
         }
         .padding(.vertical, 10)
     }
-}
-
-//MARK: - Location label section
-extension EnRouteToPickupLocationView{
     
-    private var locationSectionView: some View{
-        VStack(spacing: 20) {
-            LocationRowsViewComponent(selectLocationTitle: homeVM.userLocation?.title, destinationLocationTitle: homeVM.selectedLocation?.title)
-            CustomDivider(lineHeight: 15).padding(.horizontal, -16)
+    @ViewBuilder
+    private var tripInfoSection: some View{
+        if let trip = homeVM.trip{
+            TripDetailsInfoView(isHiddenUserLocationToogle: false, trip:trip)
         }
     }
-    
 }
 
-//MARK: - Payment Method Section View
 
-extension EnRouteToPickupLocationView{
-    private var currentPaymentMethodSectionView: some View{
-        CurrentPaymentMethodCellView()
-    }
-    
-    private var showMeDriverToggle: some View{
-        VStack {
-            Toggle(isOn: $showUserLocation) {
-                HStack(spacing: 20) {
-                    Image(systemName: "location.fill")
-                    Text("Show the driver where I am")
-                        .font(.poppinsRegular(size: 16))
-                }
-                
-            }
-            .tint(.primaryBlue)
-            .padding(.bottom, 5)
-            Divider()
-        }
-    }
-    
-    private var orderDetails: some View{
-        OrderDetailsCellView(trip: homeVM.trip)
-    }
-}
 extension EnRouteToPickupLocationView{
     private var buttonsSectionView: some View{
         HStack{

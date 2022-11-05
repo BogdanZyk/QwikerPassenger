@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RatingView: View{
-    @Binding var rating: Int
+    @State private var rating: Int = 0
     var maximumRating = 5
     var offImage: Image?
     var onImage = Image(systemName: "star.fill")
@@ -33,7 +33,7 @@ struct RatingView: View{
 
 struct RatingView_Previews: PreviewProvider {
     static var previews: some View {
-        RatingView(rating: .constant(3))
+        RatingView()
     }
 }
 

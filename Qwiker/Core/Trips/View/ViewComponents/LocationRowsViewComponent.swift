@@ -28,7 +28,7 @@ struct LocationRowsViewComponent_Previews: PreviewProvider {
 
 extension LocationRowsViewComponent{
     private func locationLabel(isDestination: Bool = false) -> some View{
-        HStack(alignment: .center, spacing: 15) {
+        HStack(alignment: .center, spacing: 20) {
             Circle()
                 .stroke(lineWidth: 3)
                 .fill(isDestination ? Color.primaryBlue : Color.secondaryGrey)
@@ -39,7 +39,7 @@ extension LocationRowsViewComponent{
                         .font(.headline.weight(.medium))
                      .foregroundColor(Color.black)
                 Text(isDestination ? "Change destination" : "Specify entrance")
-                    .font(.caption)
+                    .font(.poppinsRegular(size: 12))
                     .foregroundColor(.gray)
             }
             Spacer()

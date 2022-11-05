@@ -36,6 +36,8 @@
 		5A340A3D2916F9A00092844C /* CurrentPaymentMethodCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A340A3C2916F9A00092844C /* CurrentPaymentMethodCellView.swift */; };
 		5A340A3F2916F9B40092844C /* SheetWithScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A340A3E2916F9B40092844C /* SheetWithScrollView.swift */; };
 		5A340A412916F9CF0092844C /* CircleButtonWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A340A402916F9CF0092844C /* CircleButtonWithTitle.swift */; };
+		5A340A432916FD4B0092844C /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A340A422916FD4B0092844C /* TipView.swift */; };
+		5A340A452916FEF20092844C /* TripDetailsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A340A442916FEF20092844C /* TripDetailsInfoView.swift */; };
 		5A44E46B290A8E5000577B4A /* QwikerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E46A290A8E4F00577B4A /* QwikerApp.swift */; };
 		5A44E46D290A8E5000577B4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E46C290A8E5000577B4A /* ContentView.swift */; };
 		5A44E46F290A8E5100577B4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A44E46E290A8E5100577B4A /* Assets.xcassets */; };
@@ -119,6 +121,8 @@
 		5A340A3C2916F9A00092844C /* CurrentPaymentMethodCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPaymentMethodCellView.swift; sourceTree = "<group>"; };
 		5A340A3E2916F9B40092844C /* SheetWithScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetWithScrollView.swift; sourceTree = "<group>"; };
 		5A340A402916F9CF0092844C /* CircleButtonWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonWithTitle.swift; sourceTree = "<group>"; };
+		5A340A422916FD4B0092844C /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
+		5A340A442916FEF20092844C /* TripDetailsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsInfoView.swift; sourceTree = "<group>"; };
 		5A44E467290A8E4F00577B4A /* Qwiker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qwiker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A44E46A290A8E4F00577B4A /* QwikerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwikerApp.swift; sourceTree = "<group>"; };
 		5A44E46C290A8E5000577B4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -536,6 +540,8 @@
 				5A6A88732910831400699320 /* LocationRowsViewComponent.swift */,
 				5A340A3A2916F97D0092844C /* OrderDetailsCellView.swift */,
 				5A340A3C2916F9A00092844C /* CurrentPaymentMethodCellView.swift */,
+				5A340A422916FD4B0092844C /* TipView.swift */,
+				5A340A442916FEF20092844C /* TripDetailsInfoView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -680,6 +686,7 @@
 				5A44E4D2290ACA8100577B4A /* ErrorHandler.swift in Sources */,
 				5A44E4C7290AC75B00577B4A /* AppLocation.swift in Sources */,
 				5A2A5C1B290C18E700310290 /* UIApplication.swift in Sources */,
+				5A340A432916FD4B0092844C /* TipView.swift in Sources */,
 				5A2A5C00290BCA6A00310290 /* JumpingDraggIcon.swift in Sources */,
 				5AD57C4E290FBB580078C4F8 /* TripInProgressView.swift in Sources */,
 				5A2A5C03290BCAB200310290 /* CarDetailView.swift in Sources */,
@@ -692,6 +699,7 @@
 				5A26AA11290B1E5E00E2D5AC /* Rider.swift in Sources */,
 				5A44E4A0290AA87100577B4A /* AuthenticationViewModel.swift in Sources */,
 				5A44E4C9290AC77A00577B4A /* RideType.swift in Sources */,
+				5A340A452916FEF20092844C /* TripDetailsInfoView.swift in Sources */,
 				5A2A5C19290C0A6000310290 /* RideRequestViewModel.swift in Sources */,
 				5A340A3F2916F9B40092844C /* SheetWithScrollView.swift in Sources */,
 				5A44E4E7290ADA2D00577B4A /* UserAvaterComponent.swift in Sources */,

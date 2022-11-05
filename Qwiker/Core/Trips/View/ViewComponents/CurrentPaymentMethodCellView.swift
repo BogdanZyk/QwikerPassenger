@@ -17,8 +17,8 @@ struct CurrentPaymentMethodCellView: View{
                     Image("cash-icon")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 30, height: 30)
-                    VStack(alignment: .leading, spacing: 4){
+                        .frame(width: 20, height: 20)
+                    VStack(alignment: .leading, spacing: 2){
                         Text("Cash")
                             .foregroundColor(.black)
                             .font(.poppinsMedium(size: 16))
