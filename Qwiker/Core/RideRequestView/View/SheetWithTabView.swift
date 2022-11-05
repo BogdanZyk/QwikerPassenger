@@ -282,8 +282,9 @@ extension SheetWithTabView{
     
     private func locationLabel(isDestination: Bool = false) -> some View{
         HStack(alignment: .lastTextBaseline) {
-            Rectangle()
-                .fill(Color.black)
+            Circle()
+                .stroke(lineWidth: 3)
+                .fill(isDestination ? Color.primaryBlue : Color.gray)
                 .frame(width: 8, height: 8)
             VStack(alignment: .leading, spacing: 15){
                 HStack(spacing: 10) {

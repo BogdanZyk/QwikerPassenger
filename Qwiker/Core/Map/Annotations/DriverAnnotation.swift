@@ -11,9 +11,11 @@ import MapKit
 class DriverAnnotation: NSObject, MKAnnotation {
     @objc dynamic var coordinate: CLLocationCoordinate2D
     var uid: String
+    var course: Double
     
-    init(uid: String, coordinate: CLLocationCoordinate2D) {
+    init(uid: String, course: Double, coordinate: CLLocationCoordinate2D) {
         self.uid = uid
+        self.course = course
         self.coordinate = coordinate
     }
     
@@ -22,4 +24,5 @@ class DriverAnnotation: NSObject, MKAnnotation {
             self.coordinate = coordinate
         }
     }
+    
 }

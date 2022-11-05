@@ -68,10 +68,10 @@ final class HomeViewModel: ObservableObject{
 extension HomeViewModel {
     
     private func reset() {
-        mapState = .noInput
-        setCurrentUserRegion()
         selectedLocation = nil
         trip = nil
+        mapState = .noInput
+        setCurrentUserRegion()
     }
     
     func setCurrentUserRegion(){
@@ -263,9 +263,7 @@ extension HomeViewModel {
     //TODO: Extract to PassengerService
     func fetchNearbyDrivers(withCoordinates coordinates: CLLocationCoordinate2D) {
         print("DEBUG", "fetchNearbyDrivers")
-        withAnimation {
-            drivers.removeAll()
-        }
+        drivers.removeAll()
         let queryBounds = GFUtils.queryBounds(forLocation: coordinates, withRadius: radius)
         didExecuteFetchDrivers = true
         
@@ -298,20 +296,25 @@ extension HomeViewModel {
         }
         
         self.drivers.append(contentsOf: drivers)
-        self.driverQueue = self.drivers
+        self.driverQueue = self.drivers.filter({$0.isActive})
         self.addListenerToDrivers()
         print("DEBUG:", self.drivers.compactMap({$0.fullname}))
     }
     
     func addListenerToDrivers() {
+        guard !drivers.isEmpty else {return}
         for i in 0 ..< drivers.count {
+            
             let driver = drivers[i]
             
             let driverListener = FbConstant.COLLECTION_DRIVERS.document(driver.id ?? "").addSnapshotListener { snapshot, error in
-                guard let driver = try? snapshot?.data(as: Rider.self) else { return }
-                print("DEBUG",driver.isActive)
-                self.drivers[i].isActive = driver.isActive
-                self.drivers[i].coordinates = driver.coordinates
+                guard let driver = try? snapshot?.data(as: Rider.self), let index = self.drivers.firstIndex(where: {$0.uid == driver.uid}) else {return}
+                
+                self.drivers[index].isActive = driver.isActive
+                self.drivers[index].coordinates = driver.coordinates
+                if !driver.isActive{
+                    self.driverQueue.removeAll(where: {$0.uid == driver.uid})
+                }
             }
             
             self.listenersDictionary[driver.id ?? ""] = driverListener

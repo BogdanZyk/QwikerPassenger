@@ -16,6 +16,7 @@ struct Rider: Codable {
     @DocumentID var id: String?
     let fullname: String
     let email: String
+    var course: Double
     var phoneNumber: String
     var profileImageUrl: String?
     var coordinates: GeoPoint

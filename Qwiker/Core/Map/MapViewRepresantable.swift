@@ -29,6 +29,7 @@ struct MapViewRepresentable: UIViewRepresentable {
         case .noInput:
             context.coordinator.clearMapView()
             context.coordinator.addDriversToMapAndUpdateLocation(homeViewModel.drivers)
+            context.coordinator.removeUnActiveDrivers(homeViewModel.drivers)
         case .locationSelected:
             context.coordinator.addAnnotationAndGeneratePolyline()
         case .tripAccepted:
@@ -73,6 +74,7 @@ extension MapViewRepresentable {
                 center: userLocation.coordinate,
                 span: SPAN
             )
+            
             parent.mapView.setRegion(region, animated: true)
         }
         
@@ -118,8 +120,9 @@ extension MapViewRepresentable {
             
             if let annotation = annotation as? DriverAnnotation {
                 let view = MKAnnotationView(annotation: annotation, reuseIdentifier: "driver")
-                let image = UIImage(named: "car-top-view")?.imageResize(sizeChange: CGSize.init(width: 40, height: 30))
+                let image = UIImage(named: "car-top-view")?.imageResize(sizeChange: CGSize.init(width: 25, height: 40))
                 view.image = image
+                view.transform = .init(rotationAngle: 0)
                 return view
             }
             
@@ -198,8 +201,9 @@ extension MapViewRepresentable {
             
             if let driverAnno = driverAnnotations?.first(where: { $0.uid == trip.driverUid }){
                 driverAnno.updatePosition(withCoordinate: driverCoordinates)
+                self.updateAngleForAnnotation(driverAnno, course: tripDriver.course)
             }else{
-                let annotation = DriverAnnotation(uid: trip.driverUid, coordinate:
+                let annotation = DriverAnnotation(uid: tripDriver.uid, course: tripDriver.course, coordinate:
                 driverCoordinates)
                 parent.mapView.addAnnotation(annotation)
             }
@@ -230,13 +234,14 @@ extension MapViewRepresentable {
         func addDriversToMapAndUpdateLocation(_ drivers: [Rider]) {
             drivers.forEach { driver in
                 let driverCoordinate = CLLocationCoordinate2D(latitude: driver.coordinates.latitude,longitude: driver.coordinates.longitude)
-                let annotation = DriverAnnotation( uid: driver.id ?? NSUUID().uuidString, coordinate: driverCoordinate)
+                let annotation = DriverAnnotation(uid: driver.uid, course: driver.course, coordinate: driverCoordinate)
                 
                 var driverIsVisible: Bool {
                     return self.parent.mapView.annotations.contains(where: { annotation -> Bool in
                         guard let driverAnno = annotation as? DriverAnnotation else { return false }
                         if driverAnno.uid == driver.id ?? "" {
                             driverAnno.updatePosition(withCoordinate: driverCoordinate)
+                            self.updateAngleForAnnotation(driverAnno, course: driver.course)
                             return true
                         }
                         return false
@@ -247,6 +252,22 @@ extension MapViewRepresentable {
                     self.parent.mapView.addAnnotation(annotation)
                 }
             }
+        }
+        func removeUnActiveDrivers(_ drivers: [Rider]){
+            let annotations = parent.mapView.annotations.filter({ $0.isKind(of: DriverAnnotation.self)})
+            drivers.forEach { driver in
+                annotations.forEach { anno in
+                    guard let driverAnno = anno as? DriverAnnotation else { return }
+                    if driverAnno.uid == driver.uid && !driver.isActive{
+                        parent.mapView.removeAnnotation(driverAnno)
+                    }
+                }
+            }
+        }
+        
+        func updateAngleForAnnotation(_ anno: MKAnnotation, course: Double){
+            let annotationView = parent.mapView.view(for: anno)
+            annotationView?.rotate(degrees: course)
         }
         
         func clearMapView() {
@@ -275,3 +296,14 @@ extension MapViewRepresentable {
 
 
 
+extension UIView {
+
+
+    func rotate(degrees: CGFloat) {
+
+        let degreesToRadians: (CGFloat) -> CGFloat = { (degrees: CGFloat) in
+            return degrees / 180.0 * CGFloat.pi
+        }
+        self.transform =  CGAffineTransform(rotationAngle: degreesToRadians(degrees))
+    }
+}
