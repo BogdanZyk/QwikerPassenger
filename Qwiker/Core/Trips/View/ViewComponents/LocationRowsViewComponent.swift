@@ -11,12 +11,9 @@ struct LocationRowsViewComponent: View {
     var selectLocationTitle: String?
     var destinationLocationTitle: String?
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack(alignment: .leading, spacing: 10) {
             locationLabel()
-            Rectangle()
-                .fill(Color.primaryBlue)
-                .frame(width: 1, height: 12)
-                .padding(.horizontal, 3)
+            Divider().padding(.leading)
             locationLabel(isDestination: true)
         }
     }
@@ -31,20 +28,22 @@ struct LocationRowsViewComponent_Previews: PreviewProvider {
 
 extension LocationRowsViewComponent{
     private func locationLabel(isDestination: Bool = false) -> some View{
-        HStack(alignment: .lastTextBaseline) {
+        HStack(alignment: .center, spacing: 15) {
             Circle()
+                .stroke(lineWidth: 3)
                 .fill(isDestination ? Color.primaryBlue : Color.secondaryGrey)
-                .frame(width: 8, height: 8)
-            VStack(alignment: .leading, spacing: 15){
-                HStack(spacing: 10) {
+                .frame(width: 12, height: 12)
+            VStack(alignment: .leading, spacing: 4){
                     Text(isDestination ? destinationLocationTitle ?? "Destination" : selectLocationTitle ?? "Current location")
                         .lineLimit(1)
-                        .font(.subheadline.weight(.medium))
+                        .font(.headline.weight(.medium))
                      .foregroundColor(Color.black)
-                }
+                Text(isDestination ? "Change destination" : "Specify entrance")
+                    .font(.caption)
+                    .foregroundColor(.gray)
             }
+            Spacer()
         }
-        .hLeading()
     }
 
 }

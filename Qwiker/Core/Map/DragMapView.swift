@@ -18,6 +18,7 @@ struct DragMapView: View {
                 locationPin
                 focusCurrentLocationButton
             }
+            loaderView
         }
     }
 }
@@ -67,5 +68,13 @@ extension DragMapView{
         .padding()
         .hTrailing()
         .offset(y: getRect().height / 4)
+    }
+    
+    private var loaderView: some View{
+        Group{
+            if homeVM.mapState == .tripRequested{
+                Color.gray.ignoresSafeArea().opacity(0.3)
+            }
+        }
     }
 }

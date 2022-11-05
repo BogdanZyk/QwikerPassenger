@@ -9,27 +9,19 @@ import SwiftUI
 
 struct RiderInfoView: View {
     let trip: RequestedTrip
-    var isHiddenButton: Bool = false
     var body: some View {
-        HStack(alignment: .top, spacing: 15){
-            UserAvatarViewComponent(pathImage: trip.driverImageUrl, size: CGSize(width: 55, height: 55))
-            VStack(alignment: .leading, spacing: 2){
-                Label {
-                    Image(systemName: "star.fill")
-                        .foregroundColor(.yellow)
-                    Text("4.9")
-                        .font(.poppinsRegular(size: 14))
-                        .foregroundColor(.gray)
-                } icon: {
-                    Text(trip.driverName)
-                        .font(.poppinsMedium(size: 16))
-                }
-                Text("\(trip.carColor ?? "") \(trip.carModel ?? "") ").font(.poppinsMedium(size: 14))
-                Text(trip.carNumber ?? "").font(.poppinsRegular(size: 14)).foregroundColor(.gray)
-            }
-            Spacer()
-            if !isHiddenButton{
-                driveActionButton
+        VStack(spacing: 5){
+            UserAvatarViewComponent(pathImage: trip.driverImageUrl, size: CGSize(width: 60, height: 60))
+            Label {
+                Text("4.9")
+                    .font(.poppinsRegular(size: 16))
+                    .foregroundColor(.gray)
+                Image(systemName: "star")
+                    .imageScale(.small)
+                    .foregroundColor(.gray)
+            } icon: {
+                Text(trip.driverFirstName)
+                    .font(.poppinsRegular(size: 16))
             }
         }
     }

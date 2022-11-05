@@ -46,7 +46,7 @@ extension TripInProgressView{
         Group{
             if let trip = homeVM.trip{
                 HStack {
-                    RiderInfoView(trip: trip, isHiddenButton: true)
+                    RiderInfoView(trip: trip)
                     Spacer()
                     detailsButton
                 }

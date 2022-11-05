@@ -77,6 +77,7 @@
 		5A6A886F29107A9D00699320 /* MapHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A886E29107A9D00699320 /* MapHelpers.swift */; };
 		5A6A887229107F3800699320 /* RiderInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A887129107F3800699320 /* RiderInfoView.swift */; };
 		5A6A88742910831400699320 /* LocationRowsViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A88732910831400699320 /* LocationRowsViewComponent.swift */; };
+		5AAEB1382916C057002AAFF8 /* TripLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAEB1372916C057002AAFF8 /* TripLoaderView.swift */; };
 		5AD57C46290FBA210078C4F8 /* TripLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C45290FBA210078C4F8 /* TripLoadingView.swift */; };
 		5AD57C48290FBA650078C4F8 /* DriverArrivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C47290FBA650078C4F8 /* DriverArrivalView.swift */; };
 		5AD57C4A290FBAB80078C4F8 /* EnRouteToPickupLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C49290FBAB80078C4F8 /* EnRouteToPickupLocationView.swift */; };
@@ -155,6 +156,7 @@
 		5A6A886E29107A9D00699320 /* MapHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHelpers.swift; sourceTree = "<group>"; };
 		5A6A887129107F3800699320 /* RiderInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderInfoView.swift; sourceTree = "<group>"; };
 		5A6A88732910831400699320 /* LocationRowsViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRowsViewComponent.swift; sourceTree = "<group>"; };
+		5AAEB1372916C057002AAFF8 /* TripLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripLoaderView.swift; sourceTree = "<group>"; };
 		5AD57C45290FBA210078C4F8 /* TripLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripLoadingView.swift; sourceTree = "<group>"; };
 		5AD57C47290FBA650078C4F8 /* DriverArrivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverArrivalView.swift; sourceTree = "<group>"; };
 		5AD57C49290FBAB80078C4F8 /* EnRouteToPickupLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnRouteToPickupLocationView.swift; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 				5AD57C51290FBF390078C4F8 /* CustomCorners.swift */,
 				5AD57C53290FCD790078C4F8 /* BottomSheetView.swift */,
 				5ADC672F2915051B0063014E /* RatingView.swift */,
+				5AAEB1372916C057002AAFF8 /* TripLoaderView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -528,7 +531,6 @@
 		5AD57C41290FBA070078C4F8 /* Trips */ = {
 			isa = PBXGroup;
 			children = (
-				5ADC673729151DC50063014E /* ViewModel */,
 				5AD57C42290FBA110078C4F8 /* View */,
 				5ADC673829151DDA0063014E /* TripCompletedView.swift */,
 			);
@@ -546,13 +548,6 @@
 				5AD57C4D290FBB580078C4F8 /* TripInProgressView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		5ADC673729151DC50063014E /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -692,6 +687,7 @@
 				5A44E498290A9DAE00577B4A /* PrimaryTextFieldView.swift in Sources */,
 				5ADC673229150EA80063014E /* TimeInterval.swift in Sources */,
 				5A26AA19290B259300E2D5AC /* MainHomeActionButton.swift in Sources */,
+				5AAEB1382916C057002AAFF8 /* TripLoaderView.swift in Sources */,
 				5AD57C46290FBA210078C4F8 /* TripLoadingView.swift in Sources */,
 				5A2A5C11290BE0BD00310290 /* CustomLocationAnnotationView.swift in Sources */,
 				5A44E4BF290AC6AB00577B4A /* UserService.swift in Sources */,

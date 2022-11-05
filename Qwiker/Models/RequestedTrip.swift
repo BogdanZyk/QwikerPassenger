@@ -53,11 +53,15 @@ struct RequestedTrip: Codable, Identifiable{
         return firstName.uppercased()
     }
     
-    var driverFirstNameUppercased: String {
+    var driverFirstName: String {
         let components = driverName.components(separatedBy: " ")
-        guard let firstName = components.first else { return driverName.uppercased() }
+        guard let firstName = components.first else { return driverName}
         
-        return firstName.uppercased()
+        return firstName
+    }
+    
+    var carInfo: String{
+        (carColor ?? "Color") + " " + (carModel ?? "Model")
     }
 }
 
