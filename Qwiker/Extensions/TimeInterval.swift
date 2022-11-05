@@ -17,6 +17,6 @@ extension TimeInterval {
 
 
     var stringTimeInMinutes: String {
-         "\(minutes)m"
+         "~\(minutes) min"
     }
 }

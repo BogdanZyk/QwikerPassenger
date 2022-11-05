@@ -32,6 +32,10 @@
 		5A2A5C19290C0A6000310290 /* RideRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C18290C0A6000310290 /* RideRequestViewModel.swift */; };
 		5A2A5C1B290C18E700310290 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C1A290C18E700310290 /* UIApplication.swift */; };
 		5A2A5C1E290C2C2300310290 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A5C1D290C2C2300310290 /* Double.swift */; };
+		5A340A3B2916F97D0092844C /* OrderDetailsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A340A3A2916F97D0092844C /* OrderDetailsCellView.swift */; };
+		5A340A3D2916F9A00092844C /* CurrentPaymentMethodCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A340A3C2916F9A00092844C /* CurrentPaymentMethodCellView.swift */; };
+		5A340A3F2916F9B40092844C /* SheetWithScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A340A3E2916F9B40092844C /* SheetWithScrollView.swift */; };
+		5A340A412916F9CF0092844C /* CircleButtonWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A340A402916F9CF0092844C /* CircleButtonWithTitle.swift */; };
 		5A44E46B290A8E5000577B4A /* QwikerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E46A290A8E4F00577B4A /* QwikerApp.swift */; };
 		5A44E46D290A8E5000577B4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A44E46C290A8E5000577B4A /* ContentView.swift */; };
 		5A44E46F290A8E5100577B4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A44E46E290A8E5100577B4A /* Assets.xcassets */; };
@@ -111,6 +115,10 @@
 		5A2A5C18290C0A6000310290 /* RideRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRequestViewModel.swift; sourceTree = "<group>"; };
 		5A2A5C1A290C18E700310290 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		5A2A5C1D290C2C2300310290 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		5A340A3A2916F97D0092844C /* OrderDetailsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsCellView.swift; sourceTree = "<group>"; };
+		5A340A3C2916F9A00092844C /* CurrentPaymentMethodCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPaymentMethodCellView.swift; sourceTree = "<group>"; };
+		5A340A3E2916F9B40092844C /* SheetWithScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetWithScrollView.swift; sourceTree = "<group>"; };
+		5A340A402916F9CF0092844C /* CircleButtonWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonWithTitle.swift; sourceTree = "<group>"; };
 		5A44E467290A8E4F00577B4A /* Qwiker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qwiker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A44E46A290A8E4F00577B4A /* QwikerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwikerApp.swift; sourceTree = "<group>"; };
 		5A44E46C290A8E5000577B4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -437,6 +445,8 @@
 				5AD57C53290FCD790078C4F8 /* BottomSheetView.swift */,
 				5ADC672F2915051B0063014E /* RatingView.swift */,
 				5AAEB1372916C057002AAFF8 /* TripLoaderView.swift */,
+				5A340A3E2916F9B40092844C /* SheetWithScrollView.swift */,
+				5A340A402916F9CF0092844C /* CircleButtonWithTitle.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -524,6 +534,8 @@
 			children = (
 				5A6A887129107F3800699320 /* RiderInfoView.swift */,
 				5A6A88732910831400699320 /* LocationRowsViewComponent.swift */,
+				5A340A3A2916F97D0092844C /* OrderDetailsCellView.swift */,
+				5A340A3C2916F9A00092844C /* CurrentPaymentMethodCellView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -644,6 +656,7 @@
 				5A44E46D290A8E5000577B4A /* ContentView.swift in Sources */,
 				5A6A88742910831400699320 /* LocationRowsViewComponent.swift in Sources */,
 				5A2A5C0A290BCBD400310290 /* SheetWithTabView.swift in Sources */,
+				5A340A3D2916F9A00092844C /* CurrentPaymentMethodCellView.swift in Sources */,
 				5A6A886F29107A9D00699320 /* MapHelpers.swift in Sources */,
 				5A44E4CE290AC7C300577B4A /* FbConstant.swift in Sources */,
 				5A44E4A6290AB69C00577B4A /* Helpers.swift in Sources */,
@@ -662,6 +675,7 @@
 				5A2A5C0F290BE0A000310290 /* CurrentAnnotation.swift in Sources */,
 				5A44E4E5290AD9B800577B4A /* Preview.swift in Sources */,
 				5A44E49D290AA73700577B4A /* VerificationView.swift in Sources */,
+				5A340A3B2916F97D0092844C /* OrderDetailsCellView.swift in Sources */,
 				5A44E4A2290AA90200577B4A /* String.swift in Sources */,
 				5A44E4D2290ACA8100577B4A /* ErrorHandler.swift in Sources */,
 				5A44E4C7290AC75B00577B4A /* AppLocation.swift in Sources */,
@@ -679,6 +693,7 @@
 				5A44E4A0290AA87100577B4A /* AuthenticationViewModel.swift in Sources */,
 				5A44E4C9290AC77A00577B4A /* RideType.swift in Sources */,
 				5A2A5C19290C0A6000310290 /* RideRequestViewModel.swift in Sources */,
+				5A340A3F2916F9B40092844C /* SheetWithScrollView.swift in Sources */,
 				5A44E4E7290ADA2D00577B4A /* UserAvaterComponent.swift in Sources */,
 				5A2A5C06290BCB0400310290 /* PaymentInfoSheet.swift in Sources */,
 				5A2A5C1E290C2C2300310290 /* Double.swift in Sources */,
@@ -703,6 +718,7 @@
 				5A44E494290A9CAD00577B4A /* PrimaryButtonView.swift in Sources */,
 				5A2A5C08290BCBAE00310290 /* RideRequestExpandSheetView.swift in Sources */,
 				5A2A5C17290C06F400310290 /* MapKit.swift in Sources */,
+				5A340A412916F9CF0092844C /* CircleButtonWithTitle.swift in Sources */,
 				5A2A5C13290BE0E800310290 /* DriverAnnotation.swift in Sources */,
 				5AD57C4C290FBB2C0078C4F8 /* TripArrivalView.swift in Sources */,
 				5A44E4E3290AD8FF00577B4A /* SideMenuOptionType.swift in Sources */,
