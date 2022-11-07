@@ -97,7 +97,7 @@ extension HomeViewModel {
         dropOffTime = formatter.string(from: Date() + expectedTravelTime)
     }
     
-    func ridePriceForType(_ type: RideType) -> String {
+    func ridePriceForType(_ type: RideType) -> Double {
        let distanceAndPrice =  MapHelpers.ridePriceAndDestinceForType(type, currentLocation: userLocation, destinationLocation: selectedLocation)
         self.tripDistanceInMeters = distanceAndPrice.tripDistanceInMeters
         return distanceAndPrice.price
@@ -190,7 +190,7 @@ extension HomeViewModel {
     //MARK: - Request ride for driverQueue
     
     func requestRide() {
-        ridePrice = selectedRideType.price(for: tripDistanceInMeters)
+        ridePrice = ridePriceForType(selectedRideType)
         print("DEBUG", driverQueue.count)
         if driverQueue.isEmpty {
             //guard let trip = trip else { return }

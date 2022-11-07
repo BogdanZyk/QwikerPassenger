@@ -92,7 +92,7 @@ extension SheetWithTabView{
                     ForEach(RideType.allCases, id: \.self) { type in
                         HStack{
                             VStack(alignment: .leading, spacing: 4){
-                                Text(homeVM.ridePriceForType(type))
+                                Text(homeVM.ridePriceForType(type).toCurrency())
                                     .font(.poppinsRegular(size: 12))
                                 Text("\(type.title)")
                                     .font(.poppinsMedium(size: 14))
@@ -139,7 +139,7 @@ extension SheetWithTabView{
                     .lineLimit(1)
                     .matchedGeometryEffect(id: type.rawValue, in: animation)
                 Spacer()
-                Text(homeVM.ridePriceForType(type))
+                Text(homeVM.ridePriceForType(type).toCurrency())
                     .font(.poppinsMedium(size: 20))
             }
             .padding(.horizontal)

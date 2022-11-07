@@ -83,6 +83,7 @@
 		5A6A886F29107A9D00699320 /* MapHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A886E29107A9D00699320 /* MapHelpers.swift */; };
 		5A6A887229107F3800699320 /* RiderInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A887129107F3800699320 /* RiderInfoView.swift */; };
 		5A6A88742910831400699320 /* LocationRowsViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A88732910831400699320 /* LocationRowsViewComponent.swift */; };
+		5AA6B4962918F9C5006D0D94 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6B4952918F9C5006D0D94 /* Timer.swift */; };
 		5AAEB1382916C057002AAFF8 /* TripLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAEB1372916C057002AAFF8 /* TripLoaderView.swift */; };
 		5AD57C46290FBA210078C4F8 /* TripLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C45290FBA210078C4F8 /* TripLoadingView.swift */; };
 		5AD57C48290FBA650078C4F8 /* DriverArrivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57C47290FBA650078C4F8 /* DriverArrivalView.swift */; };
@@ -168,6 +169,7 @@
 		5A6A886E29107A9D00699320 /* MapHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHelpers.swift; sourceTree = "<group>"; };
 		5A6A887129107F3800699320 /* RiderInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderInfoView.swift; sourceTree = "<group>"; };
 		5A6A88732910831400699320 /* LocationRowsViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRowsViewComponent.swift; sourceTree = "<group>"; };
+		5AA6B4952918F9C5006D0D94 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		5AAEB1372916C057002AAFF8 /* TripLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripLoaderView.swift; sourceTree = "<group>"; };
 		5AD57C45290FBA210078C4F8 /* TripLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripLoadingView.swift; sourceTree = "<group>"; };
 		5AD57C47290FBA650078C4F8 /* DriverArrivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverArrivalView.swift; sourceTree = "<group>"; };
@@ -542,6 +544,7 @@
 				5A340A3C2916F9A00092844C /* CurrentPaymentMethodCellView.swift */,
 				5A340A422916FD4B0092844C /* TipView.swift */,
 				5A340A442916FEF20092844C /* TripDetailsInfoView.swift */,
+				5AA6B4952918F9C5006D0D94 /* Timer.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				5A44E49D290AA73700577B4A /* VerificationView.swift in Sources */,
 				5A340A3B2916F97D0092844C /* OrderDetailsCellView.swift in Sources */,
 				5A44E4A2290AA90200577B4A /* String.swift in Sources */,
+				5AA6B4962918F9C5006D0D94 /* Timer.swift in Sources */,
 				5A44E4D2290ACA8100577B4A /* ErrorHandler.swift in Sources */,
 				5A44E4C7290AC75B00577B4A /* AppLocation.swift in Sources */,
 				5A2A5C1B290C18E700310290 /* UIApplication.swift in Sources */,
