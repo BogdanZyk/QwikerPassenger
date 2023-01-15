@@ -6,11 +6,6 @@
 
 MVVM Architecture, iOS 15+, device: iphone.
 
-
-[![Watch the video](https://img.youtube.com/vi/ZCs8IySBrxo/maxresdefault.jpg)](https://youtu.be/ZCs8IySBrxo)
-
-
-
 ### The app is like an Uber
 
  - Firebase auth phone 
@@ -42,10 +37,37 @@ MVVM Architecture, iOS 15+, device: iphone.
 
 ## Video 📷
 
+[![Watch the video](https://img.youtube.com/vi/ZCs8IySBrxo/maxresdefault.jpg)](https://youtu.be/ZCs8IySBrxo)
 
 ## Screenshots 📷
 
+- Driver App
 
+ <div align="center">
+ <img src="screenshots/login.png" height="350" alt="Screenshot"/>
+ <img src="screenshots/verification.png" height="350" alt="Screenshot"/>
+<img src="screenshots/home.png" height="350" alt="Screenshot"/>
+<img src="screenshots/sideMenu.png" height="350" alt="Screenshot"/>
+<img src="screenshots/accept.png" height="350" alt="Screenshot"/>
+<img src="screenshots/inRoute.png" height="350" alt="Screenshot"/>
+<img src="screenshots/inProgress.png" height="350" alt="Screenshot"/>
+<img src="screenshots/status.png" height="350" alt="Screenshot"/>
+   </div>
+   
+   
+- Passenger App
+
+ <div align="center">
+ <img src="screenshots/home2.png" height="350" alt="Screenshot"/>
+<img src="screenshots/search.png" height="350" alt="Screenshot"/>
+<img src="screenshots/ridetype.png" height="350" alt="Screenshot"/>
+<img src="screenshots/ridetype2.png" height="350" alt="Screenshot"/>
+<img src="screenshots/inRouteDriverOpen.png" height="350" alt="Screenshot"/>
+<img src="screenshots/inRouteDriver.png" height="350" alt="Screenshot"/>
+<img src="screenshots/arrived.png" height="350" alt="Screenshot"/>
+<img src="screenshots/completeTrip.png" height="350" alt="Screenshot"/>
+
+   </div>
 
 ## Author
 * [Bogdan Zykov](https://github.com/BogdanZyk)
